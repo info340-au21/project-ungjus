@@ -19,10 +19,12 @@ h1, h2 {
     font-family:  Helvetica, sans-serif;
     font-weight: 300;
 }
+
 h1 {
     font-size: 3rem;
     margin-bottom: .5rem;
 }
+
 h2 {
     font-size: 2rem;
 }
@@ -35,4 +37,8 @@ header {
 
 header p {
     font-style: italic;
+}
+
+header p:hover {
+    color: aliceblue;
 }
