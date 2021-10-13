@@ -2,3 +2,23 @@
 include at least two (2) rules that change at 
 least three (3) different properties total. 
 */
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0 ;
+}
+
+h1, h2 {
+    font-family:  Helvetica, sans-serif;
+    font-weight: 300;
+}
+h1 {
+    font-size: 3rem;
+}
+h2 {
+    font-size: 2rem;
+}
+
+header p {
+    font-style: italic;
+}
