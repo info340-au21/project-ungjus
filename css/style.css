@@ -13,12 +13,34 @@ nav a {
 }
 
 nav a:hover{
-    color: lightgray;
-    text-decoration-color: lightgray;
-    
+    color: white;    
 }
 
 
 .material-icons.profile{
     font-size: 60px; 
+}
+
+.post {
+    margin-top: 30px;
+    padding: 1rem;
+    background-color: #C4C4C4;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+}
+
+.page-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.content-wrap {
+    flex: 1;
+}
+
+textarea {
+    min-height: 45px;
 }
