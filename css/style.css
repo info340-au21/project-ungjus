@@ -16,6 +16,13 @@ html {
     background: linear-gradient(90deg, rgba(29,29,157,1) 0%, rgba(140,185,222,1) 100%);
     height: 80px;
 }
+
+.main-header {
+    background-color: #C4C4C4;
+    color: white;
+    bottom: 0;
+}
+
 nav a {
     color: white;
     margin-right: 40px;
