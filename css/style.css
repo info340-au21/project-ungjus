@@ -110,6 +110,23 @@ h1 {
     height: 100%;
 }
 
+.sidebar a {
+    color:rgba(29,29,157,1);
+}
+
+.sidebar a:hover {
+    color:grey;
+}
+
+.sidebar p {
+    font-family: monospace;
+    font-size: x-large;
+}
+
+li {
+    margin: 3px;
+}
+
 @media (min-width: 768px) {
     .about-bio h2 {
         font-size: larger;
@@ -123,7 +140,6 @@ h1 {
         height: 200px;
     }
 }
-
 
 @media (min-width: 1200px) {
     .about-bio img {
