@@ -1,3 +1,16 @@
+body {
+    /* font-family: "Lato", "Helvetica Neue", "Helvetica", sans-serif; */
+    margin: 0;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    height: inherit;
+  }
+
+html {
+    height: 100%;
+}
+
 .nav-custom {
     background: rgb(29,29,157);
     background: linear-gradient(90deg, rgba(29,29,157,1) 0%, rgba(140,185,222,1) 100%);
@@ -22,7 +35,6 @@ nav a:hover{
 }
 
 .post {
-    margin-top: 30px;
     padding: 1rem;
     background-color: #C4C4C4;
     position: relative;
@@ -75,6 +87,17 @@ h1 {
     height: 150px;
 }
 
+/* new */
+.sidebar {
+    background-color: #F8F5E2;
+    width: 300px;
+}
+
+.mainContainer{
+    display: flex;
+    flex: 1;
+    height: 100%;
+}
 
 @media (min-width: 768px) {
     .about-bio h2 {
@@ -95,4 +118,4 @@ h1 {
     .about-bio img {
         height: 220px;
     }
-}
+
