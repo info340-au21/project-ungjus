@@ -44,3 +44,55 @@ nav a:hover{
 textarea {
     min-height: 45px;
 }
+
+.text-container {
+    width: 90%;
+    margin: 0.5rem auto;
+    padding: 1rem;
+}
+
+h1 {
+    padding-top: 0.5rem;
+    font-size: 4em;
+}
+
+.about-bio h2 {
+    font-size: large;
+}
+
+.about-bio p {
+    font-size: small;
+}
+
+.about-bio {
+    background-color: #C4C4C4;
+    width: 85%;
+    margin: 1.5rem auto;
+    display: flex;
+}
+
+.about-bio img {
+    height: 150px;
+}
+
+
+@media (min-width: 768px) {
+    .about-bio h2 {
+        font-size: larger;
+    }
+
+    .about-bio p {
+     font-size: medium;   
+    }
+
+    .about-bio img {
+        height: 200px;
+    }
+}
+
+
+@media (min-width: 1200px) {
+    .about-bio img {
+        height: 220px;
+    }
+}

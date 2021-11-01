@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">  
+    <meta name="author" content="Aaron Ho, Debbie Dai, Justin Ung, and Victoria Kourbatova">
+    <meta name="description" content="About Us Page">
+    <title>Waves - About Us</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg nav-custom">
+            <!-- Brand/Logo -->
+            <a class="navbar-brand" href="index.html">Waves</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <!-- Links to other pages -->
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Connect</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Explore</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About Us</a>
+                    </li>  
+                </ul>
+                <!-- Searchbar -->
+                <form class="form-inline my-2 my-lg-0">
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn my-2 my-sm-0" type="submit">  <i class="material-icons">search</i>
+                    </button>
+                </form>
+                <!-- Profile -->
+                <a class="btn my-2 my-sm-0" href="#"><i class="material-icons profile">account_circle</i></a>
+            </div>
+            <!-- Dropdown menu (appears on md or sm screens) -->
+            <div class="dropdown d-lg-none">
+                <button class="btn btn-secondary" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="material-icons">list</i>
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <li><a class="dropdown-item" href="#">Profile</a></li>
+                    <li><a class="dropdown-item" href="#">Connect</a></li>
+                    <li><a class="dropdown-item" href="#">Explore</a></li>
+                    <li><a class="dropdown-item" href="about.html">About Us</a></li>  
+                </ul>
+            </div>
+        </nav>
+    </header>  
+    <main>
+        <section class="text-container">
+            <h1>Our Goal</h1>
+            <p>
+                We are hoping to set up a website that creates a community of music enthusiasts, 
+                allowing users to communicate with their friends online, make new connections, 
+                and share their playlists or own music! We want to <strong>connect musicians based on their 
+                geographic location, demographics, and musical interests.</strong>
+            </p> 
+            <p>
+                Although there are already many music apps in this space, they aren’t focused on making genuine connections 
+                like we are: 
+                <ul>
+                    <li>
+                        <a href="https://www.spotify.com/us/" target="_blank">Spotify</a> 
+                            allows users to play music as well as allowing users to 
+                            add friends and view their listening activity. But it lacks the ability to communicate 
+                            with each other on the platform. 
+                    </li>
+                    <li>
+                        <a href="https://drooble.com/" target="_blank">Drooble</a> 
+                        is focused on posting and critiquing each 
+                        other’s music. However, provides little functionality for casual music enthusiasts 
+                        who want to comment on music not posted by the site’s users. 
+                    </li>
+                    <li>
+                        <a href="https://twitter.com/?lang=en" target="_blank">Twitter</a> is a social 
+                        network where users can post, but it’s too broad and doesn’t have a focus on music.
+                    </li>
+                </ul>
+                We believe we can combine the best features of these existing sites together to create 
+                a better music social platform.
+            </p>
+            
+        </section>
+        <section class="text-container">
+            <h1>Features</h1>
+            <p>Our app is geared towards music enthusiasts ranging from causal listeners to professional musicians. </p>
+            <p>Here are some things users will be able to do on our app:</p>
+            <ul>
+                <li>
+                    Our users will be able to <strong>make a profile, add songs that they like (or create on their own) 
+                    into playlists, and share them with others</strong>. Making a profile will consist of adding a personal 
+                    or user name, gender, pronouns, and tag musical interests. Users may also opt to sign in 
+                    through Google using 
+                    <a href="https://developers.google.com/identity/sign-in/web/sign-in" target="_blank">their API</a>. 
+                    We want users to be able to link their Spotify, Apple Music, 
+                    or SoundCloud profiles since many users probably also use these apps. 
+                </li>
+                <li>
+                    Furthermore, users will be able to make <strong>posts on songs they are currently listening to</strong>, connect 
+                    with other users with similar interests, add each other as friends, and continue chatting. 
+                    Users will also be able to search for specific profiles and add them as friends. 
+                </li>
+                <li>
+                    We also want to have a <strong>list of top user songs of the week, month, and year over different genres.</strong> 
+                    This way we can build a sense of community by allowing users to listen to these songs and comment 
+                    on each of these top songs to discuss what they like and dislike about them. This also allows 
+                    users to explore new music and connect with other users. We can also create this list by using 
+                    <a href="https://developer.spotify.com/documentation/web-api/" target="_blank">Spotify</a> or
+                    <a href="https://developer.apple.com/documentation/applemusicapi/" target="_blank">Apple Music’s</a> 
+                    API to get top songs as well. 
+                </li>
+            </ul>
+            <p>That is our overall idea for the project proposal. Thank you for your reading!</p>
+        </section>
+        <section class="text-container">
+            <h1>About the Developers:</h1>
+            <div class="about-bio">
+                <div class="text-container">
+                    <h2>Victoria Kourbatova</h2>
+                    <p>
+                    Intended Informatics and Linguistics double-major. Looking to improve web development skills.
+                    </p>
+                </div>
+                <img src="img/kourbatova.jpg" alt="Victoria Kourbatova">
+            </div>
+        </section>
+    </main>
+
+</body>
+</html>
