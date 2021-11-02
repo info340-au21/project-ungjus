@@ -17,8 +17,9 @@ html {
     height: 80px;
 }
 
-.main-header {
+header > h1 {
     background-color: #C4C4C4;
+    margin-bottom: 0;
     color: white;
     bottom: 0;
 }
@@ -123,6 +124,10 @@ h1 {
     color:rgba(29,29,157,1);
 }
 
+.sidebar li {
+    padding-left: 1.5rem;
+}
+
 .sidebar a:hover {
     color:grey;
 }
@@ -133,7 +138,7 @@ h1 {
     /* margin-top: 8px; */
 }
 
-p > li {
+p > {
     margin: 5px;
 }
 
