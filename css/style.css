@@ -130,8 +130,8 @@ h1 {
     font-size: x-large;
 }
 
-li {
-    margin: 3px;
+p > li {
+    margin: 5px;
 }
 
 @media (min-width: 768px) {
