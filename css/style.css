@@ -171,6 +171,10 @@ h1 {
     flex: 1;
     height: 100%;
 }
+.row {
+    justify-content: center;
+}
+
 
 .sidebar a {
     color:rgba(29,29,157,1);
@@ -213,7 +217,6 @@ img.btn {
 
 
 
-
 @media (min-width: 992px) {
     .about-bio h2 {
         font-size: larger;
@@ -246,4 +249,5 @@ img.btn {
     div.card {
         padding:0;
     }
+
 }
