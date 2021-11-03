@@ -142,7 +142,25 @@ p > {
     margin: 5px;
 }
 
-@media (min-width: 768px) {
+.card-title {
+    width: fit-content;
+    
+}
+
+.card-text {
+    width: fit-content
+}
+
+div.card {
+    width: fit-content;
+}
+
+img.btn {
+    height: 500px;
+    width: 500px;
+}
+
+@media (min-width: 992px) {
     .about-bio h2 {
         font-size: larger;
     }
@@ -154,10 +172,21 @@ p > {
     .about-bio img {
         height: 200px;
     }
+
+    img.btn {
+        height: 150px;
+        width: 150px;
+    }
+
 }
 
 @media (min-width: 1200px) {
     .about-bio img {
         height: 220px;
+    }
+
+    img.btn {
+        height: 250px;
+        width: 250px;
     }
 }
