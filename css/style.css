@@ -86,7 +86,7 @@ nav a:hover{
 .post {
     padding: 1rem;
     background-color: rgba(27,125,204,1);
-    position: relative;
+    position: sticky;
     bottom: 0;
     width: 100%;
     text-align: center;
