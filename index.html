@@ -1,96 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">  
+    <meta charset="UTF-8">
     <meta name="author" content="Aaron Ho, Debbie Dai, Justin Ung, and Victoria Kourbatova">
     <meta name="description" content="Home Page">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
 
     <title>Waves</title>
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
+
 <body class="page-container">
     <div class="content-wrap">
-        
+
         <nav class="navbar navbar-expand-lg navbar-light nav-custom">
             <a class="navbar-brand brand" href="index.html">Waves</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
             </button>
-          
-            <div class="collapse navbar-collapse " id="navbarSupportedContent">
-              <ul class="navbar-nav mr-auto ml-auto">
-                
-                <li class="nav-item ">
-                    <a class="navLink" href="#">Connect</a>
-                </li>
-                <li class="nav-item">
-                    <a class="navLink" href="#">Explore</a>
-                </li>
-                <li class="nav-item">
-                    <a class="navLink" href="about.html">About Us</a>
-                </li>  
 
-              </ul>
-              <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                <button class="btn my-2 my-sm-0 search" type="submit"> <i class="material-icons search">search</i></button>
-              </form>
-              <a class="btn my-2 my-sm-0 profile" href="#"><i class="material-icons profile">account_circle</i></a>
+            <div class="collapse navbar-collapse " id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto ml-auto">
+                    <li class="nav-item ">
+                        <a class="navLink" href="">Connect</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="navLink" href="explore.html">Explore</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="navLink" href="about.html">About Us</a>
+                    </li>
+
+                </ul>
+                <form class="form-inline my-2 my-lg-0">
+                    <lable for="search" hidden> Search for something! </lable>
+                    <input class="form-control mr-sm-2" id="search" type="search" placeholder="Search"
+                        aria-label="Search">
+                    <button class="btn my-2 my-sm-0 search" type="submit"> <i
+                            class="material-icons search">search</i></button>
+                </form>
+                <a class="btn my-2 my-sm-0 profile" href="#"><i class="material-icons profile">account_circle</i></a>
             </div>
-          </nav>
+        </nav>
         <!-- Header -->
         <!-- the main content -->
-        <section class="mainContainer">
-            <!-- Sidebar Top Music -->
-            <div class="sidebar d-none d-lg-block">
-                <p class="text-center mt-5 mb-4 font-weight-bold">Top Song</p>
+        <main>
+            <section class="mainContainer">
+                <!-- Sidebar Top Music -->
+                <div class="sidebar d-none d-lg-block">
+                    <p class="text-center mt-5 mb-4 font-weight-bold">Top Song</p>
 
-                <ol>
-                    <li class="mb-3">
-                            <a href="https://open.spotify.com/album/2widuo17g5CEC66IbzveRu?uid=3e8359c91c3bad6871e1&uri=spotify%3Atrack%3A40riOy7x9W7GXjyGp4pjAv&highlight=spotify%3Atrack%3A40riOy7x9W7GXjyGp4pjAv" _blank="target">Hotel Califonia</a>
-                    </li>
-                    <li class="mb-3"><a href="https://open.spotify.com/album/3T4tUhGYeRNVUGevb0wThu?uid=10f658b3f6d4bdf3632e&uri=spotify%3Atrack%3A7qiZfU4dY1lWllzX7mPBI3" _blank="target">Shape of You</a></li>
-                    <li class="mb-3"><a href="https://open.spotify.com/album/3g56eEg5YgMf3LZPHCMOx2?uid=d02b75813bd1983d58fb&uri=spotify%3Atrack%3A3whrwq4DtvucphBPUogRuJ&highlight=spotify%3Atrack%3A3whrwq4DtvucphBPUogRuJ" _blank="target">Havana</a></li>
-                </ol>
-            </div>
+                    <ol>
+                        <li class="mb-3">
+                            <a href="https://open.spotify.com/album/2widuo17g5CEC66IbzveRu?uid=3e8359c91c3bad6871e1&uri=spotify%3Atrack%3A40riOy7x9W7GXjyGp4pjAv&highlight=spotify%3Atrack%3A40riOy7x9W7GXjyGp4pjAv"
+                                _blank="target">Hotel Califonia</a>
+                        </li>
+                        <li class="mb-3"><a
+                                href="https://open.spotify.com/album/3T4tUhGYeRNVUGevb0wThu?uid=10f658b3f6d4bdf3632e&uri=spotify%3Atrack%3A7qiZfU4dY1lWllzX7mPBI3"
+                                _blank="target">Shape of You</a></li>
+                        <li class="mb-3"><a
+                                href="https://open.spotify.com/album/3g56eEg5YgMf3LZPHCMOx2?uid=d02b75813bd1983d58fb&uri=spotify%3Atrack%3A3whrwq4DtvucphBPUogRuJ&highlight=spotify%3Atrack%3A3whrwq4DtvucphBPUogRuJ"
+                                _blank="target">Havana</a></li>
+                    </ol>
+                </div>
 
-            <!-- Content --> 
-            <div class="containter mt-5">
-                <header>
-                    <div class="container">
-                        <h1>Waves</h1><br/>
-                        <h2>Wave you hands through the beat of the music</h2>
-                        <hr/><br/>
-                        <button class="btn btn-lg btn-light" type="button"> Sign Up Now</button>
-                    </div>
-                </header>
-                <div class="row mx-auto" >
-                    
+                <!-- Content -->
+                <div class="containter mt-5">
+                    <header>
+                        <div class="container">
+                            <h1>Waves</h1><br />
+                            <h2>Wave you hands through the beat of the music</h2>
+                            <hr /><br />
+                            <button class="btn btn-lg btn-light" type="button"> Sign Up Now</button>
+                        </div>
+                    </header>
+                    <div class="row mx-auto">
+
                         <!-- Content One -->
                         <div class="col-sm-12 col-lg-4 col">
                             <div class="card mb-4 shadow-sm p-3 mb-5 bg-white rounded">
-                                
+
                                 <img class="btn" data-bs-toggle="offcanvas" href="#content-one" role="button"
-                                src="https://static.billboard.com/files/media/24-Troye-Sivan-Blue-Neighbourhood-best-album-art-2015-billboard-1500-300x300.jpg" alt="The album cover of Troye Sivan' Blue Neighbourhood">
+                                    src="https://static.billboard.com/files/media/24-Troye-Sivan-Blue-Neighbourhood-best-album-art-2015-billboard-1500-300x300.jpg"
+                                    alt="The album cover of Troye Sivan' Blue Neighbourhood">
                                 <div class="offcanvas offcanvas-start" tabindex="-1" id="content-one">
                                     <div class="offcanvas-header">
                                         <h3 class="offcanvas-title" id="content-one">Found this hidden gem!</h3>
-                                        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                                        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                                            aria-label="Close"></button>
                                     </div>
                                     <div class="offcanvas-body">
-                                        <img src="https://static.billboard.com/files/media/24-Troye-Sivan-Blue-Neighbourhood-best-album-art-2015-billboard-1500-300x300.jpg" alt="The album cover of Troye Sivan' Blue Neighbourhood">
+                                        <img src="https://static.billboard.com/files/media/24-Troye-Sivan-Blue-Neighbourhood-best-album-art-2015-billboard-1500-300x300.jpg"
+                                            alt="The album cover of Troye Sivan' Blue Neighbourhood">
                                         <p><em>Blue Neighbourhood(Album) - Troye Sivan</em></p>
                                         <ul style="list-style-type:none;">
-                                        <li>Release Year: 2015</li>
-                                        <li>Duration: 36 min 54 sec</li>
-                                        <li>Genre:</li>
+                                            <li>Release Year: 2015</li>
+                                            <li>Duration: 36 min 54 sec</li>
+                                            <li>Genre:</li>
                                             <ul>
-                                            <li>Electropop</li>
-                                            <li>Gloom-pop</li>
-                                            <li>Synth-pop</li>
+                                                <li>Electropop</li>
+                                                <li>Gloom-pop</li>
+                                                <li>Synth-pop</li>
                                             </ul>
                                         </ul>
                                         <p class="font-weight-bold">I just recently found this album recently!</p>
@@ -104,22 +119,25 @@
                         <div class="col-sm-12 col-lg-4">
                             <div class="card mb-4 shadow-sm p-3  bg-white rounded">
                                 <img class="btn" data-bs-toggle="offcanvas" href="#content-two" role="button"
-                                src="https://upload.wikimedia.org/wikipedia/en/7/70/I_Knew_You_Were_Trouble.png" alt="The album cover of Taylor Swift's I Knew You Were Trouble">
+                                    src="https://upload.wikimedia.org/wikipedia/en/7/70/I_Knew_You_Were_Trouble.png"
+                                    alt="The album cover of Taylor Swift's I Knew You Were Trouble">
                                 <div class="offcanvas offcanvas-start" tabindex="-1" id="content-two">
                                     <div class="offcanvas-header">
                                         <h3 class="offcanvas-title" id="content-two">All Time Classic</h3>
-                                        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                                        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                                            aria-label="Close"></button>
                                     </div>
                                     <div class="offcanvas-body">
-                                        <img src="https://upload.wikimedia.org/wikipedia/en/7/70/I_Knew_You_Were_Trouble.png" alt="The album cover of Taylor Swift's I Knew You Were Trouble">
+                                        <img src="https://upload.wikimedia.org/wikipedia/en/7/70/I_Knew_You_Were_Trouble.png"
+                                            alt="The album cover of Taylor Swift's I Knew You Were Trouble">
                                         <p><em>I Knew You Were Trouble - Taylor Swift</em></p>
                                         <ul style="list-style-type:none;">
-                                        <li>Release Year: 2012</li>
-                                        <li>Duration: 3 min 39 sec</li>
-                                        <li>Genre:</li>
+                                            <li>Release Year: 2012</li>
+                                            <li>Duration: 3 min 39 sec</li>
+                                            <li>Genre:</li>
                                             <ul>
-                                            <li>Pop Rock</li>
-                                            <li>Dance-pop</li>
+                                                <li>Pop Rock</li>
+                                                <li>Dance-pop</li>
                                             </ul>
                                         </ul>
                                         <p class="font-weight-bold">You never can't get old of Taylor Swift.</p>
@@ -133,24 +151,28 @@
                         <div class="col-sm-12 col-lg-4">
                             <div class="card mb-4 shadow-sm p-3 mb-5 bg-white rounded">
                                 <img class="btn" data-bs-toggle="offcanvas" href="#content-three" role="button"
-                                src="https://upload.wikimedia.org/wikipedia/en/1/1a/Portugal._The_Man_Woodstock_album_cover.jpg" alt="The album cover of Portugal.The Man's Woodstock">
+                                    src="https://upload.wikimedia.org/wikipedia/en/1/1a/Portugal._The_Man_Woodstock_album_cover.jpg"
+                                    alt="The album cover of Portugal.The Man's Woodstock">
                                 <div class="offcanvas offcanvas-start" tabindex="-1" id="content-three">
                                     <div class="offcanvas-header">
                                         <h3 class="offcanvas-title" id="content-three">Look at the car!</h3>
-                                        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                                        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                                            aria-label="Close"></button>
                                     </div>
                                     <div class="offcanvas-body">
-                                        <img src="https://upload.wikimedia.org/wikipedia/en/1/1a/Portugal._The_Man_Woodstock_album_cover.jpg" alt="The album cover of Portugal.The Man's Woodstock">
+                                        <img src="https://upload.wikimedia.org/wikipedia/en/1/1a/Portugal._The_Man_Woodstock_album_cover.jpg"
+                                            alt="The album cover of Portugal.The Man's Woodstock">
                                         <p><em>Woodstock(Album) - Portugal. The Man discrography</em></p>
                                         <ul style="list-style-type:none;">
-                                        <li>Release Year: 2017</li>
-                                        <li>Duration: 38 min 35 sec</li>
-                                        <li>Genre:</li>
+                                            <li>Release Year: 2017</li>
+                                            <li>Duration: 38 min 35 sec</li>
+                                            <li>Genre:</li>
                                             <ul>
-                                            <li>Pop</li>
+                                                <li>Pop</li>
                                             </ul>
                                         </ul>
-                                        <p class="font-weight-bold">The album is sick! I also like how the car is on fire</p>
+                                        <p class="font-weight-bold">The album is sick! I also like how the car is on
+                                            fire</p>
                                     </div>
                                 </div>
                                 <h2 class="card-title">Look at the car!</h2>
@@ -161,21 +183,24 @@
                         <div class="col-sm-12 col-lg-4">
                             <div class="card mb-4 shadow-sm p-3 mb-5 bg-white rounded">
                                 <img class="btn" data-bs-toggle="offcanvas" href="#content-four" role="button"
-                                src="http://crownnote.com/sites/default/files/styles/album_artwork__300x300_/public/asea.jpg?itok=6E-K-1Nf" alt="The album cover of Alvaro Soler's Eterno Agosto">
+                                    src="http://crownnote.com/sites/default/files/styles/album_artwork__300x300_/public/asea.jpg?itok=6E-K-1Nf"
+                                    alt="The album cover of Alvaro Soler's Eterno Agosto">
                                 <div class="offcanvas offcanvas-start" tabindex="-1" id="content-four">
                                     <div class="offcanvas-header">
                                         <h3 class="offcanvas-title" id="content-four">Great Music</h3>
-                                        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                                        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"
+                                            aria-label="Close"></button>
                                     </div>
                                     <div class="offcanvas-body">
-                                        <img src="http://crownnote.com/sites/default/files/styles/album_artwork__300x300_/public/asea.jpg?itok=6E-K-1Nf" alt="The album cover of Alvaro Soler's Eterno Agosto">
+                                        <img src="http://crownnote.com/sites/default/files/styles/album_artwork__300x300_/public/asea.jpg?itok=6E-K-1Nf"
+                                            alt="The album cover of Alvaro Soler's Eterno Agosto">
                                         <p><em>Eterno Agosto(Album) - Alvaro Soler</em></p>
                                         <ul style="list-style-type:none;">
-                                        <li>Release Year: 2015</li>
-                                        <li>Duration: 1 min 12 sec</li>
-                                        <li>Genre:</li>
+                                            <li>Release Year: 2015</li>
+                                            <li>Duration: 1 min 12 sec</li>
+                                            <li>Genre:</li>
                                             <ul>
-                                            <li>Pop</li>
+                                                <li>Pop</li>
                                             </ul>
                                         </ul>
                                         <p class="font-weight-bold">I like the Album</p>
@@ -185,40 +210,44 @@
                                 <p class="card-text">I like the Album</p>
                             </div>
                         </div>
+                    </div>
                 </div>
-            </div>
-            <!-- Sidebar Contact -->
-            <div class="sidebar d-none d-lg-block">
-                <p class="text-center mt-5 mb-3 font-weight-bold">Friends</p>
-                <div>
-                    <a class="btn my-2 my-sm-0" href="#"><i class="material-icons">account_circle</i></a>
-                    <a href="#">Emily</a>
+                <!-- Sidebar Contact -->
+                <div class="sidebar d-none d-lg-block">
+                    <p class="text-center mt-5 mb-3 font-weight-bold">Friends</p>
+                    <div>
+                        <a class="btn my-2 my-sm-0" href="#"><i class="material-icons">account_circle</i></a>
+                        <a href="#">Emily</a>
+                    </div>
+                    <div>
+                        <a class="btn my-2 my-sm-0" href="#"><i class="material-icons">account_circle</i></a>
+                        <a href="#">Alan</a>
+                    </div>
+                    <div>
+                        <a class="btn my-2 my-sm-0" href="#"><i class="material-icons">account_circle</i></a>
+                        <a href="#">Alan</a>
+                    </div>
                 </div>
-                <div>
-                    <a class="btn my-2 my-sm-0" href="#"><i class="material-icons">account_circle</i></a>
-                    <a href="#">Alan</a>
-                </div>
-                <div>
-                    <a class="btn my-2 my-sm-0" href="#"><i class="material-icons">account_circle</i></a>
-                    <a href="#">Alan</a>
-                </div>
-            </div>
-        </section>
-       
-        
+            </section>
+        </main>
+
     </div>
-     
-    
+
+
     <!-- Justin's TODOAdd post section -->
     <section class="post">
         <div class="container">
             <form class="form-group input-group">
                 <span class="input-group-btn">
-                    <button type="submit" class="btn btn-light" id="add-circle"><i class="material-icons">add_circle</i></button>
+                    <button type="submit" class="btn btn-light" id="add-circle"><i
+                            class="material-icons">add_circle</i></button>
                 </span>
-                <textarea type="text" class="form-control" placeholder="Write a post!" rows="1"></textarea>
+                <label for="post-comment" hidden>Write a post! </label>
+                <textarea type="text" class="form-control" id="post-comment" placeholder="Write a post!"
+                    rows="1"></textarea>
                 <span class="input-group-btn">
-                    <button type="submit" class="btn btn-light" id="emoji"><i class="material-icons">emoji_emotions</i></button>
+                    <button type="submit" class="btn btn-light" id="emoji"><i
+                            class="material-icons">emoji_emotions</i></button>
                     <button type="submit" class="btn btn-light"><i class="material-icons">send</i></button>
                 </span>
             </form>
@@ -226,15 +255,25 @@
     </section>
     <footer>
         <h2>Waves<h2>
-        <p>&copy; Waves 2021</p>
+                <p>&copy; Waves 2021</p>
     </footer>
 
     <!-- CSS only -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <!-- Script -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
 </body>
+
 </html>
