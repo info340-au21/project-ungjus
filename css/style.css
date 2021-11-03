@@ -1,5 +1,5 @@
 body {
-    /* font-family: "Lato", "Helvetica Neue", "Helvetica", sans-serif; */
+    font-family: "Lato", "Helvetica Neue", "Helvetica", sans-serif;
     margin: 0;
     box-sizing: border-box;
     display: flex;
@@ -215,6 +215,18 @@ img.btn {
     text-align: center;
 }
 
+.list-group li {
+    background-color: #F8F5E2;
+}
+.list-group-item a {
+    text-decoration: none;
+    color: black;
+}
+
+.list-group-item a:hover {
+    text-decoration: none;
+    color: black;
+}
 
 
 @media (min-width: 992px) {
