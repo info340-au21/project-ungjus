@@ -163,12 +163,6 @@ h1 {
 }
 
 /* new */
-.sidebar {
-    background-color: #F8F5E2;
-
-    width: 45vw;
-}
-
 .mainContainer{
     display: flex;
     flex: 1;
@@ -198,16 +192,22 @@ img.btn {
 #xaxis {
     text-align: center;
 }
+.sidebar {
+    background-color: #f0f0f0;
+
+    width: 45vw;
+}
 
 .sidebar h1 {
     font-size: 25px;
 }
 
 .list-group li {
-    background-color: #F8F5E2;
+    background-color: #f0f0f0;
 }
 .list-group button {
-    background-color: #F8F5E2;
+    background-color: #f0f0f0;
+    /* Orginal color: #F8F5E2 */
 }
 
 .list-group-item a {
