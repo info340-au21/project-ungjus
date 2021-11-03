@@ -12,7 +12,8 @@ html {
 }
 
 .nav-custom {
-    background: linear-gradient(90deg, rgba(29,29,157,1) 0%, rgba(140,185,222,1) 100%);
+    background: rgb(1,2,58);
+    background: linear-gradient(0deg, rgba(1,2,58,1) 50%, rgba(27,125,204,1) 100%);
     min-height: 80px;
 }
 
@@ -32,7 +33,13 @@ header {
     height:300px;
     margin-top: -50px;
     margin-bottom: 50px;
-    background-color: #C4C4C4;
+    background-color: #00013A;
+    background-image: url("../img/soundwaves.jpeg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    max-height: 300px;
+    width: 100%;
 }
 
 
@@ -82,8 +89,10 @@ nav a:hover{
 }
 
 footer {
+    color: white;
     padding: 1rem;
-    background-color: #888787;
+    background: rgb(1,2,58);
+    background: linear-gradient(0deg, rgba(1,2,58,1) 50%, rgba(27,125,204,1) 100%);
     position: relative;
     bottom: 0;
     width: 100%;
