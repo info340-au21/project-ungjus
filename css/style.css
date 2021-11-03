@@ -215,9 +215,17 @@ img.btn {
     text-align: center;
 }
 
+.sidebar h1 {
+    font-size: 25px;
+}
+
 .list-group li {
     background-color: #F8F5E2;
 }
+.list-group button {
+    background-color: #F8F5E2;
+}
+
 .list-group-item a {
     text-decoration: none;
     color: black;
@@ -226,6 +234,15 @@ img.btn {
 .list-group-item a:hover {
     text-decoration: none;
     color: black;
+}
+.listening {
+    display:flex;
+    justify-content: left;
+    align-items: left;
+
+}
+.material-icons.account-circle {
+    font-size: 50px;
 }
 
 
