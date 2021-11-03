@@ -5,7 +5,7 @@ body {
     display: flex;
     flex-direction: column;
     height: inherit;
-  }
+}
 
 html {
     height: 100%;
@@ -39,7 +39,7 @@ header {
     background-repeat: no-repeat;
     background-position: center;
     max-height: 300px;
-    width: 100%;
+    max-width: 100vw;
 }
 
 
@@ -54,6 +54,7 @@ nav a {
 
 .navbar-light .navbar-brand {
     color: white !important;
+    text-decoration: none;
     font-size: 20px;
     
 } 
@@ -188,22 +189,17 @@ p > {
     margin: 5px;
 }
 
-.card-title {
-    width: fit-content;
-    
-}
-
-.card-text {
-    width: fit-content;
-}
-
 div.card {
-    width: fit-content;
+    /* width: fit-content; */
+    max-width: 100vw;
 }
 
 img.btn {
-    height: 500px;
-    width: 500px;
+    max-height: 100vh;
+    max-width: 100vw;
+}
+.col {
+    padding: 0;
 }
 
 @media (min-width: 992px) {
@@ -234,5 +230,8 @@ img.btn {
     img.btn {
         height: 250px;
         width: 250px;
+    }
+    div.card {
+        padding:0;
     }
 }

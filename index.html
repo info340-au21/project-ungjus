@@ -4,6 +4,8 @@
     <meta charset="UTF-8">  
     <meta name="author" content="Aaron Ho, Debbie Dai, Justin Ung, and Victoria Kourbatova">
     <meta name="description" content="Home Page">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
+
     <title>Waves</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -13,7 +15,7 @@
     <div class="content-wrap">
         
         <nav class="navbar navbar-expand-lg navbar-light nav-custom">
-            <a class="navbar-brand brand" href="#">Waves</a>
+            <a class="navbar-brand brand" href="index.html">Waves</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
@@ -45,9 +47,14 @@
             <!-- Sidebar Top Music -->
             <div class="sidebar d-none d-lg-block">
                 <p class="text-center mt-5 mb-4 font-weight-bold">Top Song</p>
-                <li class="mb-3"><a href="https://open.spotify.com/album/2widuo17g5CEC66IbzveRu?uid=3e8359c91c3bad6871e1&uri=spotify%3Atrack%3A40riOy7x9W7GXjyGp4pjAv&highlight=spotify%3Atrack%3A40riOy7x9W7GXjyGp4pjAv" _blank="target">Hotel Califonia</a></li>
-                <li class="mb-3"><a href="https://open.spotify.com/album/3T4tUhGYeRNVUGevb0wThu?uid=10f658b3f6d4bdf3632e&uri=spotify%3Atrack%3A7qiZfU4dY1lWllzX7mPBI3" _blank="target">Shape of You</a></li>
-                <li class="mb-3"><a href="https://open.spotify.com/album/3g56eEg5YgMf3LZPHCMOx2?uid=d02b75813bd1983d58fb&uri=spotify%3Atrack%3A3whrwq4DtvucphBPUogRuJ&highlight=spotify%3Atrack%3A3whrwq4DtvucphBPUogRuJ" _blank="target">Havana</a></li>
+
+                <ol>
+                    <li class="mb-3">
+                            <a href="https://open.spotify.com/album/2widuo17g5CEC66IbzveRu?uid=3e8359c91c3bad6871e1&uri=spotify%3Atrack%3A40riOy7x9W7GXjyGp4pjAv&highlight=spotify%3Atrack%3A40riOy7x9W7GXjyGp4pjAv" _blank="target">Hotel Califonia</a>
+                    </li>
+                    <li class="mb-3"><a href="https://open.spotify.com/album/3T4tUhGYeRNVUGevb0wThu?uid=10f658b3f6d4bdf3632e&uri=spotify%3Atrack%3A7qiZfU4dY1lWllzX7mPBI3" _blank="target">Shape of You</a></li>
+                    <li class="mb-3"><a href="https://open.spotify.com/album/3g56eEg5YgMf3LZPHCMOx2?uid=d02b75813bd1983d58fb&uri=spotify%3Atrack%3A3whrwq4DtvucphBPUogRuJ&highlight=spotify%3Atrack%3A3whrwq4DtvucphBPUogRuJ" _blank="target">Havana</a></li>
+                </ol>
             </div>
 
             <!-- Content --> 
@@ -57,14 +64,15 @@
                         <h1>Waves</h1><br/>
                         <h2>Wave you hands through the beat of the music</h2>
                         <hr/><br/>
-                        <button class="btn btn-lg btn-primary" type="button"> Sign Up Now</button>
+                        <button class="btn btn-lg btn-light" type="button"> Sign Up Now</button>
                     </div>
                 </header>
                 <div class="row mx-auto" >
                     
                         <!-- Content One -->
-                        <div class="col-sm-12 col-lg-4">
+                        <div class="col-sm-12 col-lg-4 col">
                             <div class="card mb-4 shadow-sm p-3 mb-5 bg-white rounded">
+                                
                                 <img class="btn" data-bs-toggle="offcanvas" href="#content-one" role="button"
                                 src="https://static.billboard.com/files/media/24-Troye-Sivan-Blue-Neighbourhood-best-album-art-2015-billboard-1500-300x300.jpg" alt="The album cover of Troye Sivan' Blue Neighbourhood">
                                 <div class="offcanvas offcanvas-start" tabindex="-1" id="content-one">
@@ -94,7 +102,7 @@
                         </div>
                         <!-- Content Two -->
                         <div class="col-sm-12 col-lg-4">
-                            <div class="card mb-4 shadow-sm p-3 mb-5 bg-white rounded">
+                            <div class="card mb-4 shadow-sm p-3  bg-white rounded">
                                 <img class="btn" data-bs-toggle="offcanvas" href="#content-two" role="button"
                                 src="https://upload.wikimedia.org/wikipedia/en/7/70/I_Knew_You_Were_Trouble.png" alt="The album cover of Taylor Swift's I Knew You Were Trouble">
                                 <div class="offcanvas offcanvas-start" tabindex="-1" id="content-two">
