@@ -12,17 +12,29 @@ html {
 }
 
 .nav-custom {
-    background: rgb(29,29,157);
     background: linear-gradient(90deg, rgba(29,29,157,1) 0%, rgba(140,185,222,1) 100%);
-    height: 80px;
+    min-height: 80px;
 }
 
-header > h1 {
-    background-color: #C4C4C4;
-    margin-bottom: 0;
+header .container {
     color: white;
-    bottom: 0;
+
 }
+header h1 {
+    padding-top: 50px;
+}
+header h2 {
+    font-style: italic;
+    font-size: 20px;
+}
+
+header {
+    height:300px;
+    margin-top: -50px;
+    margin-bottom: 50px;
+    background-color: #C4C4C4;
+}
+
 
 nav a {
     color: white;
@@ -31,10 +43,28 @@ nav a {
     text-decoration: underline;
     text-decoration-thickness: 5px;
     
-}
+} 
+
+.navbar-light .navbar-brand {
+    color: white !important;
+    font-size: 20px;
+    
+} 
 
 nav a:hover{
     color: white;    
+    text-decoration: none;
+}
+
+.navbar-light .navbar-toggler {
+    background-color: white;
+}
+.profile, .search {
+    color: white;
+}
+
+.profile:hover, .search:hover {
+    color:lightgray;
 }
 
 
@@ -148,7 +178,7 @@ p > {
 }
 
 .card-text {
-    width: fit-content
+    width: fit-content;
 }
 
 div.card {
