@@ -193,7 +193,7 @@ img.btn {
     text-align: center;
 }
 .sidebar {
-    background-color: #f0f0f0;
+    background-color: #fcfcfc;
 
     width: 45vw;
 }
@@ -203,10 +203,10 @@ img.btn {
 }
 
 .list-group li {
-    background-color: #f0f0f0;
+    background-color: #fcfcfc;
 }
 .list-group button {
-    background-color: #f0f0f0;
+    background-color: #fcfcfc;
     /* Orginal color: #F8F5E2 */
 }
 
