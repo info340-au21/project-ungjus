@@ -163,7 +163,8 @@ h1 {
 /* new */
 .sidebar {
     background-color: #F8F5E2;
-    width: 300px;
+
+    width: 45vw;
 }
 
 .mainContainer{
@@ -173,25 +174,6 @@ h1 {
 }
 .row {
     justify-content: center;
-}
-
-
-.sidebar a {
-    color:rgba(29,29,157,1);
-}
-
-.sidebar li {
-    padding-left: 1.5rem;
-}
-
-.sidebar a:hover {
-    color:grey;
-}
-
-.sidebar p {
-    font-family: monospace;
-    font-size: x-large;
-    /* margin-top: 8px; */
 }
 
 p > {
@@ -245,8 +227,9 @@ img.btn {
     align-items: left;
 
 }
+
 .material-icons.account-circle {
-    font-size: 50px;
+    font-size: 40px;
 }
 
 
