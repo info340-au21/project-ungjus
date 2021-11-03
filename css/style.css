@@ -235,6 +235,10 @@ img.btn {
     text-decoration: none;
     color: black;
 }
+.profile {
+    width: 10%;
+    height: 10%;
+}
 .listening {
     display:flex;
     justify-content: left;
