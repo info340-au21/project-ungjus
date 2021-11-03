@@ -124,7 +124,7 @@ footer p {
     flex: 1;
 }
 
-textarea {
+#post-comment {
     min-height: 45px;
 }
 
