@@ -75,6 +75,7 @@ nav a:hover{
 .navbar-light .navbar-toggler {
     background-color: white;
 }
+
 .profile, .search {
     color: white;
 }
@@ -98,14 +99,6 @@ nav a:hover{
     z-index: 1;
 }
 
-#add-circle {
-    margin-right: 5px;
-}
-
-#emoji {
-    margin-left: 5px;
-}
-
 footer {
     color: white;
     padding: 1rem;
@@ -124,10 +117,6 @@ footer a {
     text-decoration: none;
     color: white
 }
-footer a:hover {
-    text-decoration: none;
-    color: white
-}
 
 footer p {
     font-size: 10px;
@@ -141,10 +130,6 @@ footer p {
 
 .content-wrap {
     flex: 1;
-}
-
-#post-comment {
-    min-height: 45px;
 }
 
 .text-container {
