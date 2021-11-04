@@ -10,7 +10,19 @@ body {
 html {
     height: 100%;
 }
-
+.logo {
+    background-image: url('../img/soundwaves-removebg-preview.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position-x: 10px;
+    width: 120px;
+    height: 60px;
+    text-align: center;
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    /* max-height: 80px; */
+}
 .nav-custom {
     background: rgb(1,2,58);
     background: linear-gradient(0deg, #000033 50%, #5BA5CC 100%);
@@ -111,6 +123,19 @@ footer {
     width: 100%;
     text-align: center;
 }
+footer a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    text-decoration: none;
+    color: white
+}
+footer a:hover {
+
+    text-decoration: none;
+    color: white
+}
 
 footer p {
     font-size: 10px;
@@ -193,7 +218,7 @@ img.btn {
     text-align: center;
 }
 .sidebar {
-    background-color: #f0f0f0;
+    background-color: #fcfcfc;
 
     width: 45vw;
 }
@@ -203,11 +228,18 @@ img.btn {
 }
 
 .list-group li {
-    background-color: #f0f0f0;
+    background-color: #fcfcfc;
 }
 .list-group button {
-    background-color: #f0f0f0;
+    background-color: #fcfcfc;
     /* Orginal color: #F8F5E2 */
+}
+
+.list-group li:hover {
+    background-color: #f3f3f3;
+}
+.list-group button:hover {
+    background-color: #f3f3f3;
 }
 
 .list-group-item a {
