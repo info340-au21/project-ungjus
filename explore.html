@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
+
+    <title>Waves - Explore</title>
+    <link rel="shortcut icon" type="png" href="./img/soundwaves-removebg-preview.png"/>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    
+
+</head>
+
+<body class="page-container">
+    <div class="content-wrap">
+
+        <nav class="navbar navbar-expand-lg navbar-light nav-custom">
+            <a class="navbar-brand brand" href="index.html" aria-label="Logo and Home Button">
+                <div class="logo">Waves</div>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse " id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto ml-auto">
+
+                    <li class="nav-item mr-5">
+                        <a class="navLink" href="#">Connect</a>
+                    </li>
+                    <li class="nav-item mr-5">
+                        <a class="navLink" href="explore.html">Explore</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="navLink" href="about.html">About Us</a>
+                    </li>
+
+                </ul>
+                <form class="form-inline my-2 my-lg-0">
+                    <lable for="search" hidden> Search for something! </lable>
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn my-2 my-sm-0 search" type="submit">
+                        <span class="material-icons search" aria-label="Search Button">search</span>
+                    </button>
+                </form>
+                <a class="btn my-2 my-sm-0 profile" href="#" aria-label="Profile">
+                    <span class="material-icons profile">account_circle</span>
+                </a>
+            </div>
+        </nav>
+        <main>
+            <div id="song-graph"></div>
+            <p class="xaxis">Song Names</p>
+        </main>
+
+    </div>
+    <footer>
+        <a href="index.html" aria-label="Logo and Home Button">
+            <div class="logo">Waves</div>
+        </a>
+        <p>&copy; Waves 2021</p>
+    </footer>
+    <!-- Script -->
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script>
+        let songs = ['Easy On Me', 'STAY (with Justin Bieber)',
+            'INDUSTRY BABY (feat. Jack Harlow)', 'Heat Waves', 'MONEY',
+            'Cold Heart - PNAU Remix', 'Moth To A Flame (with The Weeknd)',
+            'Shivers', 'My Universe', 'Pepas', 'Bad Habits', 'Woman',
+            'love nwantiti (ah ah ah)',
+            "love nwantiti (feat. Dj Yo! & AX'EL) - Remix",
+            'THATS WHAT I WANT', 'good 4 u', "Beggin'", 'Need to Know',
+            'Life Goes On', 'MONTERO (Call Me By Your Name)',
+            'Lo Siento BB:/ (with Bad Bunny & Julieta Venegas)',
+            'Kiss Me More (feat. SZA)', 'Happier Than Ever',
+            'Meet Me At Our Spot', 'traitor', 'Yonaguni',
+            'Levitating (feat. DaBaby)', 'Blinding Lights',
+            'Where Are You Now', 'Way 2 Sexy (with Future & Young Thug)',
+            'Todo De Ti', 'Volví', 'Peaches (feat. Daniel Caesar & Giveon)',
+            'Ghost', 'Take My Breath',
+            'Knife Talk (with 21 Savage ft. Project Pat)',
+            'Better Days (NEIKED x Mae Muller x Polo G)', "Don't Be Shy",
+            'Índigo', 'Sweater Weather',
+            'SG (with Ozuna, Megan Thee Stallion & LISA of BLACKPINK)',
+            'OUT OUT (feat. Charli XCX & Saweetie)', 'drivers license',
+            'Nostálgico', 'Rolling in the Deep', 'In Da Getto',
+            'I Love You So', 'Save Your Tears (with Ariana Grande) (Remix)',
+            'When We Were Young', 'Fair Trade (with Travis Scott)',
+            'Someone Like You', 'I WANNA BE YOUR SLAVE', 'Qué Más Pues?',
+            'Butter', 'Watermelon Sugar', 'Sobrio', 'Cúrame', "Don't Go Yet",
+            '2055', 'Ley Seca', 'Volando - Remix', 'Get Into It (Yuh)',
+            'Bored', 'LALISA', 'Love In The Dark', 'DÁKITI', 'deja vu',
+            'Leave The Door Open', 'Let Somebody Go', 'Praise God',
+            'The Feels', 'Toxic', 'Someone You Loved', 'AM Remix',
+            'Happier Than Ever - Edit', 'Dynamite', 'Dark Red',
+            'Mood (feat. iann dior)', 'Coração Cachorro', 'París',
+            "Don't Start Now", 'lovely (with Khalid)',
+            'edamame (feat. Rich Brian)',
+            'Leave Before You Love Me (with Jonas Brothers)', 'happier',
+            'You Right', 'Girls Want Girls (with Lil Baby)', 'Freaks', 'WFM',
+            'Permission to Dance', 'family ties (with Kendrick Lamar)',
+            'Acapulco', 'Hurricane', 'Jugaste y Sufrí', 'Save Your Tears',
+            'Arranhão - Ao Vivo', "I GUESS I'M IN LOVE", 'The Business',
+            'Set Fire to the Rain', 'Entre Nosotros']
+        let streams = [57081735, 43772708, 38131363, 30071945, 27961856, 27674586,
+            27137069, 26334187, 25632159, 25389829, 25037944, 23187278,
+            21602782, 20904632, 19629995, 19615891, 19093598, 18735754,
+            18033866, 17707419, 17479060, 16903484, 16337007, 14407480,
+            13885924, 13772019, 13423842, 13224267, 12984890, 12916861,
+            12449056, 12319249, 12221046, 11973226, 11416437, 11187706,
+            11145764, 11037411, 10959583, 10933896, 10721446, 10539963,
+            10374877, 10357608, 10310443, 10291022, 10262474, 10259967,
+            10175687, 9973992, 9913123, 9563071, 9419912, 9298514,
+            9255630, 9136128, 9031819, 9026594, 9017915, 8999782,
+            8987748, 8987303, 8903542, 8733074, 8700679, 8486902,
+            8476710, 8473436, 8466440, 8442448, 8218507, 8207738,
+            8093151, 7945432, 7943576, 7887222, 7841243, 7775765,
+            7736903, 7734010, 7711027, 7694309, 7645950, 7615439,
+            7511975, 7509911, 7401769, 7357397, 7349418, 7320278,
+            7254503, 7159146, 7137680, 7123703, 6991524, 6983967,
+            6971735, 6956608, 6944280, 6877208]
+        let artist = ['Adele', 'The Kid LAROI', 'Lil Nas X', 'Glass Animals', 'LISA',
+            'Elton John', 'Swedish House Mafia', 'Ed Sheeran', 'Coldplay',
+            'Farruko', 'Ed Sheeran', 'Doja Cat', 'CKay', 'CKay', 'Lil Nas X',
+            'Olivia Rodrigo', 'Måneskin', 'Doja Cat', 'Oliver Tree',
+            'Lil Nas X', 'Tainy', 'Doja Cat', 'Billie Eilish', 'THE ANXIETY',
+            'Olivia Rodrigo', 'Bad Bunny', 'Dua Lipa', 'The Weeknd',
+            'Lost Frequencies', 'Drake', 'Rauw Alejandro', 'Aventura',
+            'Justin Bieber', 'Justin Bieber', 'The Weeknd', 'Drake', 'NEIKED',
+            'Tiësto', 'Camilo', 'The Neighbourhood', 'DJ Snake', 'Joel Corry',
+            'Olivia Rodrigo', 'Rvssian', 'Adele', 'J Balvin', 'The Walters',
+            'The Weeknd', 'Adele', 'Drake', 'Adele', 'Måneskin', 'J Balvin',
+            'BTS', 'Harry Styles', 'Maluma', 'Rauw Alejandro',
+            'Camila Cabello', 'Sleepy Hallow', 'Jhay Cortez', 'Mora',
+            'Doja Cat', 'Billie Eilish', 'LISA', 'Adele', 'Bad Bunny',
+            'Olivia Rodrigo', 'Bruno Mars', 'Coldplay', 'Kanye West', 'TWICE',
+            'BoyWithUke', 'Lewis Capaldi', 'Nio Garcia', 'Billie Eilish',
+            'BTS', 'Steve Lacy', '24kGoldn', 'Avine Vinny', 'Ingratax',
+            'Dua Lipa', 'Billie Eilish', 'bbno$', 'Marshmello',
+            'Olivia Rodrigo', 'Doja Cat', 'Drake', 'Surf Curse', 'Realestk',
+            'BTS', 'Baby Keem', 'Jason Derulo', 'Kanye West', 'Eslabon Armado',
+            'The Weeknd', 'Henrique & Juliano', 'Clinton Kane', 'Tiësto',
+            'Adele', 'Tiago PZK']
+        let data = [{
+            x: songs,
+            y: streams,
+            text: artist,
+            type: 'bar',
+            hovertemplate:
+                "<b>%{x}</b><br><br>" +
+                "Artist: %{text}</br>" +
+                "%{yaxis.title.text}: %{y:,.0f} Million<br>" +
+                "<extra></extra>"
+        }];
+        let layout = {
+            title: 'Spotify Global Top 100 Weekly',
+            titlefont: { size: 30 },
+            xaxis: {
+            },
+            yaxis: {
+                title: 'Number of Streams',
+                automargin: true
+            },
+            font: { size: 12 },
+
+
+        };
+        let config = { responsive: true };
+        TESTER = document.getElementById('song-graph');
+        Plotly.newPlot(TESTER, data, layout, config);
+    </script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
