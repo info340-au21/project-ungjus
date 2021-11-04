@@ -58,11 +58,8 @@ header {
 .search {
     background: none;
 }
-#sign-up {
+.sign-up {
     margin-top: 40px;
-}
-#sign-up:hover {
-    background-color: #eeeeee;
 }
 
 nav a {
@@ -221,7 +218,7 @@ img.btn {
     padding: 0;
 }
 
-#xaxis {
+.xaxis {
     text-align: center;
 }
 .sidebar {
