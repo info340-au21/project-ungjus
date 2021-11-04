@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=yes">
 
     <title>Waves</title>
-    <link rel="shortcut icon" type="png" href="./img/soundwaves-removebg-preview.png"/>
+    <link rel="shortcut icon" type="png" href="./img/soundwaves-removebg-preview.png" />
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -48,19 +48,19 @@
                     <lable for="search" hidden> Search for something! </lable>
                     <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
                     <button class="btn my-2 my-sm-0 search" type="submit">
-                        <i class="material-icons search" aria-label=" Button">search</i>
+                        <span class="material-icons search" aria-label=" Button">search</span>
                     </button>
                 </form>
                 <a class="btn my-2 my-sm-0 profile" href="#" aria-label="Profile">
-                    <i class="material-icons profile">account_circle</i>
+                    <span class="material-icons profile">account_circle</span>
                 </a>
             </div>
         </nav>
         <!-- the main content -->
-        <main>
-            <section class="mainContainer">
+        <main class="mainContainer">
+            
                 <!-- Sidebar Top Music -->
-                <div class="sidebar d-none d-lg-block border-right" id='top-songs'>
+                <section class="sidebar d-none d-lg-block border-right" id='top-songs'>
                     <h1 class="text-center mt-5 mb-4 font-weight-bold">Top 10 Weekly Songs</h1>
 
                     <ol class="list-group list-group-numbered list-group-flush">
@@ -147,10 +147,10 @@
                             </a>
                         </li>
                     </ol>
-                </div>
+                </section>
 
                 <!-- Content -->
-                <div class="containter mt-5">
+                <section class="containter mt-5">
                     <!-- Header -->
                     <header>
                         <div class="container">
@@ -389,10 +389,10 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </section>
 
                 <!-- Sidebar Contact -->
-                <div class="sidebar d-none d-lg-block border-left">
+                <section class="sidebar d-none d-lg-block border-left">
                     <h1 class="text-center mt-5 mb-3 font-weight-bold">Friends</h1>
                     <ul class="list-group list-group-flush">
                         <button
@@ -461,8 +461,7 @@
                             </div>
                         </button>
                     </ul>
-                </div>
-            </section>
+                </section>
         </main>
 
     </div>
@@ -479,8 +478,8 @@
                 <textarea type="text" class="form-control" id="post-comment" placeholder="Write a post!"
                     aria-label="text box" rows="1"></textarea>
                 <span class="input-group-btn">
-                    <button type="submit" class="btn btn-light" id="emoji"><i class="material-icons"
-                            aria-label="Emoji Button">emoji_emotions</i></button>
+                    <button type="submit" class="btn btn-light" id="emoji"><span class="material-icons"
+                            aria-label="Emoji Button">emoji_emotions</span></button>
                     <button type="submit" class="btn btn-light" aria-label="Send Button"><i
                             class="material-icons">send</i></button>
                 </span>
