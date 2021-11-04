@@ -21,10 +21,9 @@
     <div class="content-wrap">
         <!-- Nav bar -->
         <nav class="navbar navbar-expand-lg navbar-light nav-custom">
-            <a class="navbar-brand brand" href="index.html">
+            <a class="navbar-brand brand" href="index.html" aria-label="Logo and Home Button">
                 <div class="logo">Waves</div>
             </a>
-
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -32,8 +31,9 @@
 
             <div class="collapse navbar-collapse " id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto ml-auto">
+
                     <li class="nav-item mr-5">
-                        <a class="navLink" href="">Connect</a>
+                        <a class="navLink" href="#">Connect</a>
                     </li>
                     <li class="nav-item mr-5">
                         <a class="navLink" href="explore.html">Explore</a>
@@ -41,16 +41,18 @@
                     <li class="nav-item">
                         <a class="navLink" href="about.html">About Us</a>
                     </li>
-                </ul>
 
+                </ul>
                 <form class="form-inline my-2 my-lg-0">
                     <lable for="search" hidden> Search for something! </lable>
-                    <input class="form-control mr-sm-2" id="search" type="search" placeholder="Search"
-                        aria-label="Search">
-                    <button class="btn my-2 my-sm-0 search" type="submit"> <i
-                            class="material-icons search">search</i></button>
+                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                    <button class="btn my-2 my-sm-0 search" type="submit"> 
+                        <i class="material-icons search" aria-label=" Button">search</i>
+                    </button>
                 </form>
-                <a class="btn my-2 my-sm-0 profile" href="#"><i class="material-icons profile">account_circle</i></a>
+                <a class="btn my-2 my-sm-0 profile" href="#" aria-label="Profile">
+                    <i class="material-icons profile">account_circle</i>
+                </a>
             </div>
         </nav>
         <!-- the main content -->
@@ -153,8 +155,7 @@
                         <div class="container">
                             <h1>Waves</h1><br />
                             <h2>Wave you hands through the beat of the music</h2>
-                            <hr /><br />
-                            <button class="btn btn-lg btn-light" type="button"> Sign Up Now</button>
+                            <button class="btn btn-lg btn-light" id="sign-up" type="button"> Sign Up Now</button>
                         </div>
                     </header>
 
@@ -175,7 +176,7 @@
                                     </div>
                                     <span class="border-bottom mx-3">
                                         <div class="media mt-3">
-                                            <img src="img/Profile-Sample-Bernie-Borges.png" alt="profile picture"
+                                            <img src="img/Profile-Sample-Bernie-Borges.png" alt="Bernie picture"
                                                 class="profile rounded-circle">
                                             <div class="media-body">
                                                 <div class="d-flex justify-content-between mt-1">
@@ -207,7 +208,7 @@
                                 <p class="card-text">I just recently found this album recently!</p>
                                 <span class="border-top">
                                     <div class="media mt-3">
-                                        <img src="img/Profile-Sample-Bernie-Borges.png" alt="profile picture"
+                                        <img src="img/Profile-Sample-Bernie-Borges.png" alt="Bernie picture"
                                             class="profile rounded-circle">
                                         <div class="media-body">
                                             <div class="d-flex justify-content-between mt-1">
@@ -233,7 +234,7 @@
                                     </div>
                                     <span class="border-bottom mx-3">
                                         <div class="media mt-3">
-                                            <img src="img/Profile-Sample-Madeline-Mann.jpeg" alt="profile picture"
+                                            <img src="img/Profile-Sample-Madeline-Mann.jpeg" alt="Madeline picture"
                                                 class="profile rounded-circle">
                                             <div class="media-body">
                                                 <div class="d-flex justify-content-between mt-1">
@@ -263,7 +264,7 @@
                                 <p class="card-text">You never can't get old of Taylor Swift.</p>
                                 <span class="border-top">
                                     <div class="media mt-3">
-                                        <img src="img/Profile-Sample-Madeline-Mann.jpeg" alt="profile picture"
+                                        <img src="img/Profile-Sample-Madeline-Mann.jpeg" alt="Madeline picture"
                                             class="profile rounded-circle">
                                         <div class="media-body">
                                             <div class="d-flex justify-content-between mt-1">
@@ -289,7 +290,7 @@
                                     </div>
                                     <span class="border-bottom mx-3">
                                         <div class="media mt-3">
-                                            <img src="img/Profile-Sample-Rachel-Montañez.jpeg" alt="profile picture"
+                                            <img src="img/Profile-Sample-Rachel-Montañez.jpeg" alt="Rachel picture"
                                                 class="profile rounded-circle">
                                             <div class="media-body">
                                                 <div class="d-flex justify-content-between mt-1">
@@ -319,7 +320,7 @@
                                 <p class="card-text">The album is sick! I also like how the car is on fire</p>
                                 <span class="border-top">
                                     <div class="media mt-3">
-                                        <img src="img/Profile-Sample-Rachel-Montañez.jpeg" alt="profile picture"
+                                        <img src="img/Profile-Sample-Rachel-Montañez.jpeg" alt="Rachel picture"
                                             class="profile rounded-circle">
                                         <div class="media-body">
                                             <div class="d-flex justify-content-between mt-1">
@@ -345,7 +346,7 @@
                                     </div>
                                     <span class="border-bottom mx-3">
                                         <div class="media mt-3">
-                                            <img src="img/Profile-Sample-Tynan-Allan.jpeg" alt="profile picture"
+                                            <img src="img/Profile-Sample-Tynan-Allan.jpeg" alt="Tynan picture"
                                                 class="profile rounded-circle">
                                             <div class="media-body">
                                                 <div class="d-flex justify-content-between mt-1">
@@ -374,7 +375,7 @@
                                 <p class="card-text">I like the Album</p>
                                 <span class="border-top">
                                     <div class="media mt-3">
-                                        <img src="img/Profile-Sample-Tynan-Allan.jpeg" alt="profile picture"
+                                        <img src="img/Profile-Sample-Tynan-Allan.jpeg" alt="Tynan picture"
                                             class="profile rounded-circle">
                                         <div class="media-body">
                                             <div class="d-flex justify-content-between mt-1">
@@ -394,7 +395,8 @@
                     <h1 class="text-center mt-5 mb-3 font-weight-bold">Friends</h1>
                     <ul class="list-group list-group-flush">
                         <button
-                            class="list-group-item list-group-item-action d-flex justify-content-between align-items-start container">
+                            class="list-group-item list-group-item-action d-flex justify-content-between align-items-start container"
+                            aria-label="friend">
                             <span class="material-icons account-circle">account_circle</span>
 
                             <div class="ms-2 me-auto">
@@ -406,7 +408,8 @@
                             </div>
                         </button>
                         <button
-                            class="list-group-item list-group-item-action d-flex justify-content-between align-items-start">
+                            class="list-group-item list-group-item-action d-flex justify-content-between align-items-start"
+                            aria-label="friend">
                             <span class="material-icons account-circle">account_circle</span>
 
                             <div class="ms-2 me-auto">
@@ -418,7 +421,8 @@
                             </div>
                         </button>
                         <button
-                            class="list-group-item list-group-item-action d-flex justify-content-between align-items-start">
+                            class="list-group-item list-group-item-action d-flex justify-content-between align-items-start"
+                            aria-label="friend">
                             <span class="material-icons account-circle">account_circle</span>
 
                             <div class="ms-2 me-auto">
@@ -430,7 +434,8 @@
                             </div>
                         </button>
                         <button
-                            class="list-group-item list-group-item-action d-flex justify-content-between align-items-start">
+                            class="list-group-item list-group-item-action d-flex justify-content-between align-items-start"
+                            aria-label="friend">
                             <span class="material-icons account-circle">account_circle</span>
 
                             <div class="ms-2 me-auto">
@@ -442,7 +447,8 @@
                             </div>
                         </button>
                         <button
-                            class="list-group-item list-group-item-action d-flex justify-content-between align-items-start">
+                            class="list-group-item list-group-item-action d-flex justify-content-between align-items-start"
+                            aria-label="friend">
                             <span class="material-icons account-circle">account_circle</span>
 
                             <div class="ms-2 me-auto">
@@ -465,16 +471,17 @@
         <div class="container">
             <form class="form-group input-group">
                 <span class="input-group-btn">
-                    <button type="submit" class="btn btn-light" id="add-circle"><i
+                    <button type="submit" class="btn btn-light" id="add-circle" aria-label="Add a file button"><i
                             class="material-icons">add_circle</i></button>
                 </span>
                 <label for="post-comment" hidden>Write a post! </label>
                 <textarea type="text" class="form-control" id="post-comment" placeholder="Write a post!"
-                    rows="1"></textarea>
+                    aria-label="text box" rows="1"></textarea>
                 <span class="input-group-btn">
-                    <button type="submit" class="btn btn-light" id="emoji"><i
-                            class="material-icons">emoji_emotions</i></button>
-                    <button type="submit" class="btn btn-light"><i class="material-icons">send</i></button>
+                    <button type="submit" class="btn btn-light" id="emoji"><i class="material-icons"
+                            aria-label="Emoji Button">emoji_emotions</i></button>
+                    <button type="submit" class="btn btn-light" aria-label="Send Button"><i
+                            class="material-icons">send</i></button>
                 </span>
             </form>
         </div>
@@ -482,7 +489,7 @@
 
     <!-- Footer -->
     <footer>
-        <a href="index.html">
+        <a href="index.html" aria-label="Logo and Home Button">
             <div class="logo">Waves</div>
         </a>
         <p>&copy; Waves 2021</p>
