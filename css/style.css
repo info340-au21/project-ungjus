@@ -21,7 +21,7 @@ html {
     display:flex;
     justify-content: center;
     align-items:center;
-    /* max-height: 80px; */
+    color: white;
 }
 .nav-custom {
     background: rgb(1,2,58);
@@ -64,13 +64,6 @@ nav a {
     font-size: 20px;
     text-decoration: underline;
     text-decoration-thickness: 5px;
-    
-} 
-
-.navbar-light .navbar-brand {
-    color: white !important;
-    text-decoration: none;
-    font-size: 20px;
     
 } 
 
@@ -132,7 +125,6 @@ footer a {
     color: white
 }
 footer a:hover {
-
     text-decoration: none;
     color: white
 }
@@ -187,7 +179,6 @@ h1 {
     width: 180px;
 }
 
-/* new */
 .mainContainer{
     display: flex;
     flex: 1;
@@ -197,12 +188,7 @@ h1 {
     justify-content: center;
 }
 
-p > {
-    margin: 5px;
-}
-
 div.card {
-    /* width: fit-content; */
     max-width: 100vw;
 }
 
@@ -219,7 +205,6 @@ img.btn {
 }
 .sidebar {
     background-color: #fcfcfc;
-
     width: 45vw;
 }
 
@@ -227,18 +212,11 @@ img.btn {
     font-size: 25px;
 }
 
-.list-group li {
+.list-group li, .list-group button{
     background-color: #fcfcfc;
-}
-.list-group button {
-    background-color: #fcfcfc;
-    /* Orginal color: #F8F5E2 */
 }
 
-.list-group li:hover {
-    background-color: #f3f3f3;
-}
-.list-group button:hover {
+.list-group li:hover, .list-group button:hover {
     background-color: #f3f3f3;
 }
 
