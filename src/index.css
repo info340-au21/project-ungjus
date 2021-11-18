@@ -1,0 +1,279 @@
+body {
+    font-family: "Lato", "Helvetica Neue", "Helvetica", sans-serif;
+    margin: 0;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    height: inherit;
+}
+
+html {
+    height: 100%;
+}
+.logo {
+    background-image: url('./img/soundwaves-removebg-preview.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position-x: 10px;
+    width: 120px;
+    height: 60px;
+    text-align: center;
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    color: white;
+    text-decoration: none;
+}
+.brand {
+    text-decoration: none;
+}
+.nav-custom {
+    background: rgb(1,2,58);
+    background: linear-gradient(0deg, #000033 50%, #5BA5CC 100%);
+    min-height: 80px;
+}
+
+header .container {
+    color: white;
+
+}
+header h1 {
+    font-size: 90px;
+    margin-bottom: 20px;
+}
+
+header {
+    height:300px;
+    margin-top: -50px;
+    margin-bottom: 50px;
+    background-color: #000033;
+    background-image: url("./img/soundwaves.jpeg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    max-height: 300px;
+    max-width: 100vw;
+}
+
+.search {
+    background: none;
+}
+.sign-up {
+    margin-top: 30px;
+}
+
+nav a {
+    color: white;
+    margin-right: 40px;
+    font-size: 20px;
+    text-decoration: underline;
+    text-decoration-thickness: 5px;
+    
+} 
+
+nav a:hover{
+    color: white;    
+    text-decoration: none;
+}
+
+.navbar-light .navbar-toggler {
+    background-color: white;
+}
+
+.profile, .search {
+    color: white;
+}
+
+.profile:hover, .search:hover {
+    color:lightgray;
+}
+
+
+.material-icons.profile{
+    font-size: 60px; 
+}
+
+.post {
+    padding: 1rem;
+    background-color: #5BA5CC;
+    position: sticky;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    z-index: 1;
+}
+
+footer {
+    color: white;
+    padding: 1rem;
+    background: rgb(1,2,58);
+    background: linear-gradient(0deg, #000033 50%, #5BA5CC 100%);
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+}
+footer a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    text-decoration: none;
+    color: white
+}
+
+footer a:hover {
+    text-decoration: none;
+}
+
+
+footer p {
+    font-size: 10px;
+}
+
+.page-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.content-wrap {
+    flex: 1;
+}
+
+.text-container {
+    width: 90%;
+    margin: 0.5rem auto;
+    padding: 1rem;
+}
+
+h1 {
+    padding-top: 0.5rem;
+    font-size: 4em;
+}
+
+.about-bio h2 {
+    font-size: large;
+}
+
+.about-bio p {
+    font-size: small;
+}
+
+.about-bio {
+    background-color: #C4C4C4;
+    margin: 1.5rem auto;
+    display: flex;
+    flex:25%;
+    max-height: 300px;
+    max-width:100vw;
+}
+
+.about-bio img {
+    width: 180px;
+}
+
+.mainContainer{
+    display: flex;
+    flex: 1;
+    height: 100%;
+}
+.row {
+    justify-content: center;
+}
+
+div.card {
+    max-width: 100vw;
+}
+
+img.btn {
+    max-height: 100vh;
+    max-width: 100vw;
+}
+.col {
+    padding: 0;
+}
+
+.xaxis {
+    text-align: center;
+}
+.sidebar {
+    background-color: #fcfcfc;
+    width: 45vw;
+}
+
+.sidebar h1 {
+    font-size: 25px;
+}
+
+.list-group li, .list-group button{
+    background-color: #fcfcfc;
+}
+
+.list-group li:hover, .list-group button:hover {
+    background-color: #f3f3f3;
+}
+
+.list-group-item a {
+    text-decoration: none;
+    color: black;
+}
+
+.list-group-item a:hover {
+    text-decoration: none;
+    color: black;
+}
+
+.canvas-ul {
+    list-style-type:none;
+}
+.profile {
+    width: 10%;
+    height: 10%;
+}
+.listening {
+    display:flex;
+    justify-content: left;
+    align-items: left;
+
+}
+
+.material-icons.account-circle {
+    font-size: 40px;
+}
+
+
+@media (min-width: 992px) {
+    .about-bio h2 {
+        font-size: larger;
+    }
+
+    .about-bio p {
+     font-size: medium;   
+    }
+
+    .about-bio img {
+        height: 200px;
+    }
+
+    img.btn {
+        height: 150px;
+        width: 150px;
+    }
+
+}
+
+@media (min-width: 1200px) {
+    .about-bio img {
+        height: 220px;
+    }
+
+    img.btn {
+        height: 250px;
+        width: 250px;
+    }
+    div.card {
+        padding:0;
+    }
+
+}
