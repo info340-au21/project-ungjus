@@ -1,0 +1,58 @@
+[
+  {
+    "title":"Found this hidden gem!",
+    "user":"Bernie Borges",
+    "user_pic":"../img/userprofiles/Profile-Sample-Bernie-Borges.png",
+    "time_post":"10 mins",
+    "album_photo":"https://static.billboard.com/files/media/24-Troye-Sivan-Blue-Neighbourhood-best-album-art-2015-billboard-1500-300x300.jpg",
+    "song_title":"Blue Neighbourhood",
+    "song_artist":"Troye Sivan",
+    "song_year":"2015",
+    "song_duration":"36 min 54 sec",
+    "song_genre":["Electropop", "Gloom-pop", "Synth-pop"],
+    "comment":"I just recently found this album recently!",
+    "post_number":"1"
+  },
+  {
+    "title":"All Time Classic",
+    "user":"Madeline Mann",
+    "user_pic":"../img/userprofiles/Profile-Sample-Madeline-Mann.jpeg",
+    "time_post":"53 mins",
+    "album_photo":"https://upload.wikimedia.org/wikipedia/en/7/70/I_Knew_You_Were_Trouble.png",
+    "song_title":"I Knew You Were Trouble ",
+    "song_artist":"Taylor Swift",
+    "song_year":"2012",
+    "song_duration":"3 min 39 sec",
+    "song_genre":["Pop Rock", "Dance-pop"],
+    "comment":"You never can't get old of Taylor Swift.",
+    "post_number":"2"
+  },
+  {
+    "title":"Look at the car!",
+    "user":"Rachel Montanez",
+    "user_pic":"../img/userprofiles/Profile-Sample-Rachel-M.jpeg",
+    "time_post":"2 hours",
+    "album_photo":"https://upload.wikimedia.org/wikipedia/en/1/1a/Portugal._The_Man_Woodstock_album_cover.jpg",
+    "song_title":"Woodstock",
+    "song_artist":"Portugal. The Man discrography",
+    "song_year":"2017",
+    "song_duration":"38 min 35 sec",
+    "song_genre":["Pop"],
+    "comment":"The album is sick! I also like how the car is on Fire",
+    "post_number":"3"
+  },
+  {
+    "title":"Great Music",
+    "user":"Tynan Allan",
+    "user_pic":"../img/userprofiles/Profile-Sample-Tynan-Allan.jpeg",
+    "time_post":"3 hours",
+    "album_photo":"http://crownnote.com/sites/default/files/styles/album_artwork__300x300_/public/asea.jpg?itok=6E-K-1Nf",
+    "song_title":"Eterno Agosto",
+    "song_artist":"Alvaro Soler",
+    "song_year":"2015",
+    "song_duration":"1 min 12 sec",
+    "song_genre":["Pop"],
+    "comment":"I like the Album",
+    "post_number":"4"
+  }
+]

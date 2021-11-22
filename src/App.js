@@ -8,6 +8,7 @@ import UserPosts from './components/UserPosts';
 import Friends from './components/Friends';
 
 function App(props) {  
+    const postData = props.postData; // Declare for now, Most likely be using UseState
     return (
         <div className="page-container">
             <div className="content-wrap">
@@ -16,7 +17,7 @@ function App(props) {
                     <TopSongs/>
                     <section className="containter mt-5">
                         <Header/>
-                        <UserPosts/>
+                        <UserPosts postData={postData}/>
                     </section>
                     <Friends/>
                 </main>
