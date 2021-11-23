@@ -1,11 +1,14 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
+
 
 function Navbar(props) {
+    
     return(
         <nav className="navbar navbar-expand-lg navbar-light nav-custom">
-            <a className="navbar-brand brand" href="index.html" aria-label="Logo and Home Button">
+            <NavLink className="navbar-brand brand" to="/" aria-label="Logo and Home Button">
                 <div className="logo">Waves</div>
-            </a>
+            </NavLink>
             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span className="navbar-toggler-icon"></span>
@@ -15,14 +18,20 @@ function Navbar(props) {
                 <ul className="navbar-nav mr-auto ml-auto">
 
                     <li className="nav-item mr-5">
-                        <a className="navLink" href="#">Connect</a>
+                        <NavLink className="navLink" to="/">Connect</NavLink>
                     </li>
                     <li className="nav-item mr-5">
-                        <a className="navLink" href="explore.html">Explore</a>
+                        <NavLink className="navLink" to="/explore">Explore</NavLink>
                     </li>
                     <li className="nav-item">
-                        <a className="navLink" href="about.html">About Us</a>
+                        <NavLink className="navLink" to="/about">About Us</NavLink>
                     </li>
+                    {/* <li className="nav-item">
+                        <a className="navLink" href="about.html">Top Songs</a>
+                    </li>
+                    <li className="nav-item">
+                        <a className="navLink" href="about.html">Friends</a>
+                    </li> */}
 
                 </ul>
                 <form className="form-inline my-2 my-lg-0">

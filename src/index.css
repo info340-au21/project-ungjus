@@ -67,7 +67,7 @@ nav a {
     margin-right: 40px;
     font-size: 20px;
     text-decoration: underline;
-    text-decoration-thickness: 5px;
+    text-decoration-thickness: 6.5px;
     
 } 
 
@@ -240,6 +240,13 @@ img.btn {
 
 .material-icons.account-circle {
     font-size: 40px;
+}
+
+.song-graph {
+
+    width: 100%;
+    height: 60vh;
+
 }
 
 
