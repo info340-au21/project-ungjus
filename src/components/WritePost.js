@@ -15,7 +15,7 @@ function WritePost(props) {
                     <span className="input-group-btn">
                         <button type="submit" className="btn btn-light ml-1"><span className="material-icons"
                                 aria-label="Emoji Button">emoji_emotions</span></button>
-                        <button type="submit" className="btn btn-light" aria-label="Send Button"><i
+                        <button type="submit" className="btn btn-light ml-1" aria-label="Send Button"><i
                                 className="material-icons">send</i></button>
                     </span>
                 </form>
