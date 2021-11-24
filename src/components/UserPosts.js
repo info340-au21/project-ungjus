@@ -2,11 +2,11 @@ import React from 'react';
 
 function UserCard(props) {
     const post = props.postInfo;
-    // Loading Off-canvas doesn't work
+    const genreList = post.song_genre.map((value) => <li>{value}</li>);
     return(
         <div className="col-sm-12 col-lg-5">
         <div className="card mb-4 shadow-sm p-3 mb-5 bg-white rounded">
-            <img className="btn mx-auto" data-bs-toggle="offcanvas" href="#content-one" role="button"
+            <img className="btn mx-auto" data-bs-toggle="offcanvas" href={"#content-" + post.post_number} role="button"
                 src={post.album_photo}
                 alt={post.song_title}/>
             <div className="offcanvas offcanvas-start" tabIndex="-1" id={"content-" + post.post_number}>
@@ -36,9 +36,7 @@ function UserCard(props) {
                         <li>Duration: {post.song_duration}</li>
                         <li>Genre:</li>
                         <ul>
-                            <li>Electropop</li>
-                            <li>Gloom-pop</li>
-                            <li>Synth-pop</li>
+                            {genreList}
                         </ul>
                     </ul>
                     <p className="font-weight-bold">{post.comment}</p>
