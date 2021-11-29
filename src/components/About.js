@@ -3,7 +3,7 @@ import React from 'react';
 function About(props) {  
     return(
         <div>
-            <section class="text-container">
+            <section className="text-container">
                 <h1>Our Goal</h1>
                 <p>
                     We are hoping to set up a website that creates a community of music enthusiasts,
@@ -15,6 +15,7 @@ function About(props) {
                     Although there are already many music apps in this space, they aren’t focused on making genuine
                     connections
                     like we are:
+                </p>
                 <ul>
                     <li>
                         <a href="https://www.spotify.com/us/" rel="noreferrer" target="_blank">Spotify</a>
@@ -33,12 +34,13 @@ function About(props) {
                         network where users can post, but it’s too broad and doesn’t have a focus on music.
                     </li>
                 </ul>
+                <p>
                 We believe we can combine the best features of these existing sites together to create
                 a better music social platform.
                 </p>
 
             </section>
-            <section class="text-container">
+            <section className="text-container">
                 <h1>Features</h1>
                 <p>Our app is geared towards music enthusiasts ranging from causal listeners to professional musicians.</p>
                 <p>Here are some things users will be able to do on our app:</p>
@@ -76,34 +78,34 @@ function About(props) {
                 </ul>
                 <p>That is our overall idea for the project proposal. Thank you for your reading!</p>
             </section>
-            <section class="text-container">
+            <section className="text-container">
                 <h1>About the Developers:</h1>
-                <div class="about-bio">
-                    <div class="text-container">
+                <div className="about-bio">
+                    <div className="text-container">
                         <h2>Victoria Kourbatova</h2>
                         <p><em>Intended Informatics and Linguistics double-major</em></p>
                         <p>Looking to improve web development skills.</p>
                     </div>
                     <img src="img/authors/kourbatova.jpg" alt="Victoria Kourbatova"/>
                 </div>
-                <div class="about-bio">
-                    <div class="text-container">
+                <div className="about-bio">
+                    <div className="text-container">
                         <h2>Justin Ung</h2>
                         <p><em>Informatics major</em></p>
                         <p>Currently looking for software engineering internships!</p>
                     </div>
                     <img src="img/authors/ung.JPG" alt="Justin Ung"/>
                 </div>
-                <div class="about-bio">
-                    <div class="text-container">
+                <div className="about-bio">
+                    <div className="text-container">
                         <h2>Aaron Ho</h2>
                         <p><em>Informatics major</em></p>
                         <p>Looking for data science analyst internship.</p>
                     </div>
                     <img src="img/authors/ho.jpg" alt="Aaron Ho"/>
                 </div>
-                <div class="about-bio">
-                    <div class="text-container">
+                <div className="about-bio">
+                    <div className="text-container">
                         <h2>Debbie Dai</h2>
                         <p><em>Intended Informatics or Communication</em></p>
                         <p>Still exploring web development and database management.</p>

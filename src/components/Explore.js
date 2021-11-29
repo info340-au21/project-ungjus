@@ -2,11 +2,16 @@ import React from 'react';
 import Plot from 'react-plotly.js';
 
 function Explore(props) {
-    console.log(props.songData);
     let songData = props.songData;
-    let songs = songData[0].songs;
-    let streams = songData[0].streams;
-    let artist = songData[0].artist;
+    let songs = [];
+    let streams = [];
+    let artist = [];
+    for(let song = 0; song < 100; song++) {
+        songs.push(songData[song]["Track Name"]);
+        streams.push(songData[song]["Streams"]);
+        artist.push(songData[song]["Artist"]);
+    }
+    
     let data = [{
         x: songs,
         y: streams,

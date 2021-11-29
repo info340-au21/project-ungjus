@@ -13,14 +13,14 @@ import About from './components/About';
 
 function App(props) {  
     const postData = props.postData; // Declare for now, Most likely be using UseState
-    const songData = props.songData
+    // const songData = props.songData;
     return (
         <div className="page-container">
             <div className="content-wrap">
                 <Navbar/>
                 <Switch>
-                    <Route exact path="/"> <Main postData={postData}/></Route>
-                    <Route path="/explore"> <Explore songData={songData}/> </Route>
+                    <Route exact path="/"> <Main postData={postData} songData={props.spotifyData}/></Route>
+                    <Route path="/explore"> <Explore songData={props.spotifyData}/> </Route>
                     <Route path="/about"> <About/> </Route>
                     <Redirect to="/"/>
                 </Switch>
@@ -40,7 +40,7 @@ function Main(props) {
     return (
         <div>
             <main className="mainContainer">
-                <TopSongs/>
+                <TopSongs songData={props.songData}/>
                 <section className="containter mt-5">
                     <Header/>
                     <UserPosts postData={postData}/>
