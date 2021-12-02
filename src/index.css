@@ -95,11 +95,11 @@ nav a:hover{
 
 .post {
     padding: 1rem;
-    background-color: #5BA5CC;
+    /* background-color: #5BA5CC; */
     position: sticky;
     bottom: 0;
     width: 100%;
-    text-align: center;
+    text-align: right;
     z-index: 1;
 }
 

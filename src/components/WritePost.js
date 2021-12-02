@@ -1,24 +1,54 @@
-import React from 'react';
+import React, {useState} from 'react';
+import { Link } from 'react-router-dom';
 
 function WritePost(props) {  
+    const [postValue, setPostValue] = useState('');
+    const [postTitle, setPostTitle] = useState('');
+
+    const handleInputPost = (event) => {
+        setPostValue(event.target.value);
+    }
+
+    const handleInputTitle = (event) => {
+        setPostTitle(event.target.value);
+    }
+
+    const handleSubmit = (event) => {
+        props.onSubmit(postTitle, postValue);
+        setPostValue('');
+        setPostTitle('');
+    }
+
     return(
         <section className="post">
             <div className="container">
-                <form className="form-group input-group">
-                    <span className="input-group-btn">
-                        <button type="submit" className="btn btn-light mr-1" aria-label="Add a file button"><i
-                                className="material-icons">add_circle</i></button>
-                    </span>
-                    <label htmlFor="post-comment" hidden>Write a post! </label>
-                    <textarea type="text" className="form-control" placeholder="Write a post!" aria-label="text box"
-                        rows="1"></textarea>
-                    <span className="input-group-btn">
-                        <button type="submit" className="btn btn-light ml-1"><span className="material-icons"
-                                aria-label="Emoji Button">emoji_emotions</span></button>
-                        <button type="submit" className="btn btn-light ml-1" aria-label="Send Button"><i
-                                className="material-icons">send</i></button>
-                    </span>
-                </form>
+                <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasBottom" aria-controls="offcanvasBottom">
+                    <i className="material-icons">add_circle</i></button>
+                    <div class="offcanvas offcanvas-bottom" tabindex="-1" id="offcanvasBottom" aria-labelledby="offcanvasBottomLabel">
+                        <div class="offcanvas-header">
+                            <h5 class="offcanvas-title" id="offcanvasBottomLabel">Write a Post!</h5>
+                            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                        </div>
+                        <div class="offcanvas-body small">
+                            <form className="form-group input-group">
+                                {/* Title */}
+                                <label htmlFor="post-comment" hidden>Title</label>
+                                <textarea type="text" className="form-control" placeholder="Title" aria-label="text box"
+                                    rows="1" value={postTitle} onChange={handleInputTitle}></textarea>
+                                {/* Type In Form */}
+                                <label htmlFor="post-comment" hidden>Comment</label>
+                                <textarea type="text" className="form-control" placeholder="Comment" aria-label="text box"
+                                    rows="1" value={postValue} onChange={handleInputPost}></textarea>
+                                {/* Submit */}
+                                <span className="input-group-btn">
+                                    <Link to="/" className="nav-link">
+                                        <button type="submit" onClick={handleSubmit} className="btn btn-light ml-1" aria-label="Send Button"><i
+                                            className="material-icons">send</i></button>
+                                    </Link>
+                                </span>
+                            </form>
+                        </div>
+                    </div>
             </div>
         </section>
     );
