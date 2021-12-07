@@ -32,7 +32,7 @@ function UserCard(props) {
                         alt={post.songTitle} className="img-fluid"/>
                     <p><em>{post.songTitle} - {post.songArtist}</em></p>
                     <ul className="canvas-ul">
-                        <li>Release Year: {post.songYear}</li>
+                        <li key={post.postNumber}>Release Year: {post.songYear}</li>
                         <li>Duration: {post.songDuration}</li>
                         <li>Genre:</li>
                         <ul>

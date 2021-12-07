@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Navbar from './components/Navbar';
 import WritePost from './components/WritePost';
 import Footer from './components/Footer';
@@ -9,17 +9,40 @@ import Friends from './components/Friends';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import Explore from './components/Explore';
 import About from './components/About';
+import * as d3 from "d3";
 
 
 function App(props) {  
-    const postData = props.postData; // Declare for now, Most likely be using UseState
+    //const postData = props.postData; // Declare for now, Most likely be using UseState
     // const songData = props.songData;
+    const [postData, setPostData] = useState([]);
+    const [spotifyData, setSpotifyData] = useState([]);
+
+    async function fetchData(){
+        try {
+            const data = await d3.json("/data/spotify-data.json");
+            setSpotifyData(data);
+        } catch (error) {
+            console.log(error);
+        }
+        try {
+            const data = await d3.json("/data/data.json");
+            setPostData(data);
+        } catch (error) {
+            console.log(error);
+        }
+        
+    }
+    useEffect(() => {
+        fetchData();
+        
+    }, [])
     return (
         <div className="page-container">
             <div className="content-wrap">
                 <Navbar/>
                 <Switch>
-                    <Route exact path="/"> <Main postData={postData} songData={props.spotifyData}/></Route>
+                    <Route exact path="/"> <Main postData={postData} songData={spotifyData}/></Route>
                     <Route path="/explore"> <Explore songData={props.spotifyData}/> </Route>
                     <Route path="/about"> <About/> </Route>
                     <Redirect to="/"/>
@@ -37,7 +60,6 @@ export default App;
 
 function Main(props) {
     const [postData, setPostData] = useState(props.postData);
-    //const postData = props.postData;
 
     const addPost = (titleContent, textContent) => {
         const newPost = {
@@ -64,7 +86,7 @@ function Main(props) {
                 <TopSongs songData={props.songData}/>
                 <section className="containter mt-5">
                     <Header/>
-                    <UserPosts postData={postData}/>
+                    <UserPosts postData={(postData.length == 0) ? props.postData:  postData}/>
                 </section>
                 <Friends/>
             </main>

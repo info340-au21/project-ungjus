@@ -249,6 +249,16 @@ img.btn {
 
 }
 
+.sidebar-link {
+    display: none;
+}
+@media (max-width: 990px) {
+    .sidebar-link {
+        display: block;
+    }
+
+}
+
 
 @media (min-width: 992px) {
     .about-bio h2 {
@@ -267,7 +277,7 @@ img.btn {
         height: 150px;
         width: 150px;
     }
-
+    
 }
 
 @media (min-width: 1200px) {
@@ -282,5 +292,6 @@ img.btn {
     div.card {
         padding:0;
     }
+    
 
 }

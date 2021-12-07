@@ -26,12 +26,12 @@ function Navbar(props) {
                     <li className="nav-item">
                         <NavLink className="navLink" to="/about">About Us</NavLink>
                     </li>
-                    {/* <li className="nav-item">
-                        <a className="navLink" href="about.html">Top Songs</a>
+                    <li className="nav-item sidebar-link">
+                        <NavLink className="navLink" to="about.html">Top Songs</NavLink>
                     </li>
-                    <li className="nav-item">
-                        <a className="navLink" href="about.html">Friends</a>
-                    </li> */}
+                    <li className="nav-item sidebar-link">
+                        <NavLink className="navLink" to="about.html">Friends</NavLink>
+                    </li>
 
                 </ul>
                 <form className="form-inline my-2 my-lg-0">

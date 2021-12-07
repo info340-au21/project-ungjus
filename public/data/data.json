@@ -1,0 +1,58 @@
+[
+  {
+    "title":"Found this hidden gem!",
+    "user":"Bernie Borges",
+    "userPic":"../img/userprofiles/Profile-Sample-Bernie-Borges.png",
+    "timePost":"10 mins",
+    "albumPhoto":"https://static.billboard.com/files/media/24-Troye-Sivan-Blue-Neighbourhood-best-album-art-2015-billboard-1500-300x300.jpg",
+    "songTitle":"Blue Neighbourhood",
+    "songArtist":"Troye Sivan",
+    "songYear":"2015",
+    "songDuration":"36 min 54 sec",
+    "songGenre":["Electropop", "Gloom-pop", "Synth-pop"],
+    "comment":"I just recently found this album recently!",
+    "postNumber":"1"
+  },
+  {
+    "title":"All Time Classic",
+    "user":"Madeline Mann",
+    "userPic":"../img/userprofiles/Profile-Sample-Madeline-Mann.jpeg",
+    "timePost":"53 mins",
+    "albumPhoto":"https://upload.wikimedia.org/wikipedia/en/7/70/I_Knew_You_Were_Trouble.png",
+    "songTitle":"I Knew You Were Trouble ",
+    "songArtist":"Taylor Swift",
+    "songYear":"2012",
+    "songDuration":"3 min 39 sec",
+    "songGenre":["Pop Rock", "Dance-pop"],
+    "comment":"You never can't get old of Taylor Swift.",
+    "postNumber":"2"
+  },
+  {
+    "title":"Look at the car!",
+    "user":"Rachel Montanez",
+    "userPic":"../img/userprofiles/Profile-Sample-Rachel-M.jpeg",
+    "timePost":"2 hours",
+    "albumPhoto":"https://upload.wikimedia.org/wikipedia/en/1/1a/Portugal._The_Man_Woodstock_album_cover.jpg",
+    "songTitle":"Woodstock",
+    "songArtist":"Portugal. The Man discrography",
+    "songYear":"2017",
+    "songDuration":"38 min 35 sec",
+    "songGenre":["Pop"],
+    "comment":"The album is sick! I also like how the car is on Fire",
+    "postNumber":"3"
+  },
+  {
+    "title":"Great Music",
+    "user":"Tynan Allan",
+    "userPic":"../img/userprofiles/Profile-Sample-Tynan-Allan.jpeg",
+    "timePost":"3 hours",
+    "albumPhoto":"http://crownnote.com/sites/default/files/styles/album_artwork__300x300_/public/asea.jpg?itok=6E-K-1Nf",
+    "songTitle":"Eterno Agosto",
+    "songArtist":"Alvaro Soler",
+    "songYear":"2015",
+    "songDuration":"1 min 12 sec",
+    "songGenre":["Pop"],
+    "comment":"I like the Album",
+    "postNumber":"4"
+  }
+]
