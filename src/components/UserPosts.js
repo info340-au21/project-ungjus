@@ -65,7 +65,7 @@ function UserPosts(props) {
     const postData = props.postData;
     return(
         <div className="row mx-auto">
-            {postData.map((post) => <UserCard postInfo={post} key={post.postNumber}/>)}
+            {postData.map((post, id) => <UserCard postInfo={post} key={post.postNumber}/>)}
         </div>
     );
 }

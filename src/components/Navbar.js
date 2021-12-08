@@ -18,7 +18,7 @@ function Navbar(props) {
                 <ul className="navbar-nav mr-auto ml-auto">
 
                     <li className="nav-item mr-5">
-                        <NavLink className="navLink" to="/">Connect</NavLink>
+                        <NavLink className="navLink" to="/connect">Connect</NavLink>
                     </li>
                     <li className="nav-item mr-5">
                         <NavLink className="navLink" to="/explore">Explore</NavLink>

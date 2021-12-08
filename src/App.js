@@ -8,29 +8,42 @@ import UserPosts from './components/UserPosts';
 import Friends from './components/Friends';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import Explore from './components/Explore';
+import Connect from './components/Connect';
 import About from './components/About';
+import Profile from './components/Profile';
 import * as d3 from "d3";
+import { Alert } from 'react-bootstrap';
 
 
-function App(props) {  
+function App() {  
     //const postData = props.postData; // Declare for now, Most likely be using UseState
     // const songData = props.songData;
     const [postData, setPostData] = useState([]);
     const [spotifyData, setSpotifyData] = useState([]);
+    const [friends, setFriends] = useState([]);
+    const [peopleData, setPeopleData] = useState([]);
+    const [errorMessage, setErrorMessage] = useState(null);
 
     async function fetchData(){
         try {
             const data = await d3.json("/data/spotify-data.json");
             setSpotifyData(data);
         } catch (error) {
-            console.log(error);
+            setErrorMessage(error);
         }
         try {
             const data = await d3.json("/data/data.json");
             setPostData(data);
         } catch (error) {
-            console.log(error);
+            setErrorMessage(error);
         }
+        try {
+            const data = await d3.json("/data/friends.json");
+            setFriends(data);
+        } catch (error) {
+            setErrorMessage(error);
+        }
+        
         
     }
     useEffect(() => {
@@ -41,10 +54,15 @@ function App(props) {
         <div className="page-container">
             <div className="content-wrap">
                 <Navbar/>
+                {errorMessage && 
+                    <Alert variant="danger" dismissible onClose={() => setErrorMessage(null)}>{errorMessage}</Alert>
+                }
                 <Switch>
-                    <Route exact path="/"> <Main postData={postData} songData={spotifyData}/></Route>
-                    <Route path="/explore"> <Explore songData={props.spotifyData}/> </Route>
+                    <Route exact path="/"> <Main postData={postData} setPostData= {setPostData} songData={spotifyData} friends={friends}/></Route>
+                    <Route path="/connect"> <Connect peopleData={peopleData} setPeopleData ={setPeopleData}/> </Route>
+                    <Route path="/explore"> <Explore songData={spotifyData}/> </Route>
                     <Route path="/about"> <About/> </Route>
+                    <Route path={"/profile/:userName"}><Profile peopleData={peopleData}/></Route>
                     <Redirect to="/"/>
                 </Switch>
             </div>
@@ -59,8 +77,8 @@ function App(props) {
 export default App;
 
 function Main(props) {
-    const [postData, setPostData] = useState(props.postData);
-
+    // const [postData, setPostData] = useState(props.postData);
+    // console.log(props.songData);
     const addPost = (titleContent, textContent) => {
         const newPost = {
             title: titleContent,
@@ -76,9 +94,12 @@ function Main(props) {
             comment: textContent,
             postNumber: Date.now()
         }
-        const newPostData = [...postData, newPost];
-        setPostData(newPostData);
+        const newPostData = [...props.postData, newPost];
+        props.setPostData(newPostData);
     }
+    // const getRandomSong = () => {
+
+    // }
 
     return (
         <div>
@@ -86,9 +107,9 @@ function Main(props) {
                 <TopSongs songData={props.songData}/>
                 <section className="containter mt-5">
                     <Header/>
-                    <UserPosts postData={(postData.length == 0) ? props.postData:  postData}/>
+                    <UserPosts postData={props.postData}/>
                 </section>
-                <Friends/>
+                <Friends friends={props.friends}/>
             </main>
             <WritePost onSubmit={addPost}/>
         </div>

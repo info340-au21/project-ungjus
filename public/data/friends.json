@@ -1,0 +1,57 @@
+[
+  {
+    "First Name": "Valeria",
+    "Last Name": "Gibson",
+    "Gender": "Female",
+    "Age": 22,
+    "Email": "v.gibson@randatmail.com",
+    "Listening": {
+      "Track Name": "Shivers",
+      "Artist": "Ed Sheeran"
+    }
+  },
+  {
+    "First Name": "Roman",
+    "Last Name": "Ellis",
+    "Gender": "Male",
+    "Age": 19,
+    "Email": "r.ellis@randatmail.com",
+    "Listening": {
+      "Track Name": "Blinding Lights",
+      "Artist": "The Weeknd"
+    }
+  },
+  {
+    "First Name": "Frederick",
+    "Last Name": "Montgomery",
+    "Gender": "Male",
+    "Age": 18,
+    "Email": "f.montgomery@randatmail.com",
+    "Listening": {
+      "Track Name": "good 4 u",
+      "Artist": "Olivia Rodrigo"
+    }
+  },
+  {
+    "First Name": "Briony",
+    "Last Name": "Adams",
+    "Gender": "Female",
+    "Age": 21,
+    "Email": "b.adams@randatmail.com",
+    "Listening": {
+      "Track Name": "Girls Want Girls",
+      "Artist": "Drake"
+    }
+  },
+  {
+    "First Name": "Roman",
+    "Last Name": "Douglas",
+    "Gender": "Male",
+    "Age": 29,
+    "Email": "r.douglas@randatmail.com",
+    "Listening": {
+      "Track Name": "INDUSTRY BABY",
+      "Artist": "Lil Nas X"
+    }
+  }
+]

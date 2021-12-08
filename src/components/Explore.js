@@ -1,16 +1,25 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Plot from 'react-plotly.js';
 
 function Explore(props) {
     let songData = props.songData;
-    let songs = [];
-    let streams = [];
-    let artist = [];
-    for(let song = 0; song < 100; song++) {
-        songs.push(songData[song]["Track Name"]);
-        streams.push(songData[song]["Streams"]);
-        artist.push(songData[song]["Artist"]);
-    }
+    const [songs, setSongs] = useState([]);
+    const [streams, setStreams] = useState([]);
+    const [artist, setArtist] = useState([]);
+    
+    useEffect(()=>{
+        let tempSongs = [];
+        let tempStreams = [];
+        let tempArtist = [];
+        for(let song = 0; song < 100; song++) {
+            tempSongs.push(songData[song]["Track Name"]);
+            tempStreams.push(songData[song]["Streams"]);
+            tempArtist.push(songData[song]["Artist"]);
+        }
+        setSongs(tempSongs);
+        setStreams(tempStreams);
+        setArtist(tempArtist);
+    }, [])
     
     let data = [{
         x: songs,
@@ -44,6 +53,8 @@ function Explore(props) {
                 config={ {responsive: true} }
             />
             <p className="xaxis">Song Names</p>
+
+            {/* allow user to find seach for a long and display the song info */}
         </div>
     );
 }

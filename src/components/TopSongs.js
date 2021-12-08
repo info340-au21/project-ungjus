@@ -17,7 +17,7 @@ function TopSongs(props) {
     let top10Songs = props.songData;
     top10Songs = top10Songs.slice(0, 10);
     return(
-        <section className="sidebar d-none d-lg-block border-right" id='top-songs'>
+        <section className={"sidebar d-none d-lg-block border-right"} id='top-songs'>
                 <h1 className="text-center mt-5 mb-4 font-weight-bold">Top 10 Weekly Songs</h1>
 
                 <ol className="list-group list-group-numbered list-group-flush">

@@ -1,0 +1,552 @@
+[
+  {
+    "First Name": "Sabrina",
+    "Last Name": "Casey",
+    "Gender": "Female",
+    "Age": 21,
+    "Email": "s.casey@randatmail.com",
+    "Listening": {
+      "Track Name": "deja vu",
+      "Artist": "Olivia Rodrigo"
+    }
+  },
+  {
+    "First Name": "Freddie",
+    "Last Name": "Taylor",
+    "Gender": "Male",
+    "Age": 26,
+    "Email": "f.taylor@randatmail.com",
+    "Listening": {
+      "Track Name": "Easy On Me",
+      "Artist": "Adele"
+    }
+  },
+  {
+    "First Name": "Paul",
+    "Last Name": "Jones",
+    "Gender": "Male",
+    "Age": 24,
+    "Email": "p.jones@randatmail.com",
+    "Listening": {
+      "Track Name": "Save Your Tears",
+      "Artist": "The Weeknd"
+    }
+  },
+  {
+    "First Name": "Patrick",
+    "Last Name": "Walker",
+    "Gender": "Male",
+    "Age": 29,
+    "Email": "p.walker@randatmail.com",
+    "Listening": {
+      "Track Name": "Leave The Door Open",
+      "Artist": "Bruno Mars"
+    }
+  },
+  {
+    "First Name": "Michelle",
+    "Last Name": "Chapman",
+    "Gender": "Female",
+    "Age": 23,
+    "Email": "m.chapman@randatmail.com",
+    "Listening": {
+      "Track Name": "Butter",
+      "Artist": "BTS"
+    }
+  },
+  {
+    "First Name": "Miranda",
+    "Last Name": "Smith",
+    "Gender": "Female",
+    "Age": 28,
+    "Email": "m.smith@randatmail.com",
+    "Listening": {
+      "Track Name": "Don't Go Yet",
+      "Artist": "Camila Cabello"
+    }
+  },
+  {
+    "First Name": "Vincent",
+    "Last Name": "Foster",
+    "Gender": "Male",
+    "Age": 18,
+    "Email": "v.foster@randatmail.com",
+    "Listening": {
+      "Track Name": "Leave The Door Open",
+      "Artist": "Bruno Mars"
+    }
+  },
+  {
+    "First Name": "Darcy",
+    "Last Name": "Howard",
+    "Gender": "Female",
+    "Age": 23,
+    "Email": "d.howard@randatmail.com",
+    "Listening": {
+      "Track Name": "LALISA",
+      "Artist": "LISA"
+    }
+  },
+  {
+    "First Name": "Ned",
+    "Last Name": "Anderson",
+    "Gender": "Male",
+    "Age": 18,
+    "Email": "n.anderson@randatmail.com",
+    "Listening": {
+      "Track Name": "You Right",
+      "Artist": "Doja Cat"
+    }
+  },
+  {
+    "First Name": "Cadie",
+    "Last Name": "Wells",
+    "Gender": "Female",
+    "Age": 21,
+    "Email": "c.wells@randatmail.com",
+    "Listening": {
+      "Track Name": "jealousy, jealousy",
+      "Artist": "Olivia Rodrigo"
+    }
+  },
+  {
+    "First Name": "Charlotte",
+    "Last Name": "Kelly",
+    "Gender": "Female",
+    "Age": 28,
+    "Email": "c.kelly@randatmail.com",
+    "Listening": {
+      "Track Name": "good 4 u",
+      "Artist": "Olivia Rodrigo"
+    }
+  },
+  {
+    "First Name": "Thomas",
+    "Last Name": "Crawford",
+    "Gender": "Male",
+    "Age": 25,
+    "Email": "t.crawford@randatmail.com",
+    "Listening": {
+      "Track Name": "Happier Than Ever",
+      "Artist": "Billie Eilish"
+    }
+  },
+  {
+    "First Name": "Carlos",
+    "Last Name": "Payne",
+    "Gender": "Male",
+    "Age": 22,
+    "Email": "c.payne@randatmail.com",
+    "Listening": {
+      "Track Name": "Praise God",
+      "Artist": "Kanye West"
+    }
+  },
+  {
+    "First Name": "Rubie",
+    "Last Name": "Harris",
+    "Gender": "Female",
+    "Age": 29,
+    "Email": "r.harris@randatmail.com",
+    "Listening": {
+      "Track Name": "jealousy, jealousy",
+      "Artist": "Olivia Rodrigo"
+    }
+  },
+  {
+    "First Name": "Tyler",
+    "Last Name": "Stevens",
+    "Gender": "Male",
+    "Age": 22,
+    "Email": "t.stevens@randatmail.com",
+    "Listening": {
+      "Track Name": "Say You Won't Let Go",
+      "Artist": "James Arthur"
+    }
+  },
+  {
+    "First Name": "Preston",
+    "Last Name": "Murphy",
+    "Gender": "Male",
+    "Age": 23,
+    "Email": "p.murphy@randatmail.com",
+    "Listening": {
+      "Track Name": "Get Into It (Yuh)",
+      "Artist": "Doja Cat"
+    }
+  },
+  {
+    "First Name": "Garry",
+    "Last Name": "Farrell",
+    "Gender": "Male",
+    "Age": 19,
+    "Email": "g.farrell@randatmail.com",
+    "Listening": {
+      "Track Name": "LALISA",
+      "Artist": "LISA"
+    }
+  },
+  {
+    "First Name": "Hailey",
+    "Last Name": "Cooper",
+    "Gender": "Female",
+    "Age": 27,
+    "Email": "h.cooper@randatmail.com",
+    "Listening": {
+      "Track Name": "No Role Modelz",
+      "Artist": "J. Cole"
+    }
+  },
+  {
+    "First Name": "Brianna",
+    "Last Name": "Richardson",
+    "Gender": "Female",
+    "Age": 18,
+    "Email": "b.richardson@randatmail.com",
+    "Listening": {
+      "Track Name": "Toxic",
+      "Artist": "BoyWithUke"
+    }
+  },
+  {
+    "First Name": "Steven",
+    "Last Name": "Mason",
+    "Gender": "Male",
+    "Age": 27,
+    "Email": "s.mason@randatmail.com",
+    "Listening": {
+      "Track Name": "MONTERO (Call Me By Your Name)",
+      "Artist": "Lil Nas X"
+    }
+  },
+  {
+    "First Name": "Aston",
+    "Last Name": "Kelly",
+    "Gender": "Male",
+    "Age": 18,
+    "Email": "a.kelly@randatmail.com",
+    "Listening": {
+      "Track Name": "Woman",
+      "Artist": "Doja Cat"
+    }
+  },
+  {
+    "First Name": "Brad",
+    "Last Name": "Stevens",
+    "Gender": "Male",
+    "Age": 20,
+    "Email": "b.stevens@randatmail.com",
+    "Listening": {
+      "Track Name": "you broke me first",
+      "Artist": "Tate McRae"
+    }
+  },
+  {
+    "First Name": "Steven",
+    "Last Name": "Perry",
+    "Gender": "Male",
+    "Age": 21,
+    "Email": "s.perry@randatmail.com",
+    "Listening": {
+      "Track Name": "Yellow",
+      "Artist": "Coldplay"
+    }
+  },
+  {
+    "First Name": "Adrianna",
+    "Last Name": "Fowler",
+    "Gender": "Female",
+    "Age": 27,
+    "Email": "a.fowler@randatmail.com",
+    "Listening": {
+      "Track Name": "Love Again",
+      "Artist": "Dua Lipa"
+    }
+  },
+  {
+    "First Name": "Fenton",
+    "Last Name": "Thompson",
+    "Gender": "Male",
+    "Age": 23,
+    "Email": "f.thompson@randatmail.com",
+    "Listening": {
+      "Track Name": "love nwantiti (ah ah ah)",
+      "Artist": "CKay"
+    }
+  },
+  {
+    "First Name": "Sabrina",
+    "Last Name": "Alexander",
+    "Gender": "Female",
+    "Age": 23,
+    "Email": "s.alexander@randatmail.com",
+    "Listening": {
+      "Track Name": "Daddy Issues",
+      "Artist": "The Neighbourhood"
+    }
+  },
+  {
+    "First Name": "Adelaide",
+    "Last Name": "Harper",
+    "Gender": "Female",
+    "Age": 26,
+    "Email": "a.harper@randatmail.com",
+    "Listening": {
+      "Track Name": "Save Your Tears",
+      "Artist": "The Weeknd"
+    }
+  },
+  {
+    "First Name": "Jack",
+    "Last Name": "Allen",
+    "Gender": "Male",
+    "Age": 28,
+    "Email": "j.allen@randatmail.com",
+    "Listening": {
+      "Track Name": "Butter",
+      "Artist": "BTS"
+    }
+  },
+  {
+    "First Name": "Ted",
+    "Last Name": "Harrison",
+    "Gender": "Male",
+    "Age": 22,
+    "Email": "t.harrison@randatmail.com",
+    "Listening": {
+      "Track Name": "Bad Habits",
+      "Artist": "Ed Sheeran"
+    }
+  },
+  {
+    "First Name": "Steven",
+    "Last Name": "Ryan",
+    "Gender": "Male",
+    "Age": 30,
+    "Email": "s.ryan@randatmail.com",
+    "Listening": {
+      "Track Name": "Acapulco",
+      "Artist": "Jason Derulo"
+    }
+  },
+  {
+    "First Name": "Adelaide",
+    "Last Name": "Stewart",
+    "Gender": "Female",
+    "Age": 29,
+    "Email": "a.stewart@randatmail.com",
+    "Listening": {
+      "Track Name": "You Right",
+      "Artist": "Doja Cat"
+    }
+  },
+  {
+    "First Name": "Sabrina",
+    "Last Name": "Myers",
+    "Gender": "Female",
+    "Age": 26,
+    "Email": "s.myers@randatmail.com",
+    "Listening": {
+      "Track Name": "deja vu",
+      "Artist": "Olivia Rodrigo"
+    }
+  },
+  {
+    "First Name": "Lucia",
+    "Last Name": "Thomas",
+    "Gender": "Female",
+    "Age": 25,
+    "Email": "l.thomas@randatmail.com",
+    "Listening": {
+      "Track Name": "Easy On Me",
+      "Artist": "Adele"
+    }
+  },
+  {
+    "First Name": "Madaline",
+    "Last Name": "Douglas",
+    "Gender": "Female",
+    "Age": 22,
+    "Email": "m.douglas@randatmail.com",
+    "Listening": {
+      "Track Name": "Happier Than Ever",
+      "Artist": "Billie Eilish"
+    }
+  },
+  {
+    "First Name": "Adelaide",
+    "Last Name": "Riley",
+    "Gender": "Female",
+    "Age": 25,
+    "Email": "a.riley@randatmail.com",
+    "Listening": {
+      "Track Name": "Ley Seca",
+      "Artist": "Jhay Cortez"
+    }
+  },
+  {
+    "First Name": "Catherine",
+    "Last Name": "Farrell",
+    "Gender": "Female",
+    "Age": 18,
+    "Email": "c.farrell@randatmail.com",
+    "Listening": {
+      "Track Name": "Smells Like Teen Spirit",
+      "Artist": "Nirvana"
+    }
+  },
+  {
+    "First Name": "Isabella",
+    "Last Name": "Morris",
+    "Gender": "Female",
+    "Age": 19,
+    "Email": "i.morris@randatmail.com",
+    "Listening": {
+      "Track Name": "Daddy Issues",
+      "Artist": "The Neighbourhood"
+    }
+  },
+  {
+    "First Name": "Evelyn",
+    "Last Name": "Adams",
+    "Gender": "Female",
+    "Age": 26,
+    "Email": "e.adams@randatmail.com",
+    "Listening": {
+      "Track Name": "Say You Won't Let Go",
+      "Artist": "James Arthur"
+    }
+  },
+  {
+    "First Name": "John",
+    "Last Name": "Craig",
+    "Gender": "Male",
+    "Age": 24,
+    "Email": "j.craig@randatmail.com",
+    "Listening": {
+      "Track Name": "Gangsta's Paradise",
+      "Artist": "Coolio"
+    }
+  },
+  {
+    "First Name": "Brianna",
+    "Last Name": "Harrison",
+    "Gender": "Female",
+    "Age": 20,
+    "Email": "b.harrison@randatmail.com",
+    "Listening": {
+      "Track Name": "Easy On Me",
+      "Artist": "Adele"
+    }
+  },
+  {
+    "First Name": "Mary",
+    "Last Name": "Sullivan",
+    "Gender": "Female",
+    "Age": 29,
+    "Email": "m.sullivan@randatmail.com",
+    "Listening": {
+      "Track Name": "Don't Go Yet",
+      "Artist": "Camila Cabello"
+    }
+  },
+  {
+    "First Name": "Amy",
+    "Last Name": "Cunningham",
+    "Gender": "Female",
+    "Age": 22,
+    "Email": "a.cunningham@randatmail.com",
+    "Listening": {
+      "Track Name": "Ley Seca",
+      "Artist": "Jhay Cortez"
+    }
+  },
+  {
+    "First Name": "April",
+    "Last Name": "Elliott",
+    "Gender": "Female",
+    "Age": 27,
+    "Email": "a.elliott@randatmail.com",
+    "Listening": {
+      "Track Name": "Wildest Dreams ",
+      "Artist": "Taylor Swift"
+    }
+  },
+  {
+    "First Name": "Ted",
+    "Last Name": "Grant",
+    "Gender": "Male",
+    "Age": 20,
+    "Email": "t.grant@randatmail.com",
+    "Listening": {
+      "Track Name": "Without Me",
+      "Artist": "Eminem"
+    }
+  },
+  {
+    "First Name": "Tyler",
+    "Last Name": "Stewart",
+    "Gender": "Male",
+    "Age": 20,
+    "Email": "t.stewart@randatmail.com",
+    "Listening": {
+      "Track Name": "goosebumps",
+      "Artist": "Travis Scott"
+    }
+  },
+  {
+    "First Name": "Adelaide",
+    "Last Name": "Brown",
+    "Gender": "Female",
+    "Age": 19,
+    "Email": "a.brown@randatmail.com",
+    "Listening": {
+      "Track Name": "Love Again",
+      "Artist": "Dua Lipa"
+    }
+  },
+  {
+    "First Name": "Haris",
+    "Last Name": "Gibson",
+    "Gender": "Male",
+    "Age": 26,
+    "Email": "h.gibson@randatmail.com",
+    "Listening": {
+      "Track Name": "Circles",
+      "Artist": "Post Malone"
+    }
+  },
+  {
+    "First Name": "Tess",
+    "Last Name": "Taylor",
+    "Gender": "Female",
+    "Age": 22,
+    "Email": "t.taylor@randatmail.com",
+    "Listening": {
+      "Track Name": "Another Love",
+      "Artist": "Tom Odell"
+    }
+  },
+  {
+    "First Name": "Albert",
+    "Last Name": "Johnston",
+    "Gender": "Male",
+    "Age": 28,
+    "Email": "a.johnston@randatmail.com",
+    "Listening": {
+      "Track Name": "Bad Habits",
+      "Artist": "Ed Sheeran"
+    }
+  },
+  {
+    "First Name": "Naomi",
+    "Last Name": "Martin",
+    "Gender": "Female",
+    "Age": 27,
+    "Email": "n.martin@randatmail.com",
+    "Listening": {
+      "Track Name": "deja vu",
+      "Artist": "Olivia Rodrigo"
+    }
+  }
+]
