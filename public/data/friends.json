@@ -5,6 +5,8 @@
     "Gender": "Female",
     "Age": 22,
     "Email": "v.gibson@randatmail.com",
+    "Profile Pic": "../img/userprofiles/Valeria_Gibson.jpeg",
+    "Following": true,
     "Listening": {
       "Track Name": "Shivers",
       "Artist": "Ed Sheeran"
@@ -16,6 +18,8 @@
     "Gender": "Male",
     "Age": 19,
     "Email": "r.ellis@randatmail.com",
+    "Profile Pic": "../img/userprofiles/Roman_Ellis.jpeg",
+    "Following": true,
     "Listening": {
       "Track Name": "Blinding Lights",
       "Artist": "The Weeknd"
@@ -27,6 +31,8 @@
     "Gender": "Male",
     "Age": 18,
     "Email": "f.montgomery@randatmail.com",
+    "Profile Pic": "../img/userprofiles/Frederick_Montgomery.jpeg",
+    "Following": true,
     "Listening": {
       "Track Name": "good 4 u",
       "Artist": "Olivia Rodrigo"
@@ -38,6 +44,8 @@
     "Gender": "Female",
     "Age": 21,
     "Email": "b.adams@randatmail.com",
+    "Profile Pic": "../img/userprofiles/Briony_Adams.jpeg",
+    "Following": true,
     "Listening": {
       "Track Name": "Girls Want Girls",
       "Artist": "Drake"
@@ -49,6 +57,8 @@
     "Gender": "Male",
     "Age": 29,
     "Email": "r.douglas@randatmail.com",
+    "Profile Pic": "../img/userprofiles/Roman_Douglas.jpeg",
+    "Following": true,
     "Listening": {
       "Track Name": "INDUSTRY BABY",
       "Artist": "Lil Nas X"

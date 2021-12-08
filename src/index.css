@@ -261,6 +261,11 @@ img.btn {
     background-color: rgb(0, 100, 250);
 }
 
+.profile-pic {
+    width: 300px;
+    height: 300px;
+}
+
 @media (max-width: 990px) {
     .sidebar-link {
         display: block;

@@ -1,11 +1,17 @@
-import React from 'react';
+import React, { useState }from 'react';
+import { Redirect } from 'react-router';
+
 
 function GetFriend(props){
     let friend = props.friend;
+    let handleClick = () => {
+        let name = friend["First Name"] + "-"+ friend["Last Name"]
+        props.handleClick(name);
+    }
     return (
         <button
             className="list-group-item list-group-item-action d-flex justify-content-between align-items-start container"
-            aria-label="friend">
+            aria-label="friend" onClick={handleClick}>
             <span className="material-icons account-circle">account_circle</span>
 
             <div className="ms-2 me-auto">
@@ -20,14 +26,23 @@ function GetFriend(props){
 }
 
 function Friends(props) {  
+    let [redirectTo, setRedirectTo] = useState(undefined);
+    const handleClick = (name) => {
+        setRedirectTo(name);
+    }
     let friends = props.friends;
-    return(
-        <section className="sidebar d-none d-lg-block border-left">
-            <h1 className="text-center mt-5 mb-3 font-weight-bold">Friends</h1>
-            <ul className="list-group list-group-flush">
-                {friends.map((friend, id) => <GetFriend key={id} friend={friend}/>)}
-            </ul>
-        </section>
-    );
+    if(redirectTo != null) {
+        return <Redirect push to={"/profile/" + redirectTo}/>
+    } else {
+        return(
+            <section className="sidebar d-none d-lg-block border-left">
+                <h1 className="text-center mt-5 mb-3 font-weight-bold">Friends</h1>
+                <ul className="list-group list-group-flush">
+                    {friends.map((friend, id) => <GetFriend key={id} friend={friend} handleClick={handleClick}/>)}
+                </ul>
+            </section>
+        );
+    }
+    
 }
 export default Friends;

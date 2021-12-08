@@ -2,16 +2,21 @@ import React, { useState, useEffect } from 'react';
 import * as d3 from "d3";
 import { Alert, Button } from 'react-bootstrap';
 import { Redirect } from 'react-router';
+// import _ from 'lodash';
 
 function GetPerson(props){
-    let [follow, setFollow] = useState(false);
     let person = props.person;
+    let [follow, setFollow] = useState(person.Following);
+    
     let handleFollow = () => {
         if (follow) {
+            person.Following = false;
             setFollow(false);
         } else {
+            person.Following = true;
             setFollow(true);
         }
+        props.handleFollowing(person);
     }
     let handleClick = () => {
         let name = person["First Name"] + "-"+ person["Last Name"]
@@ -50,17 +55,20 @@ function Connect(props) {
             setErrorMessage(error);
         }
     }
-
     useEffect(() => {
         fetchPeople();
 
-    }, [])
+    },[])
 
-    const handleClick = (firstName, lastName) => {
-        console.log("You clicked on",firstName);
-        setRedirectTo(firstName);
+    let people = props.peopleData;
+    // people = _.shuffle(people)
+    // people = people.slice(0, 10);
+    
+
+    const handleClick = (name) => {
+        setRedirectTo(name);
     }
-    console.log(redirectTo);
+
     if(redirectTo != null) {
         return <Redirect push to={"/profile/" + redirectTo}/>
     }
@@ -72,7 +80,7 @@ function Connect(props) {
                     <Alert variant="danger" dismissible onClose={() => setErrorMessage(null)}>{errorMessage}</Alert>}
     
                 <ul className="list-group list-group-flush">
-                    {props.peopleData.map((person, id) => <GetPerson key={id} person={person} handleClick={handleClick}/>)}
+                    {people.map((person, id) => <GetPerson key={id} person={person} handleClick={handleClick} handleFollowing={props.handleFollowing}/>)}
                 </ul>
             </div>
         );

@@ -51,7 +51,17 @@ function App() {
         
     }, [])
 
-    
+    const handlePostData = (data) => {
+        setPostData(data);
+    }
+
+    const handlePeopleData = (data) => {
+        setPeopleData(data);
+    }
+
+    const handleFollowing = (person) => {
+        setFriends([...friends, person]);
+    }    
     return (
         <div className="page-container">
             <div className="content-wrap">
@@ -60,8 +70,8 @@ function App() {
                     <Alert variant="danger" dismissible onClose={() => setErrorMessage(null)}>{errorMessage}</Alert>
                 }
                 <Switch>
-                    <Route exact path="/"> <Main postData={postData} setPostData= {setPostData} songData={spotifyData} friends={friends}/></Route>
-                    <Route path="/connect"> <Connect peopleData={peopleData} setPeopleData ={setPeopleData}/> </Route>
+                    <Route exact path="/"> <Main postData={postData} setPostData= {handlePostData} songData={spotifyData} friends={friends}/></Route>
+                    <Route path="/connect"> <Connect peopleData={peopleData} setPeopleData ={handlePeopleData} handleFollowing={handleFollowing}/> </Route>
                     <Route path="/explore"> <Explore songData={spotifyData}/> </Route>
                     <Route path="/about"> <About/> </Route>
                     <Route path={"/profile/:userName"}><Profile peopleData={peopleData}/></Route>
