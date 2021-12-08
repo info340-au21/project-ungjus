@@ -50,6 +50,8 @@ function App() {
         fetchData();
         
     }, [])
+
+    
     return (
         <div className="page-container">
             <div className="content-wrap">
@@ -77,16 +79,9 @@ function App() {
 export default App;
 
 function Main(props) {
-<<<<<<< HEAD
     // const [postData, setPostData] = useState(props.postData);
     // console.log(props.songData);
-    const addPost = (titleContent, textContent) => {
-=======
-    const [postData, setPostData,] = useState(props.postData);
-
     const addPost = (titleContent, textContent, albumContent) => {
-        console.log(albumContent);
->>>>>>> 205319948b71b0af465ceec3046152655775a3ce
         const newPost = {
             title: titleContent,
             user: "to be named", //placeHolder

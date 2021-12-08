@@ -3,10 +3,6 @@ import * as d3 from "d3";
 import { Alert, Button } from 'react-bootstrap';
 import { Redirect } from 'react-router';
 
-
-
-
-
 function GetPerson(props){
     let [follow, setFollow] = useState(false);
     let person = props.person;
