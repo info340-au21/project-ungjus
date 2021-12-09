@@ -45,12 +45,18 @@ function Connect(props) {
     const [people, setPeople] = useState(props.peopleData);
     const [errorMessage, setErrorMessage] = useState(null);
     let [redirectTo, setRedirectTo] = useState(undefined);
+    const [isInitialRender, setIsInitialRender] = useState(true);
+
     
     useEffect(() => {
-        let tenPeople  = _.shuffle(people)
-        tenPeople = tenPeople.slice(0, 10);
-        setPeople(tenPeople)
-    },[])    
+        if (isInitialRender) {
+            setIsInitialRender(false);
+
+            let tenPeople  = _.shuffle(people)
+            tenPeople = tenPeople.slice(0, 10);
+            setPeople(tenPeople)
+        }
+    },[people, isInitialRender])    
 
     const handleClick = (name) => {
         setRedirectTo(name);

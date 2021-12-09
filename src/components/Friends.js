@@ -37,27 +37,16 @@ function Friends(props) {
     if(redirectTo != null) {
         return <Redirect push to={"/profile/" + redirectTo}/>
     } else {
-        if(props.sidebarClicked) {
-            return(
+        return(
             
-                <section className="container">
-                    <h1 className="text-center mt-5 mb-3 font-weight-bold">Friends</h1>
-                    <ul className="list-group list-group-flush">
-                        {friends.map((friend, id) => <GetFriend key={id} friend={friend} handleClick={handleClick}/>)}
-                    </ul>
-                </section>
-            );
-        } else {
-            return(
-            
-                <section className="sidebar d-none d-lg-block border-left">
-                    <h1 className="text-center mt-5 mb-3 font-weight-bold">Friends</h1>
-                    <ul className="list-group list-group-flush">
-                        {friends.map((friend, id) => <GetFriend key={id} friend={friend} handleClick={handleClick}/>)}
-                    </ul>
-                </section>
-            );
-        }
+            <section className={(props.sidebarClicked) ? "container" : "sidebar d-none d-lg-block border-left"}>
+                <h1 className="text-center mt-5 mb-3 font-weight-bold">Friends</h1>
+                <ul className="list-group list-group-flush">
+                    {friends.map((friend, id) => <GetFriend key={id} friend={friend} handleClick={handleClick}/>)}
+                </ul>
+            </section>
+        );
+        
         
     }
     

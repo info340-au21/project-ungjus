@@ -11,6 +11,7 @@ import Explore from './components/Explore';
 import Connect from './components/Connect';
 import About from './components/About';
 import Profile from './components/Profile';
+import MyProfile from './components/MyProfile';
 import * as d3 from "d3";
 import { Alert } from 'react-bootstrap';
 
@@ -105,7 +106,7 @@ function App() {
                     <Route path="/about"> <About/> </Route>
                     <Route path="/friends"> <Friends friends={friends} sidebarClicked={sidebarClicked}/> </Route>
                     <Route path="/topSongs"> <TopSongs songData={spotifyData} sidebarClicked={sidebarClicked}/> </Route>
-                    <Route path="/about"> <About/> </Route>
+                    <Route path="/myProfile"> <MyProfile/> </Route>
                     <Route path={"/profile/:userName"}><Profile peopleData={peopleData} handleFollowing={handleFollowing}/></Route>
                     <Redirect to="/"/>
                 </Switch>

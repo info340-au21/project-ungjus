@@ -6,20 +6,26 @@ function Explore(props) {
     const [songs, setSongs] = useState([]);
     const [streams, setStreams] = useState([]);
     const [artist, setArtist] = useState([]);
+    const [isInitialRender, setIsInitialRender] = useState(true);
+
     
     useEffect(()=>{
-        let tempSongs = [];
-        let tempStreams = [];
-        let tempArtist = [];
-        for(let song = 0; song < 100; song++) {
-            tempSongs.push(songData[song]["Track Name"]);
-            tempStreams.push(songData[song]["Streams"]);
-            tempArtist.push(songData[song]["Artist"]);
+        if (isInitialRender) {
+            setIsInitialRender(false);
+
+            let tempSongs = [];
+            let tempStreams = [];
+            let tempArtist = [];
+            for(let song = 0; song < 100; song++) {
+                tempSongs.push(songData[song]["Track Name"]);
+                tempStreams.push(songData[song]["Streams"]);
+                tempArtist.push(songData[song]["Artist"]);
+            }
+            setSongs(tempSongs);
+            setStreams(tempStreams);
+            setArtist(tempArtist);
         }
-        setSongs(tempSongs);
-        setStreams(tempStreams);
-        setArtist(tempArtist);
-    }, [])
+    }, [songData, isInitialRender])
     
     let data = [{
         x: songs,

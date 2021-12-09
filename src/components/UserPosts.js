@@ -2,7 +2,7 @@ import React from 'react';
 
 function UserCard(props) {
     const post = props.postInfo;
-    const genreList = post.songGenre.map((value) => <li>{value}</li>);
+    const genreList = post.songGenre.map((value, id) => <li key={id}>{value}</li>);
     return(
         <div className="col-sm-12 col-lg-5">
         <div className="card mb-4 shadow-sm p-3 mb-5 bg-white rounded">
