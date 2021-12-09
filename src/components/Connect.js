@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import * as d3 from "d3";
 import { Alert, Button } from 'react-bootstrap';
 import { Redirect } from 'react-router';
-// import _ from 'lodash';
+import _ from 'lodash';
 
 function GetPerson(props){
     let person = props.person;
@@ -41,29 +40,15 @@ function GetPerson(props){
 }
 
 function Connect(props) {
-    
+    const [people, setPeople] = useState(props.peopleData);
     const [errorMessage, setErrorMessage] = useState(null);
     let [redirectTo, setRedirectTo] = useState(undefined);
-
-
-    async function fetchPeople() {
-        try {
-            const data = await d3.json("/data/people.json");
-            props.setPeopleData(data);
-
-        } catch (error) {
-            setErrorMessage(error);
-        }
-    }
-    useEffect(() => {
-        fetchPeople();
-
-    },[])
-
-    let people = props.peopleData;
-    // people = _.shuffle(people)
-    // people = people.slice(0, 10);
     
+    useEffect(() => {
+        let tenPeople  = _.shuffle(people)
+        tenPeople = tenPeople.slice(0, 10);
+        setPeople(tenPeople)
+    },[])    
 
     const handleClick = (name) => {
         setRedirectTo(name);

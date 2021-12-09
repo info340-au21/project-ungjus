@@ -23,6 +23,7 @@ function App() {
     const [friends, setFriends] = useState([]);
     const [peopleData, setPeopleData] = useState([]);
     const [errorMessage, setErrorMessage] = useState(null);
+    const [sidebarClicked, setSidebarClicked] = useState(false);
 
     async function fetchData(){
         try {
@@ -43,6 +44,13 @@ function App() {
         } catch (error) {
             setErrorMessage(error);
         }
+        try {
+            const data = await d3.json("/data/people.json");
+            setPeopleData(data);
+
+        } catch (error) {
+            setErrorMessage(error);
+        }
         
         
     }
@@ -59,13 +67,34 @@ function App() {
         setPeopleData(data);
     }
 
-    const handleFollowing = (person) => {
-        setFriends([...friends, person]);
-    }    
+    const checkIsFriend = (person) =>{
+        let bool = friends.some((friend) => friend["First Name"] === person["First Name"] &&
+                                        friend["Last Name"] === person["Last Name"])
+        return bool;
+    }
+
+    const handleFollowing = async (person) => {
+        if( await checkIsFriend(person)){
+            let removedFriends = friends.filter((friend) => friend["First Name"] !== person["First Name"] &&
+                                                            friend["Last Name"] !== person["Last Name"]);
+            setFriends(removedFriends);
+        } else {
+            setFriends([...friends, person]);
+        }
+        
+    }  
+    // const handleSidebarClicked = () => {
+    //     if(sidebarClicked) {
+    //         setSidebarClicked(false);
+    //     } else {
+    //         setSidebarClicked(true);
+    //     }
+        
+    // }   
     return (
         <div className="page-container">
             <div className="content-wrap">
-                <Navbar/>
+                <Navbar handleSidebarClicked={setSidebarClicked}/>
                 {errorMessage && 
                     <Alert variant="danger" dismissible onClose={() => setErrorMessage(null)}>{errorMessage}</Alert>
                 }
@@ -74,7 +103,10 @@ function App() {
                     <Route path="/connect"> <Connect peopleData={peopleData} setPeopleData ={handlePeopleData} handleFollowing={handleFollowing}/> </Route>
                     <Route path="/explore"> <Explore songData={spotifyData}/> </Route>
                     <Route path="/about"> <About/> </Route>
-                    <Route path={"/profile/:userName"}><Profile peopleData={peopleData}/></Route>
+                    <Route path="/friends"> <Friends friends={friends} sidebarClicked={sidebarClicked}/> </Route>
+                    <Route path="/topSongs"> <TopSongs songData={spotifyData} sidebarClicked={sidebarClicked}/> </Route>
+                    <Route path="/about"> <About/> </Route>
+                    <Route path={"/profile/:userName"}><Profile peopleData={peopleData} handleFollowing={handleFollowing}/></Route>
                     <Redirect to="/"/>
                 </Switch>
             </div>

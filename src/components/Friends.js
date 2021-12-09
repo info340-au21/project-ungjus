@@ -1,5 +1,6 @@
 import React, { useState }from 'react';
 import { Redirect } from 'react-router';
+import { Image } from 'react-bootstrap'
 
 
 function GetFriend(props){
@@ -12,7 +13,9 @@ function GetFriend(props){
         <button
             className="list-group-item list-group-item-action d-flex justify-content-between align-items-start container"
             aria-label="friend" onClick={handleClick}>
-            <span className="material-icons account-circle">account_circle</span>
+            {/* <span className="material-icons account-circle">account_circle</span> */}
+            <Image src={friend["Profile Pic"]}
+                        alt={friend["Profile Pic"]} className="small-profile-pic" roundedCircle/>
 
             <div className="ms-2 me-auto">
                 <div className="fw-bold">{friend["First Name"] + " "+ friend["Last Name"]}</div>
@@ -34,14 +37,28 @@ function Friends(props) {
     if(redirectTo != null) {
         return <Redirect push to={"/profile/" + redirectTo}/>
     } else {
-        return(
-            <section className="sidebar d-none d-lg-block border-left">
-                <h1 className="text-center mt-5 mb-3 font-weight-bold">Friends</h1>
-                <ul className="list-group list-group-flush">
-                    {friends.map((friend, id) => <GetFriend key={id} friend={friend} handleClick={handleClick}/>)}
-                </ul>
-            </section>
-        );
+        if(props.sidebarClicked) {
+            return(
+            
+                <section className="container">
+                    <h1 className="text-center mt-5 mb-3 font-weight-bold">Friends</h1>
+                    <ul className="list-group list-group-flush">
+                        {friends.map((friend, id) => <GetFriend key={id} friend={friend} handleClick={handleClick}/>)}
+                    </ul>
+                </section>
+            );
+        } else {
+            return(
+            
+                <section className="sidebar d-none d-lg-block border-left">
+                    <h1 className="text-center mt-5 mb-3 font-weight-bold">Friends</h1>
+                    <ul className="list-group list-group-flush">
+                        {friends.map((friend, id) => <GetFriend key={id} friend={friend} handleClick={handleClick}/>)}
+                    </ul>
+                </section>
+            );
+        }
+        
     }
     
 }

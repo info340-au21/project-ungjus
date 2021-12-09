@@ -3,7 +3,6 @@ import { NavLink } from 'react-router-dom';
 
 
 function Navbar(props) {
-    
     return(
         <nav className="navbar navbar-expand-lg navbar-light nav-custom">
             <NavLink className="navbar-brand brand" to="/" aria-label="Logo and Home Button">
@@ -27,10 +26,10 @@ function Navbar(props) {
                         <NavLink className="navLink" to="/about">About Us</NavLink>
                     </li>
                     <li className="nav-item sidebar-link">
-                        <NavLink className="navLink" to="about.html">Top Songs</NavLink>
+                        <NavLink className="navLink" to="/topSongs" onClick={props.handleSidebarClicked}>Top Songs</NavLink>
                     </li>
                     <li className="nav-item sidebar-link">
-                        <NavLink className="navLink" to="about.html">Friends</NavLink>
+                        <NavLink className="navLink" to="/friends" onClick={props.handleSidebarClicked}>Friends</NavLink>
                     </li>
 
                 </ul>
