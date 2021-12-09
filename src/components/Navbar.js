@@ -40,6 +40,7 @@ function Navbar(props) {
                         <span className="material-icons search" aria-label="Search Button">search</span>
                     </button>
                 </form>
+                {/* <SearchForm /> */}
                 <NavLink className="btn my-2 my-sm-0 profile" to="/myProfile" aria-label="Profile">
                     <span className="material-icons profile">account_circle</span>
                 </NavLink>
