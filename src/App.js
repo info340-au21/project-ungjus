@@ -153,10 +153,11 @@ function Main(props) {
                 <section className="containter mt-5">
                     <Header/>
                     <UserPosts postData={props.postData}/>
+                    <WritePost onSubmit={addPost}/>
                 </section>
                 <Friends friends={props.friends}/>
             </main>
-            <WritePost onSubmit={addPost}/>
+            
         </div>
         
     )
