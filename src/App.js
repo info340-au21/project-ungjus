@@ -73,8 +73,8 @@ function App() {
         return bool;
     }
 
-    const handleFollowing = async (person) => {
-        if( await checkIsFriend(person)){
+    const handleFollowing = (person) => {
+        if( checkIsFriend(person)){
             let removedFriends = friends.filter((friend) => friend["First Name"] !== person["First Name"] &&
                                                             friend["Last Name"] !== person["Last Name"]);
             setFriends(removedFriends);

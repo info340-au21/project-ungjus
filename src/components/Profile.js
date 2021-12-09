@@ -1,12 +1,7 @@
 import React, { useState } from 'react';
 import { useParams } from 'react-router';
 import _ from 'lodash';
-import { Image } from 'react-bootstrap';
-import { Button } from 'react-bootstrap';
-
-
-
-
+import { Image, Button } from 'react-bootstrap';
 
 function Profile(props) {
     let userName = useParams().userName;
@@ -17,7 +12,6 @@ function Profile(props) {
     let user =  _.find(props.peopleData, {"First Name": firstName, "Last Name": lastName});
 
     let [follow, setFollow] = useState(user.Following);
-    console.log(user);
     let handleFollow = () => {
         props.handleFollowing(user);
         if (follow) {
