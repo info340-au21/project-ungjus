@@ -74,12 +74,12 @@ function WritePost(props) {
                                 <div className="form-group">
                                     {/* Title */}
                                     <label htmlFor="post-comment" hidden>Title</label>
-                                    <textarea type="text" className="form-control" placeholder="Title" aria-label="text box"
-                                        rows="1" value={postTitle} onChange={handleInputTitle}></textarea>
+                                    <input type="text" className="form-control" placeholder="Title" aria-label="text box"
+                                        rows="1" value={postTitle} onChange={handleInputTitle}></input>
                                     {/* Type In Form */}
                                     <label htmlFor="post-comment" hidden>Comment</label>
                                     <textarea type="text" className="form-control" placeholder="Comment" aria-label="text box"
-                                        rows="1" value={postValue} onChange={handleInputPost}></textarea>
+                                        rows="5" value={postValue} onChange={handleInputPost}></textarea>
                                 </div>
                                 {/* Submit */}
                                 <span className="input-group-btn">
