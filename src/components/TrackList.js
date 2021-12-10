@@ -1,34 +1,28 @@
 import React, { useState, useEffect } from 'react';
 // import { useParams } from 'react-router';
 
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const TRACK_QUERY_TEMPLATE = 'https://itunes.apple.com/lookup?id={collectionId}&limit=50&entity=song'
 
 export default function TrackList(props) {
   const [trackData, setTrackData] = useState([]); //tracks to show
-  const [isQuerying, setIsQuerying] = useState(false); //for spinner
+  const [errorMessage, setErrorMessage] = useState(null); //catch error message
   const [previewAudio, setPreviewAudio] = useState(null); //for playing previews!
 
-//   const urlParams = useParams(); //get album from URL
-
   useEffect(() => {
-    setIsQuerying(true);
     fetch(TRACK_QUERY_TEMPLATE.replace('{collectionId}', props.collectionId))
       .then((res) => res.json())
       .then((data) => {
         if(data.results.length === 0) {
-          //setErrorMessage("No tracks found for album.");
-          console.log("No tracks found for album");
+          setErrorMessage("No tracks found for album.");
         } else {
           setTrackData(data.results.slice(1));
         }
       })
       .catch((error) => {
-        // setErrorMessage(error.message);
-        console.log(error.message);
-      })
-      .then(() => setIsQuerying(false));
+        setErrorMessage(error.message);
+      });
   }, [props.collectionId])
 
   //for fun: allow for clicking to play preview audio!
@@ -52,16 +46,20 @@ export default function TrackList(props) {
     }
     return (
         <li key={track.trackId}>
-            <div role="button" className={classList} onClick={() => togglePlayingPreview(track.previewUrl)}>
-                <p className="track-name">{track.trackName} ({track.artistName})</p>
-            </div>
+          <div role="button" className={classList} onClick={() => togglePlayingPreview(track.previewUrl)}>
+            <p className="track-name">{track.trackName} ({track.artistName})</p>
+          </div>
         </li>
     )
   })
 
   return (
     <div>
-      {isQuerying && <FontAwesomeIcon spin size="4x" aria-label="Loading..." aria-hidden="false"/>}
+      {errorMessage &&
+        <div class="alert alert-warning" role="alert">
+          {errorMessage}
+        </div>
+      }
       <ul className="canvas-ul">
         {trackElemArray}
       </ul>
