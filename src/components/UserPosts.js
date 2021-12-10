@@ -3,6 +3,8 @@ import TrackList from './TrackList';
 
 function UserCard(props) {
     const post = props.postInfo;
+    const dateInfo = new Date(post.timePost);
+    const dateFormat = dateInfo.getMonth() + "/" + dateInfo.getDate() + "/" + dateInfo.getFullYear() + post.timePost.substring(15, 21);
     return(
         <div className="col-sm-12 col-lg-5">
         <div className="card mb-4 shadow-sm p-3 mb-5 bg-white rounded">
@@ -22,7 +24,7 @@ function UserCard(props) {
                         <div className="media-body">
                             <div className="d-flex justify-content-between mt-1">
                                 <p className="ml-2">{post.user}</p>
-                                <p><em className="text-right">Posted: {post.timePost} ago</em></p>
+                                <p><em className="text-right">{dateFormat}</em></p>
                             </div>
                         </div>
                     </div>
@@ -33,7 +35,7 @@ function UserCard(props) {
                     <p><em>{post.songTitle} - {post.songArtist}</em></p>
                     <p key={post.postNumber}>Release Year: {post.songYear}</p>
                     <p className="font-weight-bold">{post.comment}</p>
-                    <p className="border-top pt-2">Preview Tracks:</p>
+                    <p className="border-top pt-2">Preview Track(s):</p>
                     <TrackList collectionId={post.collectionID}/>
                 </div>
             </div>
@@ -46,7 +48,7 @@ function UserCard(props) {
                     <div className="media-body">
                         <div className="d-flex justify-content-between mt-1">
                             <p className="ml-2">{post.user}</p>
-                            <p><em className="text-right">Posted: {post.timePost} ago</em></p>
+                            <p><em className="text-right">{dateFormat}</em></p>
                         </div>
                     </div>
                 </div>

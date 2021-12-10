@@ -51,8 +51,8 @@ export default function TrackList(props) {
       classList += " font-weight-bold"; //bold if previewing
     }
     return (
-        <li>
-            <div role="button" className={classList} onClick={() => togglePlayingPreview(track.previewUrl)} key={track.trackId}>
+        <li key={track.trackId}>
+            <div role="button" className={classList} onClick={() => togglePlayingPreview(track.previewUrl)}>
                 <p className="track-name">{track.trackName} ({track.artistName})</p>
             </div>
         </li>
