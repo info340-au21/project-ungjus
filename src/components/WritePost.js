@@ -1,5 +1,6 @@
 import React, {useState} from 'react';
 import { Route, Link } from 'react-router-dom';
+import { Alert } from 'react-bootstrap';
 
 import AlbumSearch from "./AlbumSearch";
 import AlbumList from "./AlbumList";
@@ -13,6 +14,7 @@ function WritePost(props) {
     const [albumData, setAlbumData] = useState([]);
     const [errorMessage, setErrorMessage] = useState(null);
     const [isSearching, setSearching] = useState(false);
+    const [canPost, setCanPost] = useState(null);
 
     const handleInputPost = (event) => {
         setPostValue(event.target.value);
@@ -27,10 +29,14 @@ function WritePost(props) {
     }
 
     const handleSubmit = (event) => {
-        props.onSubmit(postTitle, postValue, albumInfo);
-        setPostValue('');
-        setPostTitle('');
-        setAlbumInfo({});
+        if((postValue === '') || (postTitle === '') || (Object.keys(albumInfo).length === 0)) {
+            setCanPost("Empty Boxes!");
+        } else {
+            props.onSubmit(postTitle, postValue, albumInfo);
+            setPostValue('');
+            setPostTitle('');
+            setAlbumInfo({});
+        }
     }
 
     function fetchAlbumList(searchTerm) { 
@@ -49,7 +55,7 @@ function WritePost(props) {
           })
           .then(() => {setSearching(false)});
       }
-
+      
     return(
         <section className="post">
             <div className="container">
@@ -61,15 +67,20 @@ function WritePost(props) {
                             <button type="button" className="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
                         </div>
                         <div className="offcanvas-body small">
+                            {canPost && 
+                                <Alert className="text-left" variant="danger" dismissible onClose={() => setCanPost(null)}>{canPost}</Alert>
+                            }
                             <form className="form-group input-group">
-                                {/* Title */}
-                                <label htmlFor="post-comment" hidden>Title</label>
-                                <textarea type="text" className="form-control" placeholder="Title" aria-label="text box"
-                                    rows="1" value={postTitle} onChange={handleInputTitle}></textarea>
-                                {/* Type In Form */}
-                                <label htmlFor="post-comment" hidden>Comment</label>
-                                <textarea type="text" className="form-control" placeholder="Comment" aria-label="text box"
-                                    rows="1" value={postValue} onChange={handleInputPost}></textarea>
+                                <div className="form-group">
+                                    {/* Title */}
+                                    <label htmlFor="post-comment" hidden>Title</label>
+                                    <textarea type="text" className="form-control" placeholder="Title" aria-label="text box"
+                                        rows="1" value={postTitle} onChange={handleInputTitle}></textarea>
+                                    {/* Type In Form */}
+                                    <label htmlFor="post-comment" hidden>Comment</label>
+                                    <textarea type="text" className="form-control" placeholder="Comment" aria-label="text box"
+                                        rows="1" value={postValue} onChange={handleInputPost}></textarea>
+                                </div>
                                 {/* Submit */}
                                 <span className="input-group-btn">
                                     <Link to="/" className="nav-link">
@@ -78,9 +89,16 @@ function WritePost(props) {
                                     </Link>
                                 </span>
                             </form>
+                            {(Object.keys(albumInfo).length !== 0) &&
+                                <div className="clearfix">
+                                    <img src={albumInfo.artworkUrl100} alt={albumInfo.collectionName} className="float-left mr-2"/>
+                                    <p className="text-left mt-3">Selected Album: <i>{albumInfo.collectionName}</i></p>
+                                    <p className="text-left mt-3">Artist: <i>{albumInfo.artistName}</i></p>
+                                </div>
+                            }
+                            {/* Adding Album */}
                             {errorMessage && 
-                            <div className="alert alert-primary" role="alert">{errorMessage}</div>
-                            // <Alert variant="danger" dismissible onClose={() => setErrorMessage(null)}>{errorMessage}</Alert>
+                                <Alert className="text-left" variant="danger" dismissible onClose={() => setErrorMessage(null)}>{errorMessage}</Alert>
                             }
                             <Route exact path="/">
                                 <AlbumSearch searchCallback={fetchAlbumList} isWaiting={isSearching} />

@@ -21,7 +21,7 @@ export default function AlbumSearch({searchCallback, isWaiting}) {
     <div>
       <form className="form-inline" onSubmit={handleSubmit}>
         <div className="form-group mb-2">
-          <label htmlFor="searchQuery" className="mb-2">Add Song to Post!</label>
+          <label htmlFor="searchQuery" className="mr-2">Add Song to Post!</label>
           <input type="text" className="form-control" placeholder="Search for an album"
             value={queryText} onChange={handleChange} />
         </div>

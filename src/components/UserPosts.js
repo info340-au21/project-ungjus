@@ -1,8 +1,8 @@
 import React from 'react';
+import TrackList from './TrackList';
 
 function UserCard(props) {
     const post = props.postInfo;
-    const genreList = post.songGenre.map((value, id) => <li key={id}>{value}</li>);
     return(
         <div className="col-sm-12 col-lg-5">
         <div className="card mb-4 shadow-sm p-3 mb-5 bg-white rounded">
@@ -31,15 +31,10 @@ function UserCard(props) {
                     <img src={post.albumPhoto}
                         alt={post.songTitle} className="img-fluid"/>
                     <p><em>{post.songTitle} - {post.songArtist}</em></p>
-                    <ul className="canvas-ul">
-                        <li key={post.postNumber}>Release Year: {post.songYear}</li>
-                        <li>Duration: {post.songDuration}</li>
-                        <li>Genre:</li>
-                        <ul>
-                            {genreList}
-                        </ul>
-                    </ul>
+                    <p key={post.postNumber}>Release Year: {post.songYear}</p>
                     <p className="font-weight-bold">{post.comment}</p>
+                    <p className="border-top pt-2">Preview Tracks:</p>
+                    <TrackList collectionId={post.collectionID}/>
                 </div>
             </div>
             <h2 className="card-title">{post.title}</h2>

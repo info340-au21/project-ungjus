@@ -4,7 +4,7 @@ export default function AlbumList({ callbackInfo, albums }) {
 
   const elemArray = albums.map((anAlbum) => {
     return (
-      <img className="m-1" 
+      <img className="m-1" key={anAlbum.collectionId}
         src={anAlbum.artworkUrl100} 
         alt={anAlbum.collectionName} 
         title={anAlbum.collectionName}

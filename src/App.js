@@ -130,14 +130,15 @@ function Main(props) {
             user: "to be named", //placeHolder
             userPic: "https://t4.ftcdn.net/jpg/00/64/67/63/360_F_64676383_LdbmhiNM6Ypzb3FM4PPuFP9rHe7ri8Ju.jpg", //placeHolder
             timePost: "un-named", //placeHolder or to be removed
-            albumPhoto: albumContent.artworkUrl100.replace('100x100bb', '500x500bb'),
+            albumPhoto: albumContent.artworkUrl100.replace('100x100bb', '400x400bb'),
             songTitle: albumContent.collectionName,
             songArtist: albumContent.artistName,
             songYear: albumContent.releaseDate.substring(0, 4),
             songDuration: "infinite", //placeHolder
             songGenre: [], //placeHolder
             comment: textContent,
-            postNumber: Date.now()
+            postNumber: Date.now(),
+            collectionID: albumContent.collectionId
         }
         const newPostData = [...props.postData, newPost];
         props.setPostData(newPostData);
