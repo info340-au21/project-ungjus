@@ -24,15 +24,29 @@ function Profile(props) {
     }
     
     let profilePic = user["Profile Pic"];
-    console.log(user)
+    let gender = user["Gender"].charAt(0);
     return (
         <div className="container userProfile">
             <div className="header">
                 <h1>{user["First Name"] + " " + user["Last Name"]}</h1>
                 <Button onClick={handleFollow}>{(follow) ? "Following": "Follow"}</Button>{' '}
             </div>
-            <Image className="profile-pic" src={profilePic} alt={profilePic} rounded/>
-            {/* gender, age, email, listening */}
+            <div className='container main'>
+                <Image className="profile-pic" src={profilePic} alt={profilePic} rounded/>
+                <div className="content">
+                    <h2>{user.Age + " " + gender} </h2>
+                    <p >{user.Email}</p>
+                    <div className="test">
+                        <span className="material-icons music-note">music_note</span>
+                        <em>{user["Listening"]["Track Name"] + " - "+ user["Listening"]["Artist"]}</em>
+                    </div>
+                    
+                </div>
+                
+                
+                
+            </div>
+            
 
         </div>
     );

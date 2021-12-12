@@ -89,6 +89,17 @@ nav a:hover{
     margin-left: 50px;
     height: 50px;
 }
+.userProfile .main {
+    display: flex;
+    flex-direction: row;
+
+}
+.userProfile .main .content{
+    display: flex;
+    flex-direction: column;
+    margin-left: 50px;
+
+}
 
 .profile, .search {
     color: white;
@@ -191,6 +202,10 @@ h1 {
     flex: 1;
     height: 100%;
 }
+.test {
+    display: flex;
+    flex: 1;
+}
 .row {
     justify-content: center;
 }
@@ -285,7 +300,11 @@ img.btn {
     width: 300px;
     height: 300px;
 }
+.test {
+    display: flex;
+    text-align: center;
 
+}
 .small-profile-pic {
     width: 50px;
     height: 50px;
@@ -309,11 +328,34 @@ img.btn {
         width: 100%;
         margin-bottom: 20px;
     }
+    
+
+}
+@media (max-width: 800px) {
     .userProfile .header {
         flex-direction: column;
         margin-bottom: 15px;
+        text-align: center;
     }
+    .userProfile button {
+        margin-left: auto;
+        margin-right: auto;
+        height: 50px;
+    }
+    .userProfile .main {
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    
+    }
+    .userProfile .main .content {
+        /* margin: 0px; */
+        /* justify-content: center; */
+        align-items: center;
+        margin-left: 0px;
 
+    
+    }
 }
 
 

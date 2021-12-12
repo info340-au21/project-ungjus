@@ -118,7 +118,7 @@ function App() {
                     <Route path="/friends"> <Friends friends={friends} sidebarClicked={sidebarClicked}/> </Route>
                     <Route path="/topSongs"> <TopSongs songData={spotifyData} sidebarClicked={sidebarClicked}/> </Route>
                     <Route path="/myProfile"> <MyProfile/> </Route>
-                    <Route path={"/profile/:userName"}><Profile peopleData={peopleData} handleFollowing={handleFollowing}/></Route>
+                    <Route path={"/profile/:userName"}><Profile peopleData={peopleData} handleFollowing={handleFollowing}/> </Route>
                     <Redirect to="/"/>
                 </Switch>
             </div>
@@ -157,7 +157,7 @@ function Main(props) {
         <div>
             <main className="mainContainer">
                 <TopSongs songData={props.songData}/>
-                <section className="containter mt-5">
+                <section className="mt-5">
                     <Header/>
                     <UserPosts postData={props.postData}/>
                     <WritePost onSubmit={addPost}/>

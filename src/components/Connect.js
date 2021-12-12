@@ -78,9 +78,7 @@ function Connect(props) {
                 <cite>
                     Data from: <a href="http://www.randat.com/">Random Data Generator</a> <a href="https://randomuser.me/photos">Random Profile Picture Generator</a>
                     
-                </cite>
-                
-
+                </cite>  
             </div>
 
         );

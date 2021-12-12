@@ -13,7 +13,9 @@ export default function TrackList(props) {
   const [previewAudio, setPreviewAudio] = useState(null); //for playing previews!
 
   useEffect(() => {
-    fetch(TRACK_QUERY_TEMPLATE.replace('{collectionId}', props.collectionId))
+    fetch(TRACK_QUERY_TEMPLATE.replace('{collectionId}', props.collectionId), {
+      mode: 'cors'
+    })
       .then((res) => res.json())
       .then((data) => {
         if(data.results.length === 0) {
