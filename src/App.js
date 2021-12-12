@@ -141,9 +141,6 @@ function Main(props) {
         const newPostData = [...props.postData, newPost];
         props.setPostData(newPostData);
     }
-    // const getRandomSong = () => {
-
-    // }
 
     return (
         <div>
