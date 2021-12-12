@@ -1,4 +1,6 @@
 import React from 'react';
+import { NavLink} from 'react-router-dom';
+
 
 function Header(props) {  
     return(
@@ -6,7 +8,7 @@ function Header(props) {
             <div className="container">
                 <h1>Waves</h1>
                 <p><em>Wave you hands through the beat of the music</em></p>
-                <button className="sign-up btn btn-lg btn-light" type="button"> Sign Up Now</button>
+                {(props.loggedIn)? "" : <NavLink to="/signUp"><button className="sign-up btn btn-lg btn-light" type="button"> Sign Up Now</button></NavLink>}
             </div>
         </header>
     );

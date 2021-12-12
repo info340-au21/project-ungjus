@@ -36,7 +36,7 @@ function Profile(props) {
                 <div className="content">
                     <h2>{user.Age + " " + gender} </h2>
                     <p >{user.Email}</p>
-                    <div className="test">
+                    <div className="music">
                         <span className="material-icons music-note">music_note</span>
                         <em>{user["Listening"]["Track Name"] + " - "+ user["Listening"]["Artist"]}</em>
                     </div>
