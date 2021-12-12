@@ -13,7 +13,7 @@ We believe we can combine the best features of these existing sites together to 
 - [Topic Proposal](https://info340-au21.github.io/project-ungjus/proposal.html)
 - [HTML Mockup](https://info340-au21.github.io/project-ungjus/index.html)
 
-## Authors:
+## Developers:
 - Debbie Dai
 - Aaron Ho 
 - Victoria Kourbatova
