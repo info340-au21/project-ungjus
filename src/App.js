@@ -12,6 +12,7 @@ import Connect from './components/Connect';
 import About from './components/About';
 import Profile from './components/Profile';
 import MyProfile from './components/MyProfile';
+import SignUp from './components/SignUp'
 import * as d3 from "d3";
 import { Alert } from 'react-bootstrap';
 
@@ -26,6 +27,9 @@ function App() {
     const [peopleData, setPeopleData] = useState([]);
     const [errorMessage, setErrorMessage] = useState(null);
     const [sidebarClicked, setSidebarClicked] = useState(false);
+    const [user, setUser] = useState({});
+    const [loggedIn, setLoggedIn] = useState(false);
+
 
 
     async function fetchData(){
@@ -79,6 +83,11 @@ function App() {
         setPeopleData(data);
     }
 
+    const handleSetUser = (input) => {
+        setUser(input);
+        setLoggedIn(true);
+    }
+
     const checkIsFriend = (person) =>{
         let bool = friends.some((friend) => friend["First Name"] === person["First Name"] &&
                                         friend["Last Name"] === person["Last Name"])
@@ -106,18 +115,19 @@ function App() {
     return (
         <div className="page-container">
             <div className="content-wrap">
-                <Navbar handleSidebarClicked={setSidebarClicked} handleDisplayData={handleDisplayData} postData={postData}/>
+                <Navbar handleSidebarClicked={setSidebarClicked} handleDisplayData={handleDisplayData} postData={postData} loggedIn={loggedIn} profilePic={user["Profile Pic"]}/>
                 {errorMessage && 
                     <Alert variant="danger" dismissible onClose={() => setErrorMessage(null)}>{errorMessage}</Alert>
                 }
                 <Switch>
-                    <Route exact path="/"> <Main postData={displayData} setPostData={handlePostData} songData={spotifyData} friends={friends}/></Route>
+                    <Route exact path="/"> <Main postData={displayData} setPostData={handlePostData} songData={spotifyData} friends={friends} loggedIn={loggedIn}/></Route>
                     <Route path="/connect"> <Connect peopleData={peopleData} setPeopleData ={handlePeopleData} handleFollowing={handleFollowing}/> </Route>
                     <Route path="/explore"> <Explore songData={spotifyData}/> </Route>
                     <Route path="/about"> <About/> </Route>
                     <Route path="/friends"> <Friends friends={friends} sidebarClicked={sidebarClicked}/> </Route>
                     <Route path="/topSongs"> <TopSongs songData={spotifyData} sidebarClicked={sidebarClicked}/> </Route>
-                    <Route path="/myProfile"> <MyProfile/> </Route>
+                    <Route path="/signUp"><SignUp handleSetUser={handleSetUser}/></Route>
+                    <Route path="/myProfile"> <MyProfile user={user} loggedIn={loggedIn}/> </Route>
                     <Route path={"/profile/:userName"}><Profile peopleData={peopleData} handleFollowing={handleFollowing}/> </Route>
                     <Redirect to="/"/>
                 </Switch>
@@ -158,7 +168,7 @@ function Main(props) {
             <main className="mainContainer">
                 <TopSongs songData={props.songData}/>
                 <section className="mt-5">
-                    <Header/>
+                    <Header loggedIn={props.loggedIn}/>
                     <UserPosts postData={props.postData}/>
                     <WritePost onSubmit={addPost}/>
                 </section>

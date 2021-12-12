@@ -1,6 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { SearchForm } from './SearchForm';
+import { Image } from 'react-bootstrap'
 
 function Navbar(props) {
     const postData = props.postData;
@@ -36,16 +37,12 @@ function Navbar(props) {
                     </li>
 
                 </ul>
-                {/* <form className="form-inline my-2 my-lg-0">
-                    <label htmlFor="search" hidden> Search for something! </label>
-                    <input className="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search"/>
-                    <button className="btn my-2 my-sm-0 search" type="submit">
-                        <span className="material-icons search" aria-label="Search Button">search</span>
-                    </button>
-                </form> */}
                 <SearchForm postData={postData} handleDisplayData={props.handleDisplayData}/>
+                
                 <NavLink className="btn my-2 my-sm-0 profile" to="/myProfile" aria-label="Profile">
-                    <span className="material-icons profile">account_circle</span>
+                    {(props.loggedIn) ? <Image src={props.profilePic} alt={props.profilePic} 
+                                className="small-profile-pic" roundedCircle/>: <span className="material-icons profile">account_circle</span>}
+                    
                 </NavLink>
             </div>
         </nav>
