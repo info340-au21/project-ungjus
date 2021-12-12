@@ -151,6 +151,9 @@ h1 {
     padding-top: 0.5rem;
     font-size: 4em;
 }
+.page-title {
+    text-align: center;
+}
 
 .about-bio h2 {
     font-size: large;

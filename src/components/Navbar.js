@@ -25,6 +25,8 @@ function Navbar(props) {
                     <li className="nav-item">
                         <NavLink className="navLink" to="/about">About Us</NavLink>
                     </li>
+
+                    {/* only show these link if small screen */}
                     <li className="nav-item sidebar-link">
                         <NavLink className="navLink" to="/topSongs" onClick={props.handleSidebarClicked}>Top Songs</NavLink>
                     </li>

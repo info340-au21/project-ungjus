@@ -34,6 +34,9 @@ function Friends(props) {
         setRedirectTo(name);
     }
     let friends = props.friends;
+
+    // if you click on a friend, then redirect to their profile page
+    // else display the list of all your friends
     if(redirectTo != null) {
         return <Redirect push to={"/profile/" + redirectTo}/>
     } else {

@@ -96,6 +96,7 @@ function WritePost(props) {
                                     <p className="text-left mt-3">Artist: <i>{albumInfo.artistName}</i></p>
                                 </div>
                             }
+                            
                             {/* Adding Album */}
                             {errorMessage && 
                                 <Alert className="text-left" variant="danger" dismissible onClose={() => setErrorMessage(null)}>{errorMessage}</Alert>
@@ -105,6 +106,7 @@ function WritePost(props) {
                                 <AlbumList albums={albumData} callbackInfo={handleInputAlbum}/>
                             </Route>
                         </div>
+                        <cite>Music Search via <a href="https://affiliate.itunes.apple.com/resources/documentation/itunes-store-web-service-search-api/">iTunes</a></cite>
                     </div>
             </div>
         </section>

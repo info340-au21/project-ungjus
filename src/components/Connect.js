@@ -71,11 +71,18 @@ function Connect(props) {
             <div className="container">
                 {errorMessage &&
                     <Alert variant="danger" dismissible onClose={() => setErrorMessage(null)}>{errorMessage}</Alert>}
-                <h1 >Connect With Others</h1>
+                <h1 className="page-title">Connect With Others</h1>
                 <ul className="list-group list-group-flush">
                     {people.map((person, id) => <GetPerson key={id} person={person} handleClick={handleClick} handleFollowing={props.handleFollowing}/>)}
                 </ul>
+                <cite>
+                    Data from: <a href="http://www.randat.com/">Random Data Generator</a> <a href="https://randomuser.me/photos">Random Profile Picture Generator</a>
+                    
+                </cite>
+                
+
             </div>
+
         );
     }
     
