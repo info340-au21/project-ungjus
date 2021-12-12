@@ -20,11 +20,13 @@ function App() {
     //const postData = props.postData; // Declare for now, Most likely be using UseState
     // const songData = props.songData;
     const [postData, setPostData] = useState([]);
+    const [displayData, setDisplayData] = useState([]);
     const [spotifyData, setSpotifyData] = useState([]);
     const [friends, setFriends] = useState([]);
     const [peopleData, setPeopleData] = useState([]);
     const [errorMessage, setErrorMessage] = useState(null);
     const [sidebarClicked, setSidebarClicked] = useState(false);
+
 
     async function fetchData(){
         try {
@@ -36,6 +38,7 @@ function App() {
         try {
             const data = await d3.json("/data/data.json");
             setPostData(data);
+            setDisplayData(data);
         } catch (error) {
             setErrorMessage(error);
         }
@@ -53,15 +56,23 @@ function App() {
             setErrorMessage(error);
         }
         
-        
     }
     useEffect(() => {
         fetchData();
         
     }, [])
 
+    console.log(displayData)
+
     const handlePostData = (data) => {
         setPostData(data);
+        setDisplayData(data);
+    }
+
+    const handleDisplayData = (data) => {
+        console.log("In the app", data);
+        setDisplayData(data);
+        console.log(displayData);
     }
 
     const handlePeopleData = (data) => {
@@ -95,12 +106,12 @@ function App() {
     return (
         <div className="page-container">
             <div className="content-wrap">
-                <Navbar handleSidebarClicked={setSidebarClicked}/>
+                <Navbar handleSidebarClicked={setSidebarClicked} handleDisplayData={handleDisplayData} postData={postData}/>
                 {errorMessage && 
                     <Alert variant="danger" dismissible onClose={() => setErrorMessage(null)}>{errorMessage}</Alert>
                 }
                 <Switch>
-                    <Route exact path="/"> <Main postData={postData} setPostData= {handlePostData} songData={spotifyData} friends={friends}/></Route>
+                    <Route exact path="/"> <Main postData={displayData} setPostData={handlePostData} songData={spotifyData} friends={friends}/></Route>
                     <Route path="/connect"> <Connect peopleData={peopleData} setPeopleData ={handlePeopleData} handleFollowing={handleFollowing}/> </Route>
                     <Route path="/explore"> <Explore songData={spotifyData}/> </Route>
                     <Route path="/about"> <About/> </Route>

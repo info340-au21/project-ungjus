@@ -1,10 +1,9 @@
 import React from 'react';
 import { useState } from 'react';
-import { UserCard } from './UserPosts';
+// import { UserCard } from './UserPosts';
 import { Alert } from 'react-bootstrap';
 
 export function SearchForm(props) {
-
     const[queryText, setQueryText] = useState('');
     // const[haveCard, setHaveCard] = useState(false);
     const [errorMessage, setErrorMessage] = useState(null);
@@ -15,27 +14,30 @@ export function SearchForm(props) {
     
     const handleSubmit = (event) => {
         event.preventDefault();
+        // props.handleDisplayData("testing");
         SearchKeyWord(queryText);
     }
 
     function SearchKeyWord(inputText) {
-        const posts = props.title;
+        const posts = props.postData;
         //const genre = props.songGenre;
         const lowercasedSearchInput = inputText.toLowerCase();
         console.log(lowercasedSearchInput);
-        const filteredPosts = posts.filter((post) =>
-            post.title.toLowerCase().includes(lowercasedSearchInput)
-        );
-    
-        if (filteredPosts) {
-            filteredPosts.map((post) => {
-                return <UserCard postInfo={post} key={post.postNumber}/>
-            })
+        console.log(lowercasedSearchInput.length === 0);
+        if(lowercasedSearchInput.length === 0){
+            props.handleDisplayData(posts);
         } else {
-            setErrorMessage("No result found.");
-            return <Alert variant="danger" dismissible onClose={() => setErrorMessage(null)}>{errorMessage}</Alert>
+            const filteredPosts = posts.filter((post) =>
+                post.title.toLowerCase().includes(lowercasedSearchInput)
+            );
+
+            if (filteredPosts) {
+                props.handleDisplayData(filteredPosts);
+            } else {
+                setErrorMessage("No result found.");
+                return <Alert variant="danger" dismissible onClose={() => setErrorMessage(null)}>{errorMessage}</Alert>
+            }
         }
-    
     }
 
     return(                
