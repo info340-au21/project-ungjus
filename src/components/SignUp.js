@@ -14,8 +14,6 @@ function SignUp(props) {
     }
 
     const handleSubmit = (event) => {
-        console.log(selectedImage);
-        // setInput({...input, "Profile Pic": selectedImage});
         event.preventDefault();
         props.handleSetUser({...input, "Profile Pic": URL.createObjectURL(selectedImage)});
         setSubmitted(true);
@@ -26,7 +24,7 @@ function SignUp(props) {
     } else {
         return (
         
-            <div>
+            <div className="container">
                 <form onSubmit={handleSubmit}>
                     <label>First name:
                     <input 

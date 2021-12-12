@@ -66,17 +66,13 @@ function App() {
         
     }, [])
 
-    console.log(displayData)
-
     const handlePostData = (data) => {
         setPostData(data);
         setDisplayData(data);
     }
 
     const handleDisplayData = (data) => {
-        console.log("In the app", data);
         setDisplayData(data);
-        console.log(displayData);
     }
 
     const handlePeopleData = (data) => {
@@ -143,8 +139,6 @@ function App() {
 export default App;
 
 function Main(props) {
-    // const [postData, setPostData] = useState(props.postData);
-    // console.log(props.songData);
     const addPost = (titleContent, textContent, albumContent) => {
         const newPost = {
             title: titleContent,
