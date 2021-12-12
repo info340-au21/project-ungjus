@@ -278,6 +278,10 @@ img.btn {
     height: 50px;
 }
 
+.play-btn {
+    margin-right: 10px;
+}
+
 @media (max-width: 990px) {
     .sidebar-link {
         display: block;

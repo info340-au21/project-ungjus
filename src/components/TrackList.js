@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
 // import { useParams } from 'react-router';
 
-// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faPlay, faStop } from '@fortawesome/free-solid-svg-icons';
+
 
 const TRACK_QUERY_TEMPLATE = 'https://itunes.apple.com/lookup?id={collectionId}&limit=50&entity=song'
 
@@ -27,6 +29,7 @@ export default function TrackList(props) {
 
   //for fun: allow for clicking to play preview audio!
   const togglePlayingPreview = (previewUrl) => {
+    
     if(!previewAudio) { //nothing playing now
       const newPreview = new Audio(previewUrl);
       newPreview.addEventListener('ended', () => setPreviewAudio(null)) //stop on end
@@ -40,14 +43,19 @@ export default function TrackList(props) {
 
   //render the track elements
   const trackElemArray = trackData.map((track, index) => {
+    let clicked = false;
     let classList = "track-record";
     if(previewAudio && previewAudio.src === track.previewUrl){
       classList += " font-weight-bold"; //bold if previewing
+      clicked = true;
     }
     return (
         <li key={track.trackId}>
           <div role="button" className={classList} onClick={() => togglePlayingPreview(track.previewUrl)}>
-            <p className="track-name">{track.trackName} ({track.artistName})</p>
+            {(clicked) ? <FontAwesomeIcon icon={faStop} className="play-btn"/>: <FontAwesomeIcon icon={faPlay} className="play-btn"/>}
+            <span className="track-name">
+              {track.trackName} ({track.artistName})
+            </span>
           </div>
         </li>
     )
@@ -56,7 +64,7 @@ export default function TrackList(props) {
   return (
     <div>
       {errorMessage &&
-        <div class="alert alert-warning" role="alert">
+        <div className="alert alert-warning" role="alert">
           {errorMessage}
         </div>
       }
