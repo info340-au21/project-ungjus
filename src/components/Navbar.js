@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom';
 import { SearchForm } from './SearchForm';
 
 function Navbar(props) {
+    const postData = props.postData;
     return(
         <nav className="navbar navbar-expand-lg navbar-light nav-custom">
             <NavLink className="navbar-brand brand" to="/" aria-label="Logo and Home Button">
@@ -42,7 +43,7 @@ function Navbar(props) {
                         <span className="material-icons search" aria-label="Search Button">search</span>
                     </button>
                 </form> */}
-                <SearchForm props={props}/>
+                <SearchForm postData={postData} handleDisplayData={props.handleDisplayData}/>
                 <NavLink className="btn my-2 my-sm-0 profile" to="/myProfile" aria-label="Profile">
                     <span className="material-icons profile">account_circle</span>
                 </NavLink>
