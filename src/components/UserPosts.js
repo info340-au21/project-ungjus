@@ -1,7 +1,7 @@
 import React from 'react';
 import TrackList from './TrackList';
 
-function UserCard(props) {
+export function UserCard(props) {
     const post = props.postInfo;
     const dateInfo = new Date(post.timePost);
     const dateFormat = dateInfo.getMonth() + "/" + dateInfo.getDate() + "/" + dateInfo.getFullYear() + post.timePost.substring(15, 21);
