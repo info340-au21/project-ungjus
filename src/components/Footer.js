@@ -1,11 +1,12 @@
 import React from 'react';
+import {NavLink} from 'react-router-dom'
 
 function Footer() {  
     return(
         <footer>
-            <a href="index.html" aria-label="Logo and Home Button">
+            <NavLink to="/">
                 <div className="logo">Waves</div>
-            </a>
+            </NavLink>
             <p>&copy; Waves 2021</p>
     </footer>
     );

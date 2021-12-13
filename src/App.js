@@ -19,16 +19,19 @@ import { getDatabase, ref, onValue, push as firebasePush } from 'firebase/databa
 
 
 function App() {  
-    //const postData = props.postData; // Declare for now, Most likely be using UseState
-    // const songData = props.songData;
+    // Stores JSON data and potential error messages
     const [postData, setPostData] = useState([]);
     const [displayData, setDisplayData] = useState([]);
     const [spotifyData, setSpotifyData] = useState([]);
-    const [friends, setFriends] = useState([]);
     const [peopleData, setPeopleData] = useState([]);
     const [errorMessage, setErrorMessage] = useState(null);
+
+    // Handles top songs and friends sidebar on small screens
     const [sidebarClicked, setSidebarClicked] = useState(false);
+    
+    // Stores user log in information, friends and enables more fucntionality.
     const [user, setUser] = useState({});
+    const [friends, setFriends] = useState([]);
     const [loggedIn, setLoggedIn] = useState(false);
 
     //Load the firebase
@@ -77,7 +80,7 @@ function App() {
                 const thePost = allPosts[key];
                 return thePost;
             })
-            console.log(postArray);
+            console.log('here');
             setPostData(postArray);
             setDisplayData(postArray);
             // console.log("PostData:", postData);
@@ -87,7 +90,7 @@ function App() {
             offFunction();
         }
         return cleanup;
-    }, [])
+    }, []) //Adding postRef dependency or removing array causes infinite calls to useEffect.
 
     const handleDisplayData = (data) => {
         setDisplayData(data);
@@ -118,14 +121,7 @@ function App() {
         }
         
     }  
-    // const handleSidebarClicked = () => {
-    //     if(sidebarClicked) {
-    //         setSidebarClicked(false);
-    //     } else {
-    //         setSidebarClicked(true);
-    //     }
-        
-    // }   
+
     return (
         <div className="page-container">
             <div className="content-wrap">
@@ -135,7 +131,7 @@ function App() {
                 }
                 <Switch>
                     <Route exact path="/"> <Main postsRef={postsRef} postData={displayData} songData={spotifyData} friends={friends} loggedIn={loggedIn}/></Route>
-                    <Route path="/connect"> <Connect peopleData={peopleData} setPeopleData ={handlePeopleData} handleFollowing={handleFollowing} loggedIn={loggedIn}/> </Route>
+                    <Route path="/connect"> <Connect peopleData={peopleData} setPeopleData ={handlePeopleData} handleFollowing={handleFollowing} loggedIn={loggedIn} fetchData={fetchData}/> </Route>
                     <Route path="/explore"> <Explore songData={spotifyData}/> </Route>
                     <Route path="/about"> <About/> </Route>
                     <Route path="/friends"> <Friends friends={friends} sidebarClicked={sidebarClicked} loggedIn={loggedIn}/> </Route>
