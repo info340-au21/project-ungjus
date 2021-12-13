@@ -135,14 +135,14 @@ function App() {
                 }
                 <Switch>
                     <Route exact path="/"> <Main postsRef={postsRef} postData={displayData} songData={spotifyData} friends={friends} loggedIn={loggedIn}/></Route>
-                    <Route path="/connect"> <Connect peopleData={peopleData} setPeopleData ={handlePeopleData} handleFollowing={handleFollowing}/> </Route>
+                    <Route path="/connect"> <Connect peopleData={peopleData} setPeopleData ={handlePeopleData} handleFollowing={handleFollowing} loggedIn={loggedIn}/> </Route>
                     <Route path="/explore"> <Explore songData={spotifyData}/> </Route>
                     <Route path="/about"> <About/> </Route>
-                    <Route path="/friends"> <Friends friends={friends} sidebarClicked={sidebarClicked}/> </Route>
+                    <Route path="/friends"> <Friends friends={friends} sidebarClicked={sidebarClicked} loggedIn={loggedIn}/> </Route>
                     <Route path="/topSongs"> <TopSongs songData={spotifyData} sidebarClicked={sidebarClicked}/> </Route>
                     <Route path="/signUp"><SignUp handleSetUser={handleSetUser}/></Route>
                     <Route path="/myProfile"> <MyProfile user={user} loggedIn={loggedIn}/> </Route>
-                    <Route path={"/profile/:userName"}><Profile peopleData={peopleData} handleFollowing={handleFollowing}/> </Route>
+                    <Route path={"/profile/:userName"}><Profile peopleData={peopleData} handleFollowing={handleFollowing} loggedIn={loggedIn}/> </Route>
                     <Redirect to="/"/>
                 </Switch>
             </div>
@@ -185,7 +185,7 @@ function Main(props) {
                     <UserPosts postData={props.postData}/>
                     <WritePost onSubmit={addPost}/>
                 </section>
-                <Friends friends={props.friends}/>
+                <Friends friends={props.friends} loggedIn={props.loggedIn}/>
             </main>
             
         </div>
