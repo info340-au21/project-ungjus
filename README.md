@@ -12,6 +12,7 @@ We believe we can combine the best features of these existing sites together to 
 ## Project Deliverables:
 - [Topic Proposal](https://info340-au21.github.io/project-ungjus/proposal.html)
 - [HTML Mockup](https://info340-au21.github.io/project-ungjus/index.html)
+- [React App Hosted on Firebase](https://waves-app-info340.web.app/)
 
 ## Developers:
 - Debbie Dai
