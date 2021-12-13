@@ -124,7 +124,7 @@ function App() {
                     <Route path="/topSongs"> <TopSongs songData={spotifyData} sidebarClicked={sidebarClicked}/> </Route>
                     <Route path="/signUp"><SignUp handleSetUser={handleSetUser}/></Route>
                     <Route path="/myProfile"> <MyProfile user={user} loggedIn={loggedIn}/> </Route>
-                    <Route path={"/profile/:userName"}><Profile peopleData={peopleData} handleFollowing={handleFollowing}/> </Route>
+                    <Route path={"/profile/:userName"}><Profile peopleData={peopleData} handleFollowing={handleFollowing} loggedIn={loggedIn}/> </Route>
                     <Redirect to="/"/>
                 </Switch>
             </div>
