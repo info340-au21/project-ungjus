@@ -179,7 +179,7 @@ function Main(props) {
                 <section className="mt-5">
                     <Header loggedIn={props.loggedIn}/>
                     <UserPosts postData={props.postData}/>
-                    <WritePost onSubmit={addPost}/>
+                    {props.loggedIn && <WritePost onSubmit={addPost}/>}
                 </section>
                 <Friends friends={props.friends} loggedIn={props.loggedIn}/>
             </main>
