@@ -14,8 +14,6 @@ function SignUp(props) {
     }
 
     const handleSubmit = (event) => {
-        console.log(selectedImage);
-        // setInput({...input, "Profile Pic": selectedImage});
         event.preventDefault();
         props.handleSetUser({...input, "Profile Pic": URL.createObjectURL(selectedImage)});
         setSubmitted(true);
@@ -25,8 +23,9 @@ function SignUp(props) {
         return <Redirect to="/"/>
     } else {
         return (
-        
-            <div>
+            <div className="container">
+                <h1>Sign Up</h1>
+                <hr/>
                 <form onSubmit={handleSubmit}>
                     <label>First name:
                     <input 

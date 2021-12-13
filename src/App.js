@@ -15,6 +15,7 @@ import MyProfile from './components/MyProfile';
 import SignUp from './components/SignUp'
 import * as d3 from "d3";
 import { Alert } from 'react-bootstrap';
+import { getDatabase, ref, onValue, push as firebasePush } from 'firebase/database'
 
 
 function App() {  
@@ -30,7 +31,9 @@ function App() {
     const [user, setUser] = useState({});
     const [loggedIn, setLoggedIn] = useState(false);
 
-
+    //Load the firebase
+    const db = getDatabase();
+    const postsRef = ref(db, "allPosts");
 
     async function fetchData(){
         try {
@@ -39,13 +42,13 @@ function App() {
         } catch (error) {
             setErrorMessage(error);
         }
-        try {
-            const data = await d3.json("/data/data.json");
-            setPostData(data);
-            setDisplayData(data);
-        } catch (error) {
-            setErrorMessage(error);
-        }
+        // try {
+        //     const data = await d3.json("/data/data.json");
+        //     setPostData(data);
+        //     setDisplayData(data);
+        // } catch (error) {
+        //     setErrorMessage(error);
+        // }
         try {
             const data = await d3.json("/data/friends.json");
             setFriends(data);
@@ -61,22 +64,33 @@ function App() {
         }
         
     }
+
     useEffect(() => {
         fetchData();
         
+        //Extract the data
+        const offFunction = onValue(postsRef, (snapshot) => {
+            const allPosts = snapshot.val();
+            // console.log(allPosts);
+            const postKeys = Object.keys(allPosts);
+            const postArray = postKeys.map((key) => {
+                const thePost = allPosts[key];
+                return thePost;
+            })
+            console.log(postArray);
+            setPostData(postArray);
+            setDisplayData(postArray);
+            // console.log("PostData:", postData);
+        })
+        
+        function cleanup() {
+            offFunction();
+        }
+        return cleanup;
     }, [])
 
-    console.log(displayData)
-
-    const handlePostData = (data) => {
-        setPostData(data);
-        setDisplayData(data);
-    }
-
     const handleDisplayData = (data) => {
-        console.log("In the app", data);
         setDisplayData(data);
-        console.log(displayData);
     }
 
     const handlePeopleData = (data) => {
@@ -120,15 +134,15 @@ function App() {
                     <Alert variant="danger" dismissible onClose={() => setErrorMessage(null)}>{errorMessage}</Alert>
                 }
                 <Switch>
-                    <Route exact path="/"> <Main postData={displayData} setPostData={handlePostData} songData={spotifyData} friends={friends} loggedIn={loggedIn}/></Route>
-                    <Route path="/connect"> <Connect peopleData={peopleData} setPeopleData ={handlePeopleData} handleFollowing={handleFollowing}/> </Route>
+                    <Route exact path="/"> <Main postsRef={postsRef} postData={displayData} songData={spotifyData} friends={friends} loggedIn={loggedIn}/></Route>
+                    <Route path="/connect"> <Connect peopleData={peopleData} setPeopleData ={handlePeopleData} handleFollowing={handleFollowing} loggedIn={loggedIn}/> </Route>
                     <Route path="/explore"> <Explore songData={spotifyData}/> </Route>
                     <Route path="/about"> <About/> </Route>
-                    <Route path="/friends"> <Friends friends={friends} sidebarClicked={sidebarClicked}/> </Route>
+                    <Route path="/friends"> <Friends friends={friends} sidebarClicked={sidebarClicked} loggedIn={loggedIn}/> </Route>
                     <Route path="/topSongs"> <TopSongs songData={spotifyData} sidebarClicked={sidebarClicked}/> </Route>
                     <Route path="/signUp"><SignUp handleSetUser={handleSetUser}/></Route>
                     <Route path="/myProfile"> <MyProfile user={user} loggedIn={loggedIn}/> </Route>
-                    <Route path={"/profile/:userName"}><Profile peopleData={peopleData} handleFollowing={handleFollowing}/> </Route>
+                    <Route path={"/profile/:userName"}><Profile peopleData={peopleData} handleFollowing={handleFollowing} loggedIn={loggedIn}/> </Route>
                     <Redirect to="/"/>
                 </Switch>
             </div>
@@ -143,8 +157,6 @@ function App() {
 export default App;
 
 function Main(props) {
-    // const [postData, setPostData] = useState(props.postData);
-    // console.log(props.songData);
     const addPost = (titleContent, textContent, albumContent) => {
         const newPost = {
             title: titleContent,
@@ -159,8 +171,9 @@ function Main(props) {
             postNumber: Date.now(),
             collectionID: albumContent.collectionId
         }
-        const newPostData = [...props.postData, newPost];
-        props.setPostData(newPostData);
+        // const newPostData = [...props.postData, newPost];
+        // props.setPostData(newPostData); //push the local json file
+        firebasePush(props.postsRef, newPost); //push the firebase
     }
 
     return (
@@ -172,7 +185,7 @@ function Main(props) {
                     <UserPosts postData={props.postData}/>
                     <WritePost onSubmit={addPost}/>
                 </section>
-                <Friends friends={props.friends}/>
+                <Friends friends={props.friends} loggedIn={props.loggedIn}/>
             </main>
             
         </div>

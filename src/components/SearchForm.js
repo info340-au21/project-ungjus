@@ -22,8 +22,6 @@ export function SearchForm(props) {
         const posts = props.postData;
         //const genre = props.songGenre;
         const lowercasedSearchInput = inputText.toLowerCase();
-        console.log(lowercasedSearchInput);
-        console.log(lowercasedSearchInput.length === 0);
         if(lowercasedSearchInput.length === 0){
             props.handleDisplayData(posts);
         } else {

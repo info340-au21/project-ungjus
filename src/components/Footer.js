@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Footer(props) {  
+function Footer() {  
     return(
         <footer>
             <a href="index.html" aria-label="Logo and Home Button">

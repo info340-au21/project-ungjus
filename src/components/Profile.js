@@ -29,7 +29,7 @@ function Profile(props) {
         <div className="container userProfile">
             <div className="header">
                 <h1>{user["First Name"] + " " + user["Last Name"]}</h1>
-                <Button onClick={handleFollow}>{(follow) ? "Following": "Follow"}</Button>{' '}
+                <Button disabled={!props.loggedIn} onClick={handleFollow}>{(follow) ? "Following": "Follow" }</Button>{' '}
             </div>
             <div className='container main'>
                 <Image className="profile-pic" src={profilePic} alt={profilePic} rounded/>
