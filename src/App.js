@@ -13,6 +13,7 @@ import About from './components/About';
 import Profile from './components/Profile';
 import MyProfile from './components/MyProfile';
 import SignUp from './components/SignUp'
+import SignIn from './components/SignIn'
 import * as d3 from "d3";
 import { Alert } from 'react-bootstrap';
 import { getDatabase, ref, onValue, push as firebasePush } from 'firebase/database'
@@ -102,6 +103,11 @@ function App() {
         setLoggedIn(true);
     }
 
+    function handleSignOut() {
+        setUser(null);
+        setLoggedIn(false);
+    }
+
     const checkIsFriend = (person) =>{
         let bool = friends.some((friend) => friend["First Name"] === person["First Name"] &&
                                         friend["Last Name"] === person["Last Name"])
@@ -129,7 +135,7 @@ function App() {
     return (
         <div className="page-container">
             <div className="content-wrap">
-                <Navbar handleSidebarClicked={setSidebarClicked} handleDisplayData={handleDisplayData} postData={postData} loggedIn={loggedIn} profilePic={user["Profile Pic"]}/>
+                <Navbar handleSidebarClicked={setSidebarClicked} handleDisplayData={handleDisplayData} handleSignOut={handleSignOut} postData={postData} loggedIn={loggedIn} profilePic={user["Profile Pic"]}/>
                 {errorMessage && 
                     <Alert variant="danger" dismissible onClose={() => setErrorMessage(null)}>{errorMessage}</Alert>
                 }
@@ -141,6 +147,7 @@ function App() {
                     <Route path="/friends"> <Friends friends={friends} sidebarClicked={sidebarClicked} loggedIn={loggedIn}/> </Route>
                     <Route path="/topSongs"> <TopSongs songData={spotifyData} sidebarClicked={sidebarClicked}/> </Route>
                     <Route path="/signUp"><SignUp handleSetUser={handleSetUser}/></Route>
+                    <Route path="/signIn"><SignIn handleSetUser={handleSetUser}/></Route>
                     <Route path="/myProfile"> <MyProfile user={user} loggedIn={loggedIn}/> </Route>
                     <Route path={"/profile/:userName"}><Profile peopleData={peopleData} handleFollowing={handleFollowing} loggedIn={loggedIn}/> </Route>
                     <Redirect to="/"/>

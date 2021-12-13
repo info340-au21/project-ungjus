@@ -1,0 +1,51 @@
+import React, {useState} from 'react';
+import { Redirect } from 'react-router';
+
+import StyledFirebaseAuth from 'react-firebaseui/StyledFirebaseAuth';
+import { getAuth, EmailAuthProvider, GoogleAuthProvider } from 'firebase/auth'
+
+//const USERS = [null, "Penguin", "Parrot", "Zebra"]
+
+//code used & modified from 12/6 lecture (with permission from Prof Ross)
+//https://github.com/info340-au21/demos/blob/section-b/react-chat/src/components/SignInPage.js
+const firebaseUIConfig = {
+  signInOptions: [
+    {provider: EmailAuthProvider.PROVIDER_ID, requiredDisplayName: true},
+    GoogleAuthProvider.PROVIDER_ID,
+  ],
+  signInFlow: 'popup', //don't redirect to authenticate
+  credentialHelper: 'none',
+  callbacks: {
+    signInSuccessWithAuthResult: () => {
+      return false; //don't redirect on your own
+    }
+  }
+}
+
+export default function SignIn(props) {
+    //const userName = props.user ? props.user.userName : null; //current userName
+    const auth = getAuth();
+
+    /*
+    const handleClick = (event) => {
+        //do the login!
+        const userName = event.currentTarget.name;
+        const userId = USERS.indexOf(userName)
+        props.handleSetUser(userId, userName);
+    }*/
+
+  if(props.user === undefined) {
+    return null;
+  }
+  if(props.user) {
+    return <Redirect to="/"/>
+  }
+
+  return (
+    <div className="card bg-light">
+      <div className="container card-body">
+        <StyledFirebaseAuth uiConfig={firebaseUIConfig} firebaseAuth={auth} />
+      </div>
+    </div>
+  )
+} 

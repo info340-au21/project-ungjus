@@ -16,14 +16,14 @@ function SignUp(props) {
     const handleSubmit = (event) => {
         event.preventDefault();
         props.handleSetUser({...input, "Profile Pic": URL.createObjectURL(selectedImage)});
-        setSubmitted(true);
-        
+        setSubmitted(true);   
     }
+
     if (submitted) {
         return <Redirect to="/"/>
     } else {
         return (
-            <div className="container">
+            <div id="signUp" className="container m-2">
                 <h1>Sign Up</h1>
                 <hr/>
                 <form onSubmit={handleSubmit}>
@@ -91,7 +91,9 @@ function SignUp(props) {
                         onChange={handleChange}
                         />
                     </label>
-                    <input type="submit" />
+                    <div className="my-2">
+                        <input type="submit" />
+                    </div>
                 </form>        
             </div>
         );
