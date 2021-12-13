@@ -34,7 +34,7 @@ function GetPerson(props){
                             <em>{person["Listening"]["Track Name"]}</em>
                         </div>
                 </button>
-                <Button className="follow" onClick={handleFollow}>{(follow) ? "Following": "Follow"}</Button>{' '}
+                <Button className="follow"  disabled={!props.loggedIn} onClick={handleFollow}>{(follow) ? "Following": "Follow" }</Button>{' '}
         </div>
         
         
@@ -73,7 +73,7 @@ function Connect(props) {
                     <Alert variant="danger" dismissible onClose={() => setErrorMessage(null)}>{errorMessage}</Alert>}
                 <h1 className="page-title">Connect With Others</h1>
                 <ul className="list-group list-group-flush">
-                    {people.map((person, id) => <GetPerson key={id} person={person} handleClick={handleClick} handleFollowing={props.handleFollowing}/>)}
+                    {people.map((person, id) => <GetPerson key={id} person={person} handleClick={handleClick} handleFollowing={props.handleFollowing} loggedIn={props.loggedIn}/>)}
                 </ul>
                 <cite>
                     Data from: <a href="http://www.randat.com/">Random Data Generator</a> <a href="https://randomuser.me/photos">Random Profile Picture Generator</a>

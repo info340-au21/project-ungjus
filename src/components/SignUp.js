@@ -23,8 +23,9 @@ function SignUp(props) {
         return <Redirect to="/"/>
     } else {
         return (
-        
             <div className="container">
+                <h1>Sign Up</h1>
+                <hr/>
                 <form onSubmit={handleSubmit}>
                     <label>First name:
                     <input 
