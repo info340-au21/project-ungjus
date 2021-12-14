@@ -16,6 +16,7 @@ function Explore(props) {
 
     
     useEffect(()=>{
+        // on first render, display full graph
         if (isInitialRender) {
             setIsInitialRender(false);
 
@@ -39,6 +40,8 @@ function Explore(props) {
             setDisplayData(tempSongs, tempStreams, tempArtist);
             
         } else {
+            // if user doesn't select any artists, display full graph
+            // else only show the selected artist on the graph
             if(selectedArtist.length === 0) {
                 setDisplayData(songs, streams, artist);
             } else {

@@ -98,7 +98,7 @@ function App() {
             setDisplayData(postArray);
         })
         
-        function cleanup() {
+        function cleanup() { 
             offFunction();
             unregisterAuthListener();
         }
