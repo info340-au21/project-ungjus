@@ -35,7 +35,7 @@ function About(props) {
                     </li>
                 </ul>
                 <p>
-                We believe we can combine the best features of these existing sites together to create
+                We believe we can combine the best features of these existing sites to create
                 a better music social platform.
                 </p>
 
@@ -54,8 +54,7 @@ function About(props) {
                         Users will also be able to search for specific profiles and add them as friends.
                     </li>
                     <li>
-                        We also have a <strong>searchable visualization</strong> of 
-                        <a href="https://spotifycharts.com/home/" rel="noreferrer" target="_blank">Spotify's weekly top songs,</a> so that users can see what's popular on a larger scale.
+                        We also have a <strong>searchable visualization</strong> of <a href="https://spotifycharts.com/home/" rel="noreferrer" target="_blank">Spotify's weekly top songs,</a> so that users can see what's popular on a larger scale.
                     </li>
                 </ul>
                 <p><strong>In the future</strong>, this app could be expanded to add other features:</p>
