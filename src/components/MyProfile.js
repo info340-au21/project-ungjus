@@ -50,8 +50,6 @@ function MyProfile(props) {
       } catch(error) {
         console.log(error.message);
       }
-  
-      console.log("done");
     }
 
     return(
