@@ -1,11 +1,14 @@
 import React, {useState} from 'react';
 import { Redirect } from 'react-router';
-
+import { Alert } from 'react-bootstrap';
 
 function SignUp(props) {
     let [input, setInput] = useState({});
     let [submitted, setSubmitted] = useState(false);
     let [selectedImage, setSelectedImage] = useState(null);
+    const [errorMessage, setErrorMessage] = useState(null);
+
+    const formKeys = ["First Name", "Last Name", "Age", "Gender", "Email", "Password"]
  
     const handleChange = (event) => {
         const name = event.target.name;
@@ -15,8 +18,33 @@ function SignUp(props) {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        props.handleSetUser({...input, "Profile Pic": URL.createObjectURL(selectedImage)});
-        setSubmitted(true);
+        let incompleteKeys = "Please Fill Out: ";
+        let completed = true;
+
+        
+
+        // checks that all text boxes all filled
+        for(const key of formKeys) {
+            if(!(key in input) || input[key] ===  ""){
+                incompleteKeys += key + ", "
+                completed = false;
+            }
+        }
+        // special case for profile pic
+        try {
+            props.handleSetUser({...input, "Profile Pic": URL.createObjectURL(selectedImage)});
+
+        } catch {
+            incompleteKeys += "Profile Picture, "
+            completed = false;
+        }
+
+        if(completed){
+            setSubmitted(true);
+        } else {
+            setErrorMessage(incompleteKeys.substring(0, incompleteKeys.length - 2));
+        }
+        
         
     }
     if (submitted) {
@@ -25,9 +53,14 @@ function SignUp(props) {
         return (
             <div className="container">
                 <h1>Sign Up</h1>
+                
+                {(errorMessage) &&
+                    <Alert className="text-left" variant="danger" dismissible onClose={() => setErrorMessage(null)}>{errorMessage}</Alert>
+                }
+                
                 <hr/>
                 <form onSubmit={handleSubmit}>
-                    <label>First name:
+                    <label htmlFor="First Name">First name:
                     <input 
                         type="text" 
                         name="First Name" 
@@ -36,7 +69,7 @@ function SignUp(props) {
                     />
                     </label>
                     <br/>
-                    <label>Last name:
+                    <label htmlFor="Last Name">Last name:
                     <input 
                         type="text" 
                         name="Last Name" 
@@ -45,7 +78,7 @@ function SignUp(props) {
                     />
                     </label>
                     <br/>
-                    <label>Age:
+                    <label htmlFor="Age">Age:
                         <input 
                         type="number" 
                         name="Age" 
@@ -55,7 +88,7 @@ function SignUp(props) {
                         />
                     </label>
                     <br/>
-                    <label>Gender:
+                    <label htmlFor="Gender">Gender:
                         <select name="Gender" value={input.Gender || ""} onChange={handleChange}>
                             <option value=""></option>
                             <option value="Male">Male</option>
@@ -64,7 +97,7 @@ function SignUp(props) {
                         </select>
                     </label>
                     <br/>
-                    <label>Email:
+                    <label htmlFor="Email">Email:
                         <input 
                         type="email" 
                         name="Email" 
@@ -73,7 +106,7 @@ function SignUp(props) {
                         />
                     </label>
                     <br/>
-                    <label>Upload a Profile Picture:
+                    <label htmlFor="Profile Pic">Upload a Profile Picture:
                         <input 
                         type="file" 
                         name="Profile Pic" 
@@ -83,7 +116,7 @@ function SignUp(props) {
                         />
                     </label>
                     <br/>
-                    <label>Password:
+                    <label htmlFor="Password">Password:
                         <input 
                         type="password" 
                         name="Password" 
