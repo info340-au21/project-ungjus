@@ -93,7 +93,6 @@ function App() {
                 const thePost = allPosts[key];
                 return thePost;
             })
-            console.log('here');
             setPostData(postArray);
             setDisplayData(postArray);
             // console.log("PostData:", postData);

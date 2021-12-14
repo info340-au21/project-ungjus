@@ -60,9 +60,12 @@ export function UserCard(props) {
 
 function UserPosts(props) { 
     const postData = props.postData;
+    
+    const handleUserPosts = postData.map((post) => <UserCard postInfo={post} key={post.postNumber}/>)
+
     return(
         <div className="row mx-auto">
-            {postData.map((post, id) => <UserCard postInfo={post} key={post.postNumber}/>)}
+            {handleUserPosts}
         </div>
     );
 }

@@ -18,7 +18,6 @@ const firebaseUIConfig = {
         }
     }
 }
-
 function SignUp(props) {
     const auth = getAuth();
     if(props.loggedIn) {

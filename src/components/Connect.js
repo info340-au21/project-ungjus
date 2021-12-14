@@ -62,6 +62,8 @@ function Connect(props) {
         setRedirectTo(name);
     }
 
+    const mapPeople = people.map((person, id) => <GetPerson key={id} person={person} handleClick={handleClick} handleFollowing={props.handleFollowing} loggedIn={props.loggedIn}/>)
+
     if(redirectTo != null) {
         return <Redirect push to={"/profile/" + redirectTo}/>
     }
@@ -73,7 +75,7 @@ function Connect(props) {
                     <Alert variant="danger" dismissible onClose={() => setErrorMessage(null)}>{errorMessage}</Alert>}
                 <h1 className="page-title">Connect With Others</h1>
                 <ul className="list-group list-group-flush">
-                    {people.map((person, id) => <GetPerson key={id} person={person} handleClick={handleClick} handleFollowing={props.handleFollowing} loggedIn={props.loggedIn}/>)}
+                    {mapPeople}
                 </ul>
                 <cite>
                     Data from: <a href="http://www.randat.com/">Random Data Generator</a> <a href="https://randomuser.me/photos">Random Profile Picture Generator</a>

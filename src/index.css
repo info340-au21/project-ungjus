@@ -79,27 +79,35 @@ nav a:hover{
 .navbar-light .navbar-toggler {
     background-color: white;
 }
+
 .userProfile .header {
     display: flex;
-    flex-direction: row;
-    align-items: center;
+    flex-direction: column;
+    margin-bottom: 15px;
+    text-align: center;
 
 }
 .userProfile button {
-    margin-left: 50px;
+    margin-left: auto;
+    margin-right: auto;
     height: 50px;
 }
 .userProfile .main {
-    display: flex;
-    flex-direction: row;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 
 }
 .userProfile .main .content{
     display: flex;
     flex-direction: column;
-    margin-left: 50px;
+    align-items: center;
+    margin-left: 0px;
+   
 
 }
+
 
 .profile, .search {
     color: white;
@@ -278,19 +286,21 @@ img.btn {
 }
 
 .sidebar-link {
-    display: none;
+    display: block;
 }
 .connect-page {
     display: flex;  
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
-    align-items: center;  
+    align-items: center; 
+    margin-bottom: 20px;
+ 
 }
 .connect-page .follow {
     background-color: rgb(33, 121, 252);
     color: white;
     height: 65px;
-    width: 100px
+    width: 100%;
 }
 .connect-page .follow:hover {
     background-color: rgb(0, 100, 250);
@@ -314,52 +324,43 @@ img.btn {
     margin-right: 10px;
 }
 
-@media (max-width: 990px) {
-    .sidebar-link {
-        display: block;
-    }
-    .connect-page {  
-        flex-direction: column;
-    }
-    .connect-page .follow {
-        background-color: rgb(33, 121, 252);
-        color: white;
-        height: 65px;
-        width: 100%;
-        margin-bottom: 20px;
-    }
-    
 
-}
-@media (max-width: 800px) {
+@media (min-width: 800px) {
     .userProfile .header {
-        flex-direction: column;
-        margin-bottom: 15px;
-        text-align: center;
-    }
-    .userProfile button {
-        margin-left: auto;
-        margin-right: auto;
-        height: 50px;
-    }
-    .userProfile .main {
-        justify-content: center;
+        flex-direction: row;
+        margin-bottom: 0px;
+        text-align:left;
         align-items: center;
-        flex-direction: column;
-    
     }
-    .userProfile .main .content {
-        /* margin: 0px; */
-        /* justify-content: center; */
-        align-items: center;
-        margin-left: 0px;
 
-    
+    .userProfile button {
+        margin-left: 50px;
+    }
+
+    .userProfile .main {
+        flex-direction: row;
+        justify-content: left;
+        align-items: flex-start;
+    }
+
+    .userProfile .main .content {
+        margin-left: 50px;
+        align-items: flex-start;
     }
 }
 
 
 @media (min-width: 992px) {
+    .sidebar-link {
+        display: none;
+    }
+    .connect-page {  
+        flex-direction: row;
+        margin-bottom: 0px;
+    }
+    .connect-page .follow {
+        width: 100px;
+    }
     .about-bio h2 {
         font-size: larger;
     }
@@ -375,9 +376,7 @@ img.btn {
     img.btn {
         height: 150px;
         width: 150px;
-    }
-    
-    
+    } 
 }
 
 @media (min-width: 1200px) {

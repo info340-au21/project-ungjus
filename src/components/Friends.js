@@ -35,6 +35,11 @@ function Friends(props) {
     }
     let friends = props.friends;
 
+    const handleFriends = () => {
+        return (props.loggedIn) ? friends.map((friend, id) => <GetFriend key={id} friend={friend} handleClick={handleClick}/>)
+        : <small className="d-flex justify-content-center">log in and add some friends!</small> 
+    }
+
     // if you click on a friend, then redirect to their profile page
     // else display the list of all your friends
     if(redirectTo != null) {
@@ -44,8 +49,7 @@ function Friends(props) {
             <h1 className="text-center mt-5 mb-3 font-weight-bold">Friends</h1>
             <ul className="list-group list-group-flush">
 
-                {(props.loggedIn) ? friends.map((friend, id) => <GetFriend key={id} friend={friend} handleClick={handleClick}/>)
-                                : <small className="d-flex justify-content-center">log in and add some friends!</small> }
+                {handleFriends()}
             </ul>
             
             </section>
