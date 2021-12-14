@@ -6,10 +6,10 @@ function About(props) {
             <section className="text-container">
                 <h1>Our Goal</h1>
                 <p>
-                    We are hoping to set up a website that creates a community of music enthusiasts,
+                    We hope our website can create a community of music enthusiasts,
                     allowing users to communicate with their friends online, make new connections,
-                    and share their playlists or own music! We want to <strong>connect musicians based on their
-                        geographic location, demographics, and musical interests.</strong>
+                    and share their favorite albums! We want to <strong>connect musicians and casual
+                    listeners alike based on their musical interests.</strong>
                 </p>
                 <p>
                     Although there are already many music apps in this space, they aren’t focused on making genuine
@@ -43,51 +43,38 @@ function About(props) {
             <section className="text-container">
                 <h1>Features</h1>
                 <p>Our app is geared towards music enthusiasts ranging from causal listeners to professional musicians.</p>
-                <p>Here are some things users will be able to do on our app:</p>
+                <p>Here are some things users are able to do on our app:</p>
                 <ul>
                     <li>
-                        Our users will be able to <strong>make a profile, add songs that they like (or create on their
-                            own)
-                            into playlists, and share them with others</strong>. Making a profile will consist of adding
-                        a personal
-                        or user name, gender, pronouns, and tag musical interests. Users may also opt to sign in
-                        through Google using
-                        <a href="https://developers.google.com/identity/sign-in/web/sign-in" rel="noreferrer" target="_blank">their
-                            API</a>.
-                        We want users to be able to link their Spotify, Apple Music,
-                        or SoundCloud profiles since many users probably also use these apps.
+                        Our users will be able to <strong>make a profile, explore current popular songs, and make posts to share their musical interests with others</strong>. Making a profile is easy by signing up with an email or through a Google account.
                     </li>
                     <li>
-                        Furthermore, users will be able to make <strong>posts on songs they are currently listening
-                            to</strong>, connect
+                        Furthermore, users will be able to make <strong>posts on songs they are currently listening to</strong>, connect
                         with other users with similar interests, add each other as friends, and continue chatting.
                         Users will also be able to search for specific profiles and add them as friends.
                     </li>
                     <li>
-                        We also want to have a <strong>list of top user songs of the week, month, and year over
-                            different genres.</strong>
-                        This way we can build a sense of community by allowing users to listen to these songs and
-                        comment
-                        on each of these top songs to discuss what they like and dislike about them. This also allows
-                        users to explore new music and connect with other users. We can also create this list by using
-                        <a href="https://developer.spotify.com/documentation/web-api/" rel="noreferrer" target="_blank">Spotify</a> or
-                        <a href="https://developer.apple.com/documentation/applemusicapi/" rel="noreferrer" target="_blank">Apple
-                            Music’s</a>
-                        API to get top songs as well.
+                        We also have a <strong>searchable visualization</strong> of 
+                        <a href="https://spotifycharts.com/home/" rel="noreferrer" target="_blank">Spotify's weekly top songs,</a> so that users can see what's popular on a larger scale.
                     </li>
                 </ul>
-                <p>That is our overall idea for the project proposal. Thank you for your reading!</p>
+                <p><strong>In the future</strong>, this app could be expanded to add other features:</p>
+                <ul>
+                    <li>
+                        Users may be able to make more detailed profiles, optionally providing information such as genre interests and geographic locations so that users can find people with similar interests, or those who they might be interested in meeting up with in real life. A direct messaging feature would add another dimension to communication between users.
+                    </li>
+                    <li>
+                        Another possible future feature is to allow users to make and share playlists of songs, to share a whole collection of music at once.
+                    </li>
+                    <li>
+                        Users may later be able to connect their Spotify, Soundcloud, and Apple Music accounts to share their top songs of the week, month, and year over
+                        different genres. We can build a sense of community by allowing users to easily display their musical interests and open up a dialogue around them.
+                    </li>
+                </ul>
+                <p>Thanks for exploring our app!</p>
             </section>
             <section className="text-container">
                 <h1>About the Developers:</h1>
-                <div className="about-bio">
-                    <div className="text-container">
-                        <h2>Victoria Kourbatova</h2>
-                        <p><em>Intended Informatics and Linguistics double-major</em></p>
-                        <p>Looking to improve web development skills.</p>
-                    </div>
-                    <img src="img/authors/kourbatova.jpg" alt="Victoria Kourbatova"/>
-                </div>
                 <div className="about-bio">
                     <div className="text-container">
                         <h2>Justin Ung</h2>
@@ -111,6 +98,14 @@ function About(props) {
                         <p>Still exploring web development and database management.</p>
                     </div>
                     <img src="img/authors/dai.jpg" alt="Debbie Dai"/>
+                </div>
+                <div className="about-bio">
+                    <div className="text-container">
+                        <h2>Victoria Kourbatova</h2>
+                        <p><em>Intended Informatics and Linguistics double-major</em></p>
+                        <p>Looking to improve my web development skills.</p>
+                    </div>
+                    <img src="img/authors/kourbatova.jpg" alt="Victoria Kourbatova"/>
                 </div>
 
             </section>
