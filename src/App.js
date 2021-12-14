@@ -93,6 +93,7 @@ function App() {
                 const thePost = allPosts[key];
                 return thePost;
             })
+            console.log('here');
             setPostData(postArray);
             setDisplayData(postArray);
             // console.log("PostData:", postData);
@@ -116,6 +117,11 @@ function App() {
     const handleSetUser = (input) => {
         setUser(input);
         setLoggedIn(true);
+    }
+
+    function handleSignOut() {
+        setUser({});
+        setLoggedIn(false);
     }
 
     const checkIsFriend = (person) =>{

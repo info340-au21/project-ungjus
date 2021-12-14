@@ -1,7 +1,7 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { SearchForm } from './SearchForm';
-import { Image } from 'react-bootstrap'
+import { Dropdown, DropdownButton, Image } from 'react-bootstrap'
 
 function Navbar(props) {
     const postData = props.postData;
@@ -48,8 +48,22 @@ function Navbar(props) {
                                 className="small-profile-pic" roundedCircle/>: <span className="material-icons profile">account_circle</span>}
                     
                 </NavLink>
+                <SignInOutLinks handleSignOut={props.handleSignOut} loggedIn={props.loggedIn}/>
             </div>
         </nav>
     );
 }
 export default Navbar;
+
+function SignInOutLinks(props) {
+
+    if (props.loggedIn) { 
+        return (
+            <DropdownButton id="navbar-user-dropdown" className="ml-0 pl-0" title="">
+                <Dropdown.Item href="/myProfile">My Profile</Dropdown.Item>
+                <Dropdown.Item onClick={props.handleSignOut}>Sign Out</Dropdown.Item>
+            </DropdownButton>
+        )
+    }
+    else {return null}
+}
