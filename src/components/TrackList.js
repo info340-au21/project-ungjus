@@ -18,8 +18,7 @@ export default function TrackList(props) {
 
   useEffect(() => {
     fetch(TRACK_QUERY_TEMPLATE.replace('{collectionId}', props.collectionId), {
-      mode: 'cors',
-      header: {'Access-Control-Allow-Origin': "*"}
+      mode: 'cors'
     })
       .then((res) => res.json())
       .then((data) => {
