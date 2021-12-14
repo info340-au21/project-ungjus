@@ -88,11 +88,6 @@ nav a:hover{
     color:lightgray;
 }
 
-#signUp > input {
-    background-color: #5BA5CC;
-}
-
-
 .material-icons.profile{
     font-size: 60px; 
 }
