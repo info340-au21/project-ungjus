@@ -61,12 +61,6 @@ function SignInOutLinks(props) {
                 <Dropdown.Item onClick={props.handleSignOut}>Sign Out</Dropdown.Item>
             </DropdownButton>
         )
-    } else {
-        return (
-            <DropdownButton id="navbar-user-dropdown" className="ml-0 pl-0" title="">
-                <Dropdown.Item href="/signIn">Sign In</Dropdown.Item>
-                <Dropdown.Item href="/signUp">Create Account</Dropdown.Item>
-            </DropdownButton>
-        )
     }
+    else {return null}
 }

@@ -13,7 +13,6 @@ import About from './components/About';
 import Profile from './components/Profile';
 import MyProfile from './components/MyProfile';
 import SignUp from './components/SignUp'
-import SignIn from './components/SignIn'
 import * as d3 from "d3";
 import { Alert } from 'react-bootstrap';
 import { getDatabase, ref, onValue, push as firebasePush } from 'firebase/database'
@@ -107,7 +106,7 @@ function App() {
     }
 
     function handleSignOut() {
-        setUser(null);
+        setUser(undefined);
         setLoggedIn(false);
     }
 
