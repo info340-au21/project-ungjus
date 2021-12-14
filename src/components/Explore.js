@@ -108,7 +108,6 @@ function Explore(props) {
             <p className="xaxis">Song Names</p>
             <cite>Data from <a href="https://charts.spotify.com/charts/view/regional-global-weekly/latest">Spotify Charts</a></cite>
 
-            {/* allow user to find search for a song and display the song info */}
         </div>
     );
 }
