@@ -5,6 +5,10 @@ import { Image } from 'react-bootstrap'
 
 function Navbar(props) {
     const postData = props.postData;
+    let profilePic = "https://t4.ftcdn.net/jpg/00/64/67/63/360_F_64676383_LdbmhiNM6Ypzb3FM4PPuFP9rHe7ri8Ju.jpg";
+    if (props.user.photoURL !== null) {
+        profilePic = props.user.photoURL;
+    }
     return(
         <nav className="navbar navbar-expand-lg navbar-light nav-custom">
             <NavLink className="navbar-brand brand" to="/" aria-label="Logo and Home Button">
@@ -40,7 +44,7 @@ function Navbar(props) {
                 <SearchForm postData={postData} handleDisplayData={props.handleDisplayData}/>
                 
                 <NavLink className="btn my-2 my-sm-0 profile" to="/myProfile" aria-label="Profile">
-                    {(props.loggedIn) ? <Image src={props.profilePic} alt={props.profilePic} 
+                    {(props.loggedIn) ? <Image src={profilePic} alt={profilePic} 
                                 className="small-profile-pic" roundedCircle/>: <span className="material-icons profile">account_circle</span>}
                     
                 </NavLink>

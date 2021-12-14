@@ -15,7 +15,8 @@ import MyProfile from './components/MyProfile';
 import SignUp from './components/SignUp'
 import * as d3 from "d3";
 import { Alert } from 'react-bootstrap';
-import { getDatabase, ref, onValue, push as firebasePush } from 'firebase/database'
+import { getDatabase, ref, onValue, push as firebasePush } from 'firebase/database';
+import { getAuth, onAuthStateChanged } from 'firebase/auth';
 
 
 function App() {  
@@ -70,7 +71,19 @@ function App() {
 
     useEffect(() => {
         fetchData();
-        
+        const auth = getAuth();
+        const unregisterAuthListener = onAuthStateChanged(auth, (firebaseUser) => {
+            if(firebaseUser) {
+                console.log("loggin in", firebaseUser.displayName);
+                setUser(firebaseUser);
+                setLoggedIn(true);
+            } else {
+                console.log("logging out");
+                setUser({});
+                setLoggedIn(false);
+            }
+            console.log(user);
+        })
         //Extract the data
         const offFunction = onValue(postsRef, (snapshot) => {
             const allPosts = snapshot.val();
@@ -88,6 +101,7 @@ function App() {
         
         function cleanup() {
             offFunction();
+            unregisterAuthListener();
         }
         return cleanup;
     }, []) //Adding postRef dependency or removing array causes infinite calls to useEffect.
@@ -125,18 +139,18 @@ function App() {
     return (
         <div className="page-container">
             <div className="content-wrap">
-                <Navbar handleSidebarClicked={setSidebarClicked} handleDisplayData={handleDisplayData} postData={postData} loggedIn={loggedIn} profilePic={user["Profile Pic"]}/>
+                <Navbar handleSidebarClicked={setSidebarClicked} handleDisplayData={handleDisplayData} postData={postData} loggedIn={loggedIn} user={user}/>
                 {errorMessage && 
                     <Alert variant="danger" dismissible onClose={() => setErrorMessage(null)}>{errorMessage}</Alert>
                 }
                 <Switch>
-                    <Route exact path="/"> <Main postsRef={postsRef} postData={displayData} songData={spotifyData} friends={friends} loggedIn={loggedIn}/></Route>
+                    <Route exact path="/"> <Main postsRef={postsRef} postData={displayData} songData={spotifyData} friends={friends} loggedIn={loggedIn} user={user}/></Route>
                     <Route path="/connect"> <Connect peopleData={peopleData} setPeopleData ={handlePeopleData} handleFollowing={handleFollowing} loggedIn={loggedIn} fetchData={fetchData}/> </Route>
                     <Route path="/explore"> <Explore songData={spotifyData}/> </Route>
                     <Route path="/about"> <About/> </Route>
                     <Route path="/friends"> <Friends friends={friends} sidebarClicked={sidebarClicked} loggedIn={loggedIn}/> </Route>
                     <Route path="/topSongs"> <TopSongs songData={spotifyData} sidebarClicked={sidebarClicked}/> </Route>
-                    <Route path="/signUp"><SignUp handleSetUser={handleSetUser}/></Route>
+                    <Route path="/signUp"><SignUp handleSetUser={handleSetUser} loggedIn={loggedIn}/></Route>
                     <Route path="/myProfile"> <MyProfile user={user} loggedIn={loggedIn}/> </Route>
                     <Route path={"/profile/:userName"}><Profile peopleData={peopleData} handleFollowing={handleFollowing} loggedIn={loggedIn}/> </Route>
                     <Redirect to="/"/>
@@ -154,10 +168,14 @@ export default App;
 
 function Main(props) {
     const addPost = (titleContent, textContent, albumContent) => {
+        let profilePic = "https://t4.ftcdn.net/jpg/00/64/67/63/360_F_64676383_LdbmhiNM6Ypzb3FM4PPuFP9rHe7ri8Ju.jpg";
+        if (props.user.photoURL !== null) {
+            profilePic = props.user.photoURL;
+        }
         const newPost = {
             title: titleContent,
-            user: "to be named", //placeHolder
-            userPic: "https://t4.ftcdn.net/jpg/00/64/67/63/360_F_64676383_LdbmhiNM6Ypzb3FM4PPuFP9rHe7ri8Ju.jpg", //placeHolder
+            user: props.user.displayName,
+            userPic: profilePic,
             timePost: Date().toString(),
             albumPhoto: albumContent.artworkUrl100.replace('100x100bb', '400x400bb'),
             songTitle: albumContent.collectionName,
