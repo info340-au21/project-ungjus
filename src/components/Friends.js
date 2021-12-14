@@ -45,7 +45,7 @@ function Friends(props) {
     if(redirectTo != null) {
         return <Redirect push to={"/profile/" + redirectTo}/>
     } else {
-        return (<section className={(props.sidebarClicked) ? "container" : "sidebar d-none d-lg-block border-left"}>
+        return (<section className={(props.sidebarClicked) ? "container" : "container sidebar d-none d-lg-block border-left"}>
             <h1 className="text-center mt-5 mb-3 font-weight-bold">Friends</h1>
             <ul className="list-group list-group-flush">
 

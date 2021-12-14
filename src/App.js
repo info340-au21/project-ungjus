@@ -35,6 +35,8 @@ function App() {
     const [friends, setFriends] = useState([]);
     const [loggedIn, setLoggedIn] = useState(false);
 
+    // const [isInitialRender, setIsInitialRender] = useState(true);
+
     //Load the firebase
     const db = getDatabase();
     const postsRef = ref(db, "allPosts");
@@ -74,36 +76,36 @@ function App() {
         const auth = getAuth();
         const unregisterAuthListener = onAuthStateChanged(auth, (firebaseUser) => {
             if(firebaseUser) {
-                console.log("loggin in", firebaseUser.displayName);
+                // console.log("loggin in", firebaseUser.displayName);
                 setUser(firebaseUser);
                 setLoggedIn(true);
             } else {
-                console.log("logging out");
+                // console.log("logging out");
                 setUser({});
                 setLoggedIn(false);
             }
         })
+
         //Extract the data
         const offFunction = onValue(postsRef, (snapshot) => {
             const allPosts = snapshot.val();
-            // console.log(allPosts);
             const postKeys = Object.keys(allPosts);
             const postArray = postKeys.map((key) => {
                 const thePost = allPosts[key];
                 return thePost;
             })
-            console.log('here');
             setPostData(postArray);
             setDisplayData(postArray);
-            // console.log("PostData:", postData);
         })
         
         function cleanup() {
             offFunction();
             unregisterAuthListener();
         }
+
         return cleanup;
-    }, []) //Adding postRef dependency or removing array causes infinite calls to useEffect.
+    // eslint-disable-next-line
+    }, []) // NOTE: Adding postRef dependency or removing array causes infinite calls to useEffect.
 
     const handleDisplayData = (data) => {
         setDisplayData(data);
