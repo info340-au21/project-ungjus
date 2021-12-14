@@ -82,7 +82,6 @@ function App() {
                 setUser({});
                 setLoggedIn(false);
             }
-            console.log(user);
         })
         //Extract the data
         const offFunction = onValue(postsRef, (snapshot) => {
@@ -117,11 +116,6 @@ function App() {
     const handleSetUser = (input) => {
         setUser(input);
         setLoggedIn(true);
-    }
-
-    function handleSignOut() {
-        setUser({});
-        setLoggedIn(false);
     }
 
     const checkIsFriend = (person) =>{

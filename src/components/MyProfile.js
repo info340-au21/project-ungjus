@@ -32,7 +32,6 @@ function MyProfile(props) {
     const handleChange = (event) => {
       if(event.target.files.length > 0 && event.target.files[0]) {
         const imageFile = event.target.files[0];
-        console.log(event.target.files[0]);
         setImageFile(imageFile);
         setImageUrl(URL.createObjectURL(imageFile));
       }
