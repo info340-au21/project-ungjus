@@ -76,11 +76,9 @@ function App() {
         const auth = getAuth();
         const unregisterAuthListener = onAuthStateChanged(auth, (firebaseUser) => {
             if(firebaseUser) {
-                // console.log("loggin in", firebaseUser.displayName);
                 setUser(firebaseUser);
                 setLoggedIn(true);
             } else {
-                // console.log("logging out");
                 setUser({});
                 setLoggedIn(false);
             }
